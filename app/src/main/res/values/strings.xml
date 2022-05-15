@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Simulador Plan de Negocios</string>
+    <string name="BotonSiguiente">SIMULACION</string>
+    <string name="tv1">Primer Activity</string>
+
+    <string name="BotonAnterior">Volver</string>
+    <string name="tv2">Segundo Activity</string>
+
+    <string name="resultados">VER RESULTADOS</string>
 </resources>
