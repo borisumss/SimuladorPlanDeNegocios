@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_resultados_pdf.xml" value="0.25" />
       </map>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+=======
+        <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+>>>>>>> 633dce1d2f353e7f9dafeca9f344d527b23a7093
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
