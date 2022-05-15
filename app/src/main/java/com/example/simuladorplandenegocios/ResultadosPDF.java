@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
@@ -22,6 +23,7 @@ import android.os.Environment;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
@@ -31,13 +33,14 @@ import java.lang.ref.WeakReference;
 public class ResultadosPDF<pubic> extends AppCompatActivity {
 
     Button generarPDF;
-
+    EditText via, atra;
     String titulo="Resultados de la Simulacion";
     String descripcionText="Aqui tendria que ir la matriz";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados_pdf);
+
 
         if(checkPermission()){
             Toast.makeText(this,"Permiso aceptado", Toast.LENGTH_LONG).show();
@@ -46,13 +49,39 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
         }
 
         generarPDF = findViewById(R.id.btnCrearPDF);
+        via = findViewById(R.id.viabilidad);
+        atra = findViewById(R.id.atratividad);
 
+
+        Bundle enviado = getIntent().getExtras();
+        Triangular tr = (Triangular) enviado.getSerializable("Triang");
+        String atractiv = tr.getAtractivo();
+        atra.setText(atractiv);
+
+
+        via.setText(tr.getViabilidad()+"%");
+        via.setTextColor(Color.parseColor("BLUE"));
+
+        if(tr.getViabilidad()>50.0){
+            via.setTextColor(Color.parseColor("GREEN"));
+        }else{
+            via.setTextColor(Color.parseColor("RED"));
+        }
+
+        if(atractiv.equals("ES ATRACTIVO")){
+            atra.setTextColor(Color.parseColor("GREEN"));
+        }else{
+            atra.setTextColor(Color.parseColor("RED"));
+        }
         /*generarPDF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 pdfGenerado();
             }
         });*/
+
+
+
     }
 
     public void volver(View view){

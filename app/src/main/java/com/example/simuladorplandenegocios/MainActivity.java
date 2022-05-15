@@ -15,9 +15,19 @@ public class MainActivity extends AppCompatActivity {
 
     //metodo para ir a la siguiente pagina Reporte
     public void irReporte(View view){
+        Triangular t2 = new Triangular(12017, 22103, 34207, 0.07f, 74000);
+        t2.estimarVan(100000);
+
         Intent sig = new Intent(this, ResultadosPDF.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Triang",t2);
+        sig.putExtras(bundle);
+
         startActivity(sig);
+
     }
+
 
 
 }
