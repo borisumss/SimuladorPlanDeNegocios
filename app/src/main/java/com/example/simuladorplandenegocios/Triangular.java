@@ -1,14 +1,21 @@
 package com.example.simuladorplandenegocios;
 
-import java.io.Serializable;
+import android.view.View;
+import android.widget.ProgressBar;
 
-public class Triangular implements Serializable {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Triangular implements Serializable  {
     float a,b,c;
     float interes,inversion,TREMA;
     float cuota,saldoInicial,costosFijos,costosProduccion,margenBrutoCostosProduccion;
     float[] fci;
     String atractivo="";
     float viabilidad=0.0f;
+
+
+    ArrayList<String[]> resultados;
     public Triangular(float a,float b,float c,float interes,float inversion){
         this.a = a;
         this.b = b;
@@ -22,6 +29,8 @@ public class Triangular implements Serializable {
         //this.margenBrutoCostosProduccion = margenBrutoCostosProduccion;
         this.fci = new float [13];
         //this.TREMA = (float)(interes + inflacion + inflacion*interes);
+        resultados = new ArrayList<String[]>();
+
     }
 
     public void estimarVan(int n){
@@ -32,7 +41,7 @@ public class Triangular implements Serializable {
         int TIRAtractivo = 0;
         int TIRNoAtractivo = 0;
         float TIR = 0.0f;
-        for(int i=0;i<=n;i++){
+        for(int i=0;i<n;i++){
             for(int j=1;j<=12;j++){
                 float r1 = (float) (Math.random());
                 float r2 = (float) (Math.random());
@@ -60,7 +69,10 @@ public class Triangular implements Serializable {
             }else{
                 TIR = 0f;
             }
+            String [] aux = {""+(i+1),""+VAN,""+TIR,""+(((float)frecuenciaVAN/n)*100)};
+            resultados.add(aux);
             System.out.println("CORRIDA: "+i+"  EL VAN ES: "+VAN+" Y SU TIR ES: "+TIR*100+"%");
+
         }
 
         if(TIRAtractivo>TIRNoAtractivo){
@@ -76,6 +88,9 @@ public class Triangular implements Serializable {
 
     }
 
+    public ArrayList<String[]> getResultados(){
+        return resultados;
+    }
     public String getAtractivo(){
         return atractivo;
     }

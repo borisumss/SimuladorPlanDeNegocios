@@ -26,20 +26,34 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 
 public class ResultadosPDF<pubic> extends AppCompatActivity {
 
     Button generarPDF;
     EditText via, atra;
     String titulo="Resultados de la Simulacion";
-    String descripcionText="Aqui tendria que ir la matriz";
+    private int nroCorrida=0;
+    private String[] header={"Corrida","VAN","TIR","VIABILIDAD"};
+    Triangular tr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados_pdf);
+
 
 
         if(checkPermission()){
@@ -54,7 +68,9 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
 
 
         Bundle enviado = getIntent().getExtras();
-        Triangular tr = (Triangular) enviado.getSerializable("Triang");
+        tr = (Triangular) enviado.getSerializable("Triang");
+        nroCorrida=100;
+        tr.estimarVan(nroCorrida);
         String atractiv = tr.getAtractivo();
         atra.setText(atractiv);
 
@@ -95,48 +111,39 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
         TextPaint titutlo = new TextPaint();
         TextPaint descripcion = new TextPaint();
 
-        Bitmap bitmap, bitmapEscala;
-        PdfDocument.PageInfo pageInfo= new PdfDocument.PageInfo.Builder(816,1054,1).create();
-        PdfDocument.Page pagina1 = pdf.startPage(pageInfo);
+        PdfDocument.PageInfo pageInfo= new PdfDocument.PageInfo.Builder(816,1054,nroCorrida/50).create();;
+        ArrayList<String[]> matriz =  tr.getResultados();
+        int init = 0;
+        int end = 50;
+        for(int h=0;h<nroCorrida/50;h++){
+            PdfDocument.Page pagina = pdf.startPage(pageInfo);
+            Canvas canvas = pagina.getCanvas();
 
-        Canvas canvas = pagina1.getCanvas();
+            titutlo.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
+            titutlo.setTextSize(20);
+            canvas.drawText(titulo,250,85,titutlo);
 
-        /*bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
-        bitmapEscala=Bitmap.createScaledBitmap(bitmap, 80,80,false);
-        canvas.drawBitmap(bitmapEscala,368,20,paint);*/
 
-        titutlo.setTypeface(Typeface.create(Typeface.DEFAULT,Typeface.BOLD));
-        titutlo.setTextSize(20);
-        canvas.drawText(titulo,10,150,titutlo);
+            int y = 150;
+            int x=200;
+            for (int i = init-1; i<end;i++) {
+                for (int j = 0; j < matriz.get(0).length; j++) {
+                    if(i<init){
+                        canvas.drawText(header[j], x, y, descripcion);
+                        x+=100;
+                    }else{
+                        canvas.drawText(matriz.get(i)[j], x, y, descripcion);
+                        x+=100;
+                    }
 
-        descripcion.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
-        descripcion.setTextSize(14);
-
-        String [][] matriz = {
-                {"Corrida","VAM","TIR","TREMA","VIABILIDAD"},
-                {"1","200","550","5","NO"},
-                {"2","300","50","5","NO"},
-                {"3","500","50","5","NO"},
-                {"4","400","50","5","NO"},
-                {"5","600","50","5","NO"},
-                {"6","700","50","5","NO"},
-                {"7","800","500","5","NO"},
-                {"8","900","50554","5","NO"},
-                {"9","100","50","5","NO"},
-                {"10","850","50","5","NO"}
-        };
-        int y = 200;
-        int x=10;
-        for (int i = 0; i<matriz.length;i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
-                canvas.drawText(matriz[i][j], x, y, descripcion);
-                x+=100;
+                }
+                y += 15;
+                x=200;
             }
-            y += 15;
-            x=10;
+            init+=50;
+            end+=50;
+            pdf.finishPage(pagina);
         }
-
-        pdf.finishPage(pagina1);
         File file = new File(Environment.getExternalStorageDirectory(),"Resultados.pdf");
 
         try {
@@ -191,6 +198,5 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
             }
         }
     }
-
 
 }

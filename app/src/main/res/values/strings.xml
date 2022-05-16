@@ -11,4 +11,5 @@
 
     <string name="via"></string>
     <string name="atrac"></string>
+    <string name="carga">Cargando Simulación</string>
 </resources>
