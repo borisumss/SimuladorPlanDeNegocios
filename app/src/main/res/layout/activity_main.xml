@@ -24,7 +24,7 @@
         android:layout_height="581dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="153dp">
+        tools:layout_editor_absoluteY="157dp">
 
         <Button
             android:id="@+id/iniciar"
@@ -32,8 +32,7 @@
             android:layout_height="70dp"
             android:layout_marginLeft="250px"
             android:layout_marginTop="200px"
-            android:text="Iniciar Nueva Simulación"
-            />
+            android:text="Iniciar Nueva Simulación" />
 
         <Button
             android:id="@+id/button4"
