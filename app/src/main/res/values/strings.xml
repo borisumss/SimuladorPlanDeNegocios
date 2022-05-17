@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Simulador Plan de Negocios</string>
     <string name="simulador_opciones">Simulador Opciones</string>
+
+    <string name="BotonSiguiente">SIMULACION</string>
+    <string name="tv1">Resultado de la Simulación</string>
+
+    <string name="BotonAnterior">Volver</string>
+    <string name="tv2">La viabilidad del proyecto es de:</string>
+    <string name="tv3">¿El proyecto es atractivo?</string>
+    <string name="tv4">Informe detallada de la simulación</string>
+    <string name="resultados">VER RESULTADOS</string>
+
+    <string name="via"></string>
+    <string name="atrac"></string>
+    <string name="carga">Cargando Simulación</string>
 </resources>
