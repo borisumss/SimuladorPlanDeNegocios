@@ -5,30 +5,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
+import com.example.simuladorplandenegocios.Controlador.Triangular2;
+import com.example.simuladorplandenegocios.Modelo.Producto;
 
 public class simulacion extends AppCompatActivity {
     private ProgressBar pb;
-    private EditText a,b,c, prestamo,interes, plazo,aporte,costosFiojos, cantidad, costoProduccion;
+    private EditText precioDeVentaPesimistaInput,precioDeVentaModeradoInput,precioDeVentaOptimistaInput, prestamoInput,tasaDeInteresInput,
+            plazoInput,aportePropioInput,costosFijosInput, cantidadAVenderInput, costoDeProduccionInput;
+
+    private float precioDeVentaPesimista,precioDeVentaModerado,precioDeVentaOptimista, prestamo,tasaDeInteres,
+            aportePropio,costosFijos, costoDeProduccion;
+
+    private int plazo,cantidadAVender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simulacion);
 
-        a = (EditText) findViewById(R.id.aa);
-        b = (EditText) findViewById(R.id.bb);
-        c = (EditText) findViewById(R.id.cc);
-        prestamo = (EditText) findViewById(R.id.prest);
-        interes = (EditText) findViewById(R.id.tasaInteres);
-        plazo = (EditText) findViewById(R.id.plazoText);
-        aporte = (EditText) findViewById(R.id.aportePropio);
-        costosFiojos = (EditText) findViewById(R.id.costosFijos);
-        cantidad = (EditText) findViewById(R.id.cantidadVender);
-        costoProduccion = (EditText) findViewById(R.id.costosProduccion);
+        precioDeVentaPesimistaInput = (EditText) findViewById(R.id.PrecioDeVentaPesimistaInput);
+        precioDeVentaModeradoInput = (EditText) findViewById(R.id.PrecioDeVentaModeradoInput);
+        precioDeVentaOptimistaInput = (EditText) findViewById(R.id.PrecioDeVentaOptimistaInput);
+        prestamoInput = (EditText) findViewById(R.id.PrestamoInput);
+        tasaDeInteresInput = (EditText) findViewById(R.id.TasaInteresInput);
+        plazoInput = (EditText) findViewById(R.id.PlazoInput);
+        aportePropioInput = (EditText) findViewById(R.id.AportePropioInput);
+        costosFijosInput = (EditText) findViewById(R.id.CostosFijosInput);
+        cantidadAVenderInput = (EditText) findViewById(R.id.CantidadAVenderInput);
+        costoDeProduccionInput = (EditText) findViewById(R.id.CostoDeProduccionInput);
         pb = findViewById(R.id.progressBar2);
         pb.setVisibility(View.GONE);
     }
@@ -41,9 +47,10 @@ public class simulacion extends AppCompatActivity {
     }
     public boolean validarCampos(){
         boolean res = true;
-        if(a.getText().toString().length()==0 || b.getText().toString().length()==0 || c.getText().toString().length()==0 || prestamo.getText().toString().length()==0
-        || interes.getText().toString().length()==0 || plazo.getText().toString().length()==0 ||aporte.getText().toString().length()==0
-        || costosFiojos.getText().toString().length()==0 || cantidad.getText().toString().length()==0 || costoProduccion.getText().toString().length()==0){
+        if(precioDeVentaPesimistaInput.getText().toString().length()==0 || precioDeVentaModeradoInput.getText().toString().length()==0
+                || precioDeVentaOptimistaInput.getText().toString().length()==0 || prestamoInput.getText().toString().length()==0
+                || tasaDeInteresInput.getText().toString().length()==0 || plazoInput.getText().toString().length()==0 ||aportePropioInput.getText().toString().length()==0
+                || costosFijosInput.getText().toString().length()==0 || cantidadAVenderInput.getText().toString().length()==0 || costoDeProduccionInput.getText().toString().length()==0){
             Toast.makeText(this, "LLENE TODOS LOS CAMPOS°", Toast.LENGTH_LONG).show();
 
             res = false;
@@ -53,27 +60,27 @@ public class simulacion extends AppCompatActivity {
     }
 
     public void cambiar(){
-        float af,bf,cf,prestf,interesf,plazof,aportef,costosFijosf, cantidadf,costoProducf;
 
-        af = Float.parseFloat(a.getText().toString());
-        bf = Float.parseFloat(b.getText().toString());
-        cf = Float.parseFloat(c.getText().toString());
-        prestf = Float.parseFloat(prestamo.getText().toString());
-        interesf = Float.parseFloat(interes.getText().toString());
-        plazof = Float.parseFloat(plazo.getText().toString());
-        aportef = Float.parseFloat(aporte.getText().toString());
-        costosFijosf = Float.parseFloat(costosFiojos.getText().toString());
-        cantidadf = Float.parseFloat(cantidad.getText().toString());
-        costoProducf = Float.parseFloat(costoProduccion.getText().toString());
+        precioDeVentaPesimista = Float.parseFloat(precioDeVentaPesimistaInput.getText().toString());
+        precioDeVentaModerado = Float.parseFloat(precioDeVentaModeradoInput.getText().toString());
+        precioDeVentaOptimista = Float.parseFloat(precioDeVentaOptimistaInput.getText().toString());
+        prestamo = Float.parseFloat(prestamoInput.getText().toString());
+        tasaDeInteres = Float.parseFloat(tasaDeInteresInput.getText().toString());
+        plazo = Integer.parseInt(plazoInput.getText().toString());
+        aportePropio = Float.parseFloat(aportePropioInput.getText().toString());
+        costosFijos = Float.parseFloat(costosFijosInput.getText().toString());
+        cantidadAVender = Integer.parseInt(cantidadAVenderInput.getText().toString());
+        costoDeProduccion = Float.parseFloat(costoDeProduccionInput.getText().toString());
 
-        //Triangular t2 = new Triangular(12017, 22103, 34207, 0.07f, 74000);
+
         pb.setVisibility(View.VISIBLE);
-        Triangular t2 = new Triangular(af, bf, cf, interesf, prestf);
+        Producto p1 = new Producto("App Web",costoDeProduccion,precioDeVentaPesimista,precioDeVentaModerado,precioDeVentaOptimista,cantidadAVender);
+        Triangular2 t1 = new Triangular2(p1,prestamo,tasaDeInteres,plazo,aportePropio,costosFijos);
 
         Intent sig = new Intent(this, ResultadosPDF.class);
         Bundle bundle = new Bundle();
-        //t2.estimarVan(10000);
-        bundle.putSerializable("Triang",t2);
+        //t1.estimarVan(10000);
+        bundle.putSerializable("Triang",t1);
         sig.putExtras(bundle);
         startActivity(sig);
         //pb.setVisibility(View.GONE);

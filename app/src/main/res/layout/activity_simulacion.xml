@@ -46,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/cc"
+            android:id="@+id/PrecioDeVentaOptimistaInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -56,10 +56,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bb" />
+            app:layout_constraintTop_toBottomOf="@+id/PrecioDeVentaModeradoInput" />
 
         <EditText
-            android:id="@+id/cantidadVender"
+            android:id="@+id/CantidadAVenderInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -69,10 +69,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/costosFijos" />
+            app:layout_constraintTop_toBottomOf="@+id/CostosFijosInput" />
 
         <EditText
-            android:id="@+id/aportePropio"
+            android:id="@+id/AportePropioInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -82,10 +82,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plazoText" />
+            app:layout_constraintTop_toBottomOf="@+id/PlazoInput" />
 
         <EditText
-            android:id="@+id/costosProduccion"
+            android:id="@+id/CostoDeProduccionInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -95,10 +95,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cantidadVender" />
+            app:layout_constraintTop_toBottomOf="@+id/CantidadAVenderInput" />
 
         <EditText
-            android:id="@+id/costosFijos"
+            android:id="@+id/CostosFijosInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -108,10 +108,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/aportePropio" />
+            app:layout_constraintTop_toBottomOf="@+id/AportePropioInput" />
 
         <EditText
-            android:id="@+id/prest"
+            android:id="@+id/PrestamoInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -121,10 +121,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cc" />
+            app:layout_constraintTop_toBottomOf="@+id/PrecioDeVentaOptimistaInput" />
 
         <EditText
-            android:id="@+id/plazoText"
+            android:id="@+id/PlazoInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -134,10 +134,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tasaInteres" />
+            app:layout_constraintTop_toBottomOf="@+id/TasaInteresInput" />
 
         <EditText
-            android:id="@+id/bb"
+            android:id="@+id/PrecioDeVentaModeradoInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -147,10 +147,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/aa" />
+            app:layout_constraintTop_toBottomOf="@+id/PrecioDeVentaPesimistaInput" />
 
         <EditText
-            android:id="@+id/aa"
+            android:id="@+id/PrecioDeVentaPesimistaInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="76dp"
@@ -164,7 +164,7 @@
             android:textColor="#3F51B5" />
 
         <EditText
-            android:id="@+id/tasaInteres"
+            android:id="@+id/TasaInteresInput"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
@@ -174,10 +174,10 @@
             android:text=""
             android:textColor="#3F51B5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prest" />
+            app:layout_constraintTop_toBottomOf="@+id/PrestamoInput" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/IniciarSimulacionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="684dp"

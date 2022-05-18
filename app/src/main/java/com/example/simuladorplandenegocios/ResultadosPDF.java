@@ -40,15 +40,16 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-
+import com.example.simuladorplandenegocios.Controlador.Triangular2;
+import com.example.simuladorplandenegocios.Modelo.Producto;
 public class ResultadosPDF<pubic> extends AppCompatActivity {
 
     Button generarPDF;
     EditText via, atra;
     String titulo="Resultados de la Simulacion";
     private int nroCorrida=0;
-    private String[] header={"Corrida","VAN","TIR","VIABILIDAD"};
-    Triangular tr;
+    private String[] header={"Corrida","VAN","TIR","TREMA","VIABILIDAD"};
+    Triangular2 tr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +69,9 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
 
 
         Bundle enviado = getIntent().getExtras();
-        tr = (Triangular) enviado.getSerializable("Triang");
+        tr = (Triangular2) enviado.getSerializable("Triang");
         nroCorrida=10000;
-        tr.estimarVan(nroCorrida);
-        String atractiv = tr.getAtractivo();
-        atra.setText(atractiv);
-
+        tr.estimarVAN(nroCorrida);
 
         via.setText(tr.getViabilidad()+"%");
         via.setTextColor(Color.parseColor("BLUE"));
@@ -84,17 +82,22 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
             via.setTextColor(Color.parseColor("RED"));
         }
 
-        if(atractiv.equals("ES ATRACTIVO")){
+        String atractiv = "";
+
+
+        if(tr.getViabilidad()>50.0){
+            atractiv="Es atractivo";
             atra.setTextColor(Color.parseColor("GREEN"));
+        }else if(tr.getViabilidad()>30.0){
+            atractiv="Es poco atractivo";
+            atra.setTextColor(Color.parseColor("RED"));
         }else{
+            atractiv="No es nada atractivo";
             atra.setTextColor(Color.parseColor("RED"));
         }
-        /*generarPDF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pdfGenerado();
-            }
-        });*/
+
+        atra.setText(atractiv);
+
 
 
 
