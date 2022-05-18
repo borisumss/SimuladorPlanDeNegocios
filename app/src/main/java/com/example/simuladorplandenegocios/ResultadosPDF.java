@@ -26,16 +26,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.ref.WeakReference;
@@ -48,7 +38,7 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
     EditText via, atra;
     String titulo="Resultados de la Simulacion";
     private int nroCorrida=0;
-    private String[] header={"Corrida","VAN","TIR","TREMA","VIABILIDAD"};
+    private String[] header={"Corrida","VAN","TIR","TREMA","VIABILIDAD","ATRACTIVIDAD"};
     Triangular2 tr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

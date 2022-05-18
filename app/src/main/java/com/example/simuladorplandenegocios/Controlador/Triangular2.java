@@ -71,7 +71,7 @@ public class Triangular2 implements Serializable {
                 viable = "NO";
                 atractivo="NO";
             }
-            String [] aux = {""+(i+1),""+VAN,""+(float)TIR*100+"%",""+(float)this.TREMA*100+"%",""+viable};
+            String [] aux = {""+(i),""+VAN,""+(float)TIR*100+"%",""+(float)this.TREMA*100+"%",""+viable,atractivo};
             resultados.add(aux);
             System.out.println("CORRIDA: "+i+" VAN: "+VAN+" TIR:"+(float)TIR*100+"% TREMA:"+(float)this.TREMA*100+"% VIABILIDAD?: "+viable+" ATRACTIVO?:"+atractivo);
         }
@@ -82,8 +82,8 @@ public class Triangular2 implements Serializable {
             atractivoFinal = "NO ES ATRACTIVO";
         }
 
-        viabilidad= (float) viabilidadI/n;
-        System.out.println("LA VIABILIDAD DEL PROYECTO ES DE: "+viabilidad*100+"% Y EL PLAN DE NEGOCIOS"+atractivoFinal);
+        viabilidad= 100*((float) viabilidadI/n);
+        System.out.println("LA VIABILIDAD DEL PROYECTO ES DE: "+viabilidad+"% Y EL PLAN DE NEGOCIOS"+atractivoFinal);
     }
 
     public float flujoCajaMes(){
