@@ -22,11 +22,13 @@ public class Triangular {
     }
 
     public void estimarVAN(int n){
-        int atractivo = 0;
+        int viabilidad = 0;
+        int atractividad = 0;
         for(int i=1 ;i<=n; i++){
             float VAN = 0f;
             float TIR = 0f;
             String viable="";
+            String atractivo="";
             this.fci[0]=this.inversionInicial;
             /** CALCULO FLUJO CAJA **/
             for(int j=1; j<=12 ;j++){
@@ -43,19 +45,34 @@ public class Triangular {
             if(VAN>0.0f){
                 TIR = (float)estimarTIR(fci);
                 if(TIR>this.TREMA){
-                    atractivo++;
+                    viabilidad++;
                     viable = "SI";
                 }else{
                     viable = "NO";
                 }
+                if(TIR>this.interes){
+                    atractividad++;
+                    atractivo = "SI";
+                }else{
+                    atractivo = "NO";
+                }
             }else{
                 TIR = 0f;
                 viable = "NO";
+                atractivo = "NO";
             }
 
-            System.out.println("CORRIDA: "+i+" VAN: "+VAN+" TIR:"+(float)TIR*100+"% TREMA:"+(float)this.TREMA*100+"% VIABILIDAD?: "+viable);
+            System.out.println("CORRIDA: "+i+" VAN: "+VAN+" TIR:"+(float)TIR*100+"% TREMA:"+(float)this.TREMA*100+"% VIABILIDAD?: "+viable+" ATRACTIVO?:"+atractivo);
         }
-        System.out.println("LA VIABILIDAD DEL PROYECTO ES DE: "+(float)(atractivo/n)*100+"%");
+        float porcentajeAtractividad = (float) atractividad/n;
+        String atractivoFinal = "";
+        if(porcentajeAtractividad>0.50){
+            atractivoFinal = "ES ATRACTIVO";
+        }else{
+            atractivoFinal = "NO ES ATRACTIVO";
+        }
+        float porcentajeViabilidad = (float) viabilidad/n;
+        System.out.println("LA VIABILIDAD DEL PROYECTO ES DE: "+porcentajeViabilidad*100+"% Y EL PLAN DE NEGOCIOS "+atractivoFinal);
     }
 
     public float flujoCajaMes(){
@@ -87,9 +104,9 @@ public class Triangular {
             ingresos = 0f;
             costoProduccion = 0f;
         }
-        utilidadBruta = ingresos - costoProduccion;
-        utilidadNeta = utilidadBruta + this.costosFijos;
-        flCaja = utilidadNeta - this.cuota + this.inversionInicial - this.saldoInicial;
+        utilidadBruta = (float)(ingresos - costoProduccion);
+        utilidadNeta = (float)(utilidadBruta - this.costosFijos);
+        flCaja = (float)(utilidadNeta - this.cuota + this.inversionInicial + this.saldoInicial);
         return flCaja;
     }
 

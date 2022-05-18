@@ -3,6 +3,7 @@ package com.example.simuladorplandenegocios;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -50,6 +51,22 @@ public class simulacion extends AppCompatActivity {
         this.cantidadAVenderInput = (EditText) findViewById(R.id.CantidadAVenderInput);
         this.costoDeProduccionInput = (EditText) findViewById(R.id.CostoDeProduccionInput);
 
+        /*this.precioDeVentaPesimista = Float.parseFloat(this.precioDeVentaPesimistaInput.getText().toString());
+        this.precioDeVentaModerado = Float.parseFloat(this.precioDeVentaModeradoInput.getText().toString());
+        this.precioDeVentaOptimista = Float.parseFloat(this.precioDeVentaOptimistaInput.getText().toString());
+        this.prestamo = Float.parseFloat(this.prestamoInput.getText().toString());
+        this.tasaDeInteres = Float.parseFloat(this.tasaDeInteresInput.getText().toString());
+        this.plazo = Integer.parseInt(this.plazoInput.getText().toString());
+        this.aportePropio = Float.parseFloat(this.aportePropioInput.getText().toString());
+        this.costosFijos = Float.parseFloat(this.costosFijosInput.getText().toString());
+        this.cantidadAVender = Integer.parseInt(this.cantidadAVenderInput.getText().toString());
+        this.costoDeProduccion = Float.parseFloat(this.costoDeProduccionInput.getText().toString());
+        Producto p1 = new Producto("App Web",this.costoDeProduccion,this.precioDeVentaPesimista,this.precioDeVentaModerado,this.precioDeVentaOptimista,this.cantidadAVender);
+        Triangular t1 = new Triangular(p1,this.prestamo,this.tasaDeInteres,this.plazo,this.aportePropio,this.costosFijos);
+        t1.estimarVAN(100);*/
+    }
+
+    public void simular(View v){
         this.precioDeVentaPesimista = Float.parseFloat(this.precioDeVentaPesimistaInput.getText().toString());
         this.precioDeVentaModerado = Float.parseFloat(this.precioDeVentaModeradoInput.getText().toString());
         this.precioDeVentaOptimista = Float.parseFloat(this.precioDeVentaOptimistaInput.getText().toString());
