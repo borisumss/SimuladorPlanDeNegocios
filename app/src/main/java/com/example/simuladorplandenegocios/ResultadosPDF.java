@@ -82,10 +82,14 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
             via.setTextColor(Color.parseColor("RED"));
         }
 
-        String atractiv = "";
+        String atractiv = tr.getAtractivoFinal();
+        if(atractiv.equals("ES ATRACTIVO")){
+            atra.setTextColor(Color.parseColor("GREEN"));
+        }else{
+            atra.setTextColor(Color.parseColor("RED"));
+        }
 
-
-        if(tr.getViabilidad()>50.0){
+       /* if(tr.getViabilidad()>50.0){
             atractiv="Es atractivo";
             atra.setTextColor(Color.parseColor("GREEN"));
         }else if(tr.getViabilidad()>30.0){
@@ -94,7 +98,7 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
         }else{
             atractiv="No es nada atractivo";
             atra.setTextColor(Color.parseColor("RED"));
-        }
+        }*/
 
         atra.setText(atractiv);
 

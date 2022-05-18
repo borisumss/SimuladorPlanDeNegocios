@@ -12,6 +12,7 @@ public class Triangular2 implements Serializable {
     float[] fci;
     Producto producto;
     float viabilidad=0.0f;
+    String atractivoFinal="";
     ArrayList<String[]> resultados;
 
     public Triangular2 (Producto producto,float inversionInicial,float interes,int plazo,float aportePropio,float costosFijos){
@@ -29,11 +30,13 @@ public class Triangular2 implements Serializable {
     }
 
     public void estimarVAN(int n){
-        int atractivo = 0;
+        int viabilidadI = 0;
+        int atractividad = 0;
         for(int i=1 ;i<=n; i++){
             float VAN = 0f;
             float TIR = 0f;
             String viable="";
+            String atractivo="";
             this.fci[0]=this.inversionInicial;
             /** CALCULO FLUJO CAJA **/
             for(int j=1; j<=12 ;j++){
@@ -50,21 +53,37 @@ public class Triangular2 implements Serializable {
             if(VAN>0.0f){
                 TIR = (float)estimarTIR(fci);
                 if(TIR>this.TREMA){
-                    atractivo++;
+                    viabilidadI++;
                     viable = "SI";
                 }else{
                     viable = "NO";
                 }
+
+                if(TIR>this.interes){
+                    atractividad++;
+                    atractivo = "SI";
+                }else{
+                    atractivo = "NO";
+                }
+
             }else{
                 TIR = 0f;
                 viable = "NO";
+                atractivo="NO";
             }
             String [] aux = {""+(i+1),""+VAN,""+(float)TIR*100+"%",""+(float)this.TREMA*100+"%",""+viable};
             resultados.add(aux);
-            System.out.println("CORRIDA: "+i+" VAN: "+VAN+" TIR:"+(float)TIR*100+"% TREMA:"+(float)this.TREMA*100+"% VIABILIDAD?: "+viable);
+            System.out.println("CORRIDA: "+i+" VAN: "+VAN+" TIR:"+(float)TIR*100+"% TREMA:"+(float)this.TREMA*100+"% VIABILIDAD?: "+viable+" ATRACTIVO?:"+atractivo);
         }
-        viabilidad= (float)(atractivo/n)*100;
-        System.out.println("LA VIABILIDAD DEL PROYECTO ES DE: "+(float)(atractivo/n)*100+"%");
+        float porcentajeAtractividad = (float) atractividad/n;
+        if(porcentajeAtractividad>0.50){
+            atractivoFinal = "ES ATRACTIVO";
+        }else{
+            atractivoFinal = "NO ES ATRACTIVO";
+        }
+
+        viabilidad= (float) viabilidadI/n;
+        System.out.println("LA VIABILIDAD DEL PROYECTO ES DE: "+viabilidad*100+"% Y EL PLAN DE NEGOCIOS"+atractivoFinal);
     }
 
     public float flujoCajaMes(){
@@ -128,12 +147,14 @@ public class Triangular2 implements Serializable {
     }
 
     public ArrayList<String[]> getResultados(){
-
         return resultados;
     }
 
     public float getViabilidad(){
-
         return viabilidad;
+    }
+
+    public String getAtractivoFinal(){
+        return atractivoFinal;
     }
 }
