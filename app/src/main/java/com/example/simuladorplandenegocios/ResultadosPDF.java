@@ -126,7 +126,7 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
 
 
             int y = 150;
-            int x=200;
+            int x=150;
             for (int i = init-1; i<end;i++) {
                 for (int j = 0; j < matriz.get(0).length; j++) {
                     if(i<init){
@@ -139,7 +139,7 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
 
                 }
                 y += 15;
-                x=200;
+                x=150;
             }
             init+=50;
             end+=50;
