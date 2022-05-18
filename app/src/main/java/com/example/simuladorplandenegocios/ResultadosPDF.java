@@ -58,7 +58,7 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
 
 
         if(checkPermission()){
-            Toast.makeText(this,"Permiso aceptado", Toast.LENGTH_LONG).show();
+           // Toast.makeText(this,"Permiso aceptado", Toast.LENGTH_LONG).show();
         }else{
             requestPermission();
         }
@@ -108,11 +108,15 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
     }
 
     public void volver(View view){
-        Intent sig = new Intent(this, MainActivity.class);
+        Intent sig = new Intent(this, simulacion.class);
         startActivity(sig);
     }
-
+    public void generarPDF(View v){
+        Toast.makeText(this, "Generando PDF...", Toast.LENGTH_LONG).show();
+        pdfGenerado(v);
+    }
     public void pdfGenerado(View view){
+        Toast.makeText(this, "Generando PDF...", Toast.LENGTH_LONG).show();
         PdfDocument pdf= new PdfDocument();
         Paint paint = new Paint();
         TextPaint titutlo = new TextPaint();

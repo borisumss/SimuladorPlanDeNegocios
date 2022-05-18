@@ -56,6 +56,7 @@
             android:layout_height="70dp"
             android:layout_marginLeft="250px"
             android:layout_marginTop="50px"
+            android:onClick="salir"
             android:text="Salir"
             tools:ignore="MissingConstraints" />
 

@@ -73,7 +73,8 @@ public class simulacion extends AppCompatActivity {
         costoDeProduccion = Float.parseFloat(costoDeProduccionInput.getText().toString());
 
 
-        pb.setVisibility(View.VISIBLE);
+       // pb.setVisibility(View.VISIBLE);
+        Toast.makeText(this, "Generando resultados...", Toast.LENGTH_LONG).show();
         Producto p1 = new Producto("App Web",costoDeProduccion,precioDeVentaPesimista,precioDeVentaModerado,precioDeVentaOptimista,cantidadAVender);
         Triangular2 t1 = new Triangular2(p1,prestamo,tasaDeInteres,plazo,aportePropio,costosFijos);
 

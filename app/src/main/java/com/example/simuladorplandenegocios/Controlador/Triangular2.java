@@ -115,9 +115,9 @@ public class Triangular2 implements Serializable {
             ingresos = 0f;
             costoProduccion = 0f;
         }
-        utilidadBruta = ingresos - costoProduccion;
-        utilidadNeta = utilidadBruta + this.costosFijos;
-        flCaja = utilidadNeta - this.cuota + this.inversionInicial - this.saldoInicial;
+        utilidadBruta = (float)(ingresos - costoProduccion);
+        utilidadNeta = (float) (utilidadBruta - this.costosFijos);
+        flCaja = (float) (utilidadNeta - this.cuota + this.inversionInicial + this.saldoInicial);
         return flCaja;
     }
 
