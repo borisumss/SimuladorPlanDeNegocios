@@ -6,16 +6,17 @@ import java.util.Random;
 public class Triangular {
     float inversionInicial;
     float interes,TREMA;
-    float cuota,saldoInicial,costosFijos;
+    float cuota,saldoInicial,costosFijos,inflacion;
     float[] fci;
     Producto producto;
-    public Triangular(Producto producto,float inversionInicial,float interes,int plazo,float aportePropio,float costosFijos,float inflacion){
+    public Triangular(Producto producto,float inversionInicial,float interes,int plazo,float aportePropio,float costosFijos){
         this.producto = producto;
         this.inversionInicial = -inversionInicial;
         this.interes = interes;
         this.cuota = (float)((inversionInicial/plazo)+(inversionInicial/plazo)*interes);
         this.saldoInicial = inversionInicial + aportePropio;
         this.costosFijos = costosFijos;
+        this.inflacion = (float)((0.000049f + 0.0147f + 0.0151f + 0.0271f + 0.04f)/5);
         this.TREMA = (float)(interes + inflacion + interes*inflacion);
         this.fci = new float[13];
     }
