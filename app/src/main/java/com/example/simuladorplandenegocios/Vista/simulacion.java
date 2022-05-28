@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios;
+package com.example.simuladorplandenegocios.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.example.simuladorplandenegocios.Controlador.Triangular2;
 import com.example.simuladorplandenegocios.Modelo.Producto;
+import com.example.simuladorplandenegocios.R;
+import com.example.simuladorplandenegocios.Vista.ResultadosPDF;
 
 public class simulacion extends AppCompatActivity {
     private ProgressBar pb;

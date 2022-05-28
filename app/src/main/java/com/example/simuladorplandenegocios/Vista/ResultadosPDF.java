@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios;
+package com.example.simuladorplandenegocios.Vista;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,11 +8,8 @@ import androidx.core.content.ContextCompat;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -28,10 +25,10 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import com.example.simuladorplandenegocios.Controlador.Triangular2;
-import com.example.simuladorplandenegocios.Modelo.Producto;
+import com.example.simuladorplandenegocios.R;
+
 public class ResultadosPDF<pubic> extends AppCompatActivity {
 
     Button generarPDF;

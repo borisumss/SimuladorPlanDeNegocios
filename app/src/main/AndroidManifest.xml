@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimuladorPlanDeNegocios">
         <activity
-            android:name=".simulacion"
+            android:name=".Vista.simulacion"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Vista.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,11 +26,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ResultadosPDF"
+            android:name=".Vista.ResultadosPDF"
             android:exported="true" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Vista.MainActivity"
             android:exported="true" />
     </application>
 
