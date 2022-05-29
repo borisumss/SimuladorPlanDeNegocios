@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_presupuesto_del_emprendimiento.xml" value="0.33" />
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.33" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.33" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
