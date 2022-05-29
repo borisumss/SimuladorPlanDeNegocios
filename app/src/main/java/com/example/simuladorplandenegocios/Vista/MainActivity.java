@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.simuladorplandenegocios.DatosDeudor;
 import com.example.simuladorplandenegocios.R;
 
 
@@ -36,5 +37,10 @@ public class MainActivity extends AppCompatActivity {
     public void salir(View view){
         finish();
         System.exit(0);
+    }
+
+    public void ayuda(View view){
+        Intent i = new Intent( this, DatosDeudor.class);
+        startActivity(i);
     }
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Costo fijo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="203dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Costo variable total"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Costo total de operacion"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="298dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="234dp"
+        android:layout_height="29dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="193dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText10"
+        android:layout_width="234dp"
+        android:layout_height="29dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText11"
+        android:layout_width="234dp"
+        android:layout_height="29dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="601dp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="601dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

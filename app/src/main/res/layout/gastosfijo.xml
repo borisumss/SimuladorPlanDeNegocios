@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="492dp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sercicio de Celular"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Gastos"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="682dp" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servicio de agua"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servicio de telefono"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="289dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Otros Imprevistos"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="637dp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Servicios"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salud"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="585dp" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servicio de agua"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="241dp" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Mantenimiento"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mantenimiento"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Impuestos"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servicio de luz"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="157dp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alimentación"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="112dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText16"
+        android:layout_width="238dp"
+        android:layout_height="23dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText17"
+        android:layout_width="238dp"
+        android:layout_height="23dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="198dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText18"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText25"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="637dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText28"
+        android:layout_width="159dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="681dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText27"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="584dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText26"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText24"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="492dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText23"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="437dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText22"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText21"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="332dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText20"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="289dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText19"
+        android:layout_width="238dp"
+        android:layout_height="23dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="241dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText15"
+        android:layout_width="238dp"
+        android:layout_height="23dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="112dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText29"
+        android:layout_width="238dp"
+        android:layout_height="23dp"
+        android:hint="hint"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="71dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gastos Fijos"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

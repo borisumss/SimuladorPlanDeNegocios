@@ -6,14 +6,23 @@
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.33" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_datos_deudor.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_resultados_pdf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.264" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/content_deudor.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/costototaloperacion.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/credito.xml" value="0.2" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/fragment_reflow.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/gastosfijo.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/gastosfijos.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/nav_header_deudor.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/utilidaneta.xml" value="0.24010416666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
