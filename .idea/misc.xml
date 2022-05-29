@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_capital_inversion1.xml" value="0.25" />
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_capital_inversion2.xml" value="0.33" />
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_capital_inversion3.xml" value="0.25" />
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_capital_operativo1.xml" value="0.33" />
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_capital_operativo2.xml" value="0.25" />
+        <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_capital_operativo3.xml" value="0.33" />
         <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
         <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_presupuesto_del_emprendimiento.xml" value="0.33" />
         <entry key="..\:/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.33" />

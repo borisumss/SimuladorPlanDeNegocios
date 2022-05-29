@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.simuladorplandenegocios" >
+    package="com.example.simuladorplandenegocios">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,7 +12,25 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SimuladorPlanDeNegocios" >
+        android:theme="@style/Theme.SimuladorPlanDeNegocios">
+        <activity
+            android:name=".Vista.CapitalInversion3"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.CapitalInversion2"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.CapitalInversion1"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.CapitalOperativo3"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.CapitalOperativo2"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.CapitalOperativo1"
+            android:exported="false" />
         <activity
             android:name=".Vista.PresupuestoDelEmprendimiento"
             android:exported="false" />
@@ -21,7 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".Vista.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

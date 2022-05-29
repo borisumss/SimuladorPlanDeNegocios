@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vista.CapitalInversion3">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/CapitalInversion3Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Capital de Inversion"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subtituloInversion3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="84dp"
+            android:text="Requerimientos Legales"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cantidadRequerimientosLegalesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="136dp"
+            android:text="Cantidad:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/cantidadRequerimientosLegalesInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="128dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toEndOf="@+id/cantidadRequerimientosLegalesLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/unidadRequerimientosLegalesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="200dp"
+            android:text="Unidad:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/unidadRequerimientosLegalesInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintStart_toEndOf="@+id/unidadRequerimientosLegalesLabel"
+            app:layout_constraintTop_toBottomOf="@+id/cantidadRequerimientosLegalesInput" />
+
+        <TextView
+            android:id="@+id/detalleRequerimientosLegalesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="264dp"
+            android:text="Detalle:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/detalleRequerimientosLegalesInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintStart_toEndOf="@+id/detalleRequerimientosLegalesLabel"
+            app:layout_constraintTop_toBottomOf="@+id/unidadRequerimientosLegalesInput" />
+
+        <TextView
+            android:id="@+id/aportePropioRequerimientosLegalesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="328dp"
+            android:text="Aporte Propio:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/aportePropioRequerimientosLegalesInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.636"
+            app:layout_constraintStart_toEndOf="@+id/aportePropioRequerimientosLegalesLabel"
+            app:layout_constraintTop_toBottomOf="@+id/detalleRequerimientosLegalesInput" />
+
+        <TextView
+            android:id="@+id/seInvertiraRequerimientosLegalesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="392dp"
+            android:text="Se invertira:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/seInvertiraRequerimientosLegalesInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.737"
+            app:layout_constraintStart_toEndOf="@+id/seInvertiraRequerimientosLegalesLabel"
+            app:layout_constraintTop_toBottomOf="@+id/aportePropioRequerimientosLegalesInput" />
+
+        <Button
+            android:id="@+id/añadirRequerimientosLegalesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Añadir"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seInvertiraRequerimientosLegalesInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

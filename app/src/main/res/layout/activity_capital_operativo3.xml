@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vista.CapitalOperativo3">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/CapitalOperativo3Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Capital Operativo"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subtituloOperativo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="84dp"
+            android:text="Gastos Operativos"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cantidadGastosOperativosLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="136dp"
+            android:text="Cantidad:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/cantidadGastosOperativosInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="128dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toEndOf="@+id/cantidadGastosOperativosLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/unidadGastosOperativosLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="200dp"
+            android:text="Unidad:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/unidadGastosOperativosInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintStart_toEndOf="@+id/unidadGastosOperativosLabel"
+            app:layout_constraintTop_toBottomOf="@+id/cantidadGastosOperativosInput" />
+
+        <TextView
+            android:id="@+id/detalleGastosOperativosLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="264dp"
+            android:text="Detalle:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/detalleGastosOperativosInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintStart_toEndOf="@+id/detalleGastosOperativosLabel"
+            app:layout_constraintTop_toBottomOf="@+id/unidadGastosOperativosInput" />
+
+        <TextView
+            android:id="@+id/seInvertiraGastosOperativosLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="328dp"
+            android:text="Se invertira:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/seInvertiraGastosOperativosInput"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.737"
+            app:layout_constraintStart_toEndOf="@+id/seInvertiraGastosOperativosLabel"
+            app:layout_constraintTop_toBottomOf="@+id/detalleGastosOperativosInput" />
+
+        <Button
+            android:id="@+id/añadirGastosOperativosButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Añadir"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seInvertiraGastosOperativosInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
