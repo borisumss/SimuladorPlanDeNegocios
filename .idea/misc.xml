@@ -3,13 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_resultados_pdf.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/costototaloperacion.xml" value="0.22" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/credito.xml" value="0.22" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/fragment_first.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/fragment_second.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/gastosfijos.xml" value="0.203125" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/layout/utilidaneta.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nailda/Desktop/pruebaOriginal/SimuladorPlanDeNegocios/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.33" />
-        <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_resultados_pdf.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.264" />
-        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

@@ -14,4 +14,17 @@
     <string name="via"></string>
     <string name="atrac"></string>
     <string name="carga">Cargando Simulación</string>
+    <string name="title_activity_credito">credito</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string-array name="opciones">
+        <item>Cuota Fija</item>
+        <item>Cuota Variable</item>
+    </string-array>
 </resources>
