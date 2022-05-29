@@ -14,4 +14,9 @@
     <string name="via"></string>
     <string name="atrac"></string>
     <string name="carga">Cargando Simulación</string>
+
+    <string-array name="opciones">
+        <item>Cuota Fija</item>
+        <item>Cuota Variable</item>
+    </string-array>
 </resources>

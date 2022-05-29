@@ -29,11 +29,11 @@
         tools:layout_editor_absoluteY="298dp" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="234dp"
-        android:layout_height="29dp"
+        android:layout_width="233dp"
+        android:layout_height="58dp"
         android:hint="hint"
         tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="193dp" />
+        tools:layout_editor_absoluteY="164dp" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText10"

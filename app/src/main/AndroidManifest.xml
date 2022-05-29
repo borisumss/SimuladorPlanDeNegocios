@@ -16,6 +16,15 @@
         <activity
             android:name=".DatosDeudor"
             android:exported="false" />
+
+        <activity
+            android:name=".Vista.Credito"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vista.CostoTotalOperacion"
+            android:exported="false" />
+
         <activity
             android:name=".Vista.simulacion"
             android:exported="false" />
