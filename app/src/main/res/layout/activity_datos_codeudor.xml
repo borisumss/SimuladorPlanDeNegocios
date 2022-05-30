@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DatosDeudor">
+    tools:context=".DatosCodeudor">
 
     <Button
         android:id="@+id/atras"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tefCoDeudorInput"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="250px"
-        android:layout_marginTop="50px"
-        android:layout_marginBottom="90dp"
+        android:layout_marginTop="27dp"
+        android:onClick="volver"
         android:text="Atrás"
         tools:ignore="MissingConstraints" />
 
@@ -23,18 +23,17 @@
         android:id="@+id/siguiente"
         android:layout_width="138dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/edadCoDeudorInput"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginLeft="250px"
-        android:layout_marginTop="50px"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="90dp"
-        android:onClick="siguiente"
+        android:onClick="Siguiente"
         android:text="Siguiente"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/edadDeudorLabel4"
+        android:id="@+id/edadCoDeudorLabel4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -44,7 +43,7 @@
         android:text="Edad" />
 
     <TextView
-        android:id="@+id/telfDeudorLabel3"
+        android:id="@+id/telfCoDeudorLabel3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -54,7 +53,7 @@
         android:text="Telefono" />
 
     <TextView
-        android:id="@+id/CIDeudorLabel"
+        android:id="@+id/CICoDeudorLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -64,7 +63,7 @@
         android:text="C.I." />
 
     <TextView
-        android:id="@+id/extDeudorLabel2"
+        android:id="@+id/extCoDeudorLabel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -74,53 +73,53 @@
         android:text="Extensión" />
 
     <TextView
-        android:id="@+id/datosDeudorLabel"
+        android:id="@+id/datosCoDeudorLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginTop="36dp"
-        android:text="Datos del Deudor"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="38dp"
+        android:text="Datos del Codeudor"
         android:textAlignment="center"
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/nombreDedurolabel"
+        android:id="@+id/nombreCoDedurolabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/datosDeudorLabel"
+        android:layout_below="@+id/datosCoDeudorLabel"
         android:layout_alignParentStart="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="26dp"
         android:text="Nombres" />
 
     <TextView
-        android:id="@+id/apellidoDedurolabel"
+        android:id="@+id/apellidoCoDedurolabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nombreDeudorInput"
+        android:layout_below="@+id/nombreCoDeudorInput"
         android:layout_alignParentStart="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="23dp"
         android:text="Apellidos" />
 
     <TextView
-        android:id="@+id/civilDeudorLabel"
+        android:id="@+id/civilCoDeudorLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/apellidoDeudorInput"
+        android:layout_below="@+id/apellidoCoDeudorInput"
         android:layout_alignParentStart="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="23dp"
         android:text="Estado Civil" />
 
     <EditText
-        android:id="@+id/ciDeudorInput"
+        android:id="@+id/ciCoDeudorInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/CIDeudorLabel"
+        android:layout_below="@+id/CICoDeudorLabel"
         android:layout_alignParentStart="true"
         android:layout_marginStart="42dp"
         android:layout_marginTop="2dp"
@@ -128,10 +127,10 @@
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/extDeudorInput"
+        android:id="@+id/extCoDeudorInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/extDeudorLabel2"
+        android:layout_below="@+id/extCoDeudorLabel2"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="229dp"
@@ -141,10 +140,10 @@
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/tefDeudorInput"
+        android:id="@+id/tefCoDeudorInput"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/telfDeudorLabel3"
+        android:layout_below="@+id/telfCoDeudorLabel3"
         android:layout_alignParentStart="true"
         android:layout_marginStart="42dp"
         android:layout_marginTop="1dp"
@@ -152,10 +151,10 @@
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/edadDeudorInput"
+        android:id="@+id/edadCoDeudorInput"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edadDeudorLabel4"
+        android:layout_below="@+id/edadCoDeudorLabel4"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="227dp"
@@ -165,7 +164,7 @@
         android:inputType="number" />
 
     <EditText
-        android:id="@+id/nombreDeudorInput"
+        android:id="@+id/nombreCoDeudorInput"
         android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -178,7 +177,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/apellidoDeudorInput"
+        android:id="@+id/apellidoCoDeudorInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -192,10 +191,10 @@
         android:inputType="textPersonName" />
 
     <Spinner
-        android:id="@+id/civilDeudorInput"
+        android:id="@+id/civilCoDeudorInput"
         android:layout_width="228dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/civilDeudorLabel"
+        android:layout_below="@+id/civilCoDeudorLabel"
         android:layout_alignParentStart="true"
         android:layout_marginStart="42dp"
         android:layout_marginTop="2dp" />

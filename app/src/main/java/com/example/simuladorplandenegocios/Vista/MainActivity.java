@@ -40,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ayuda(View view){
+<<<<<<< HEAD
         Intent i = new Intent( this, gastosfijos2.class);
+=======
+        Intent i = new Intent( this, DatosDeudor.class);
+>>>>>>> 72af0a08fa5ff3913608dd9eb9844affd1c5b19d
         startActivity(i);
     }
 }
