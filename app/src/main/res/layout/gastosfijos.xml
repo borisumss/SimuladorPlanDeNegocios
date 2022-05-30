@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="39dp"
+        android:onClick="volver"
+        android:text="@string/BotonAnterior" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="39dp"
+        android:onClick="volver"
+        android:text="Siguiente" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="563dp"
+        android:text="Gastos fijos" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toStartOf="@+id/editText7"
+        android:text="Impuestos" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toStartOf="@+id/editText11"
+        android:text="Alimentacion" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView22"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toStartOf="@+id/editText13"
+        android:text="Servicio de luz" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView23"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toStartOf="@+id/editText14"
+        android:text="Servicio de agua" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView24"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="4dp"
+        android:layout_toStartOf="@+id/editText10"
+        android:text="Servicio de telefono" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText7"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText13"
+        android:layout_width="190dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/editText11"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="32dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText15"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText10"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="30dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText16"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editText10"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText14"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editText13"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="32dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText10"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText14"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="9dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText11"
+        android:layout_width="192dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/editText7"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="28dp"
+        android:hint="hint" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView25"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="87dp"
+        android:layout_toStartOf="@+id/editText15"
+        android:text="Total Servicios" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView25"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="137dp"
+        android:layout_toStartOf="@+id/editText15"
+        android:text="Servicio de celular" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="39dp"
+        android:onClick="volver"
+        android:text="@string/BotonAnterior" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="39dp"
+        android:onClick="volver"
+        android:text="Siguiente" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText17"
+        android:layout_width="192dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="18dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText22"
+        android:layout_width="192dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/editText25"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="18dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText26"
+        android:layout_width="192dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/editText22"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="18dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText25"
+        android:layout_width="192dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/editText23"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText24"
+        android:layout_width="192dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/editText17"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="18dp"
+        android:hint="hint" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText23"
+        android:layout_width="157dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editText24"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="18dp"
+        android:hint="hint" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView31"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="7dp"
+        android:layout_toStartOf="@+id/editText22"
+        android:text="Otros Imprevistos" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="159dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="13dp"
+        android:layout_toStartOf="@+id/editText17"
+        android:text="Mantenimiento" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView28"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/editText24"
+        android:text="Precio" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@+id/textView30"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toStartOf="@+id/editText23"
+        android:text="Total Mantenimiento" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView32"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="11dp"
+        android:layout_toStartOf="@+id/editText25"
+        android:text="Salud" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@+id/textView34"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="134dp"
+        android:layout_toStartOf="@+id/editText26"
+        android:text="Total gastos" />
+
+</RelativeLayout>

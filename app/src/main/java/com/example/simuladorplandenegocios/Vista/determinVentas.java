@@ -5,10 +5,11 @@ import android.os.Bundle;
 
 import com.example.simuladorplandenegocios.R;
 
-public class CostoTotalOperacion extends AppCompatActivity {
+public class determinVentas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.utilidan);
+        setContentView(R.layout.determinacionventas);
     }
 }
+

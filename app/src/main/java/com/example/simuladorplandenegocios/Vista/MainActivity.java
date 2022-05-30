@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ayuda(View view){
-        Intent i = new Intent( this, CostoTotalOperacion.class);
+        Intent i = new Intent( this, gastosfijos2.class);
         startActivity(i);
     }
 }

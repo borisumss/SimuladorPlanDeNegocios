@@ -20,10 +20,24 @@
         <activity
             android:name=".Vista.Credito"
             android:exported="false" />
+        <activity
+            android:name=".Vista.gastosfijos2"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.gastosFijos"
+            android:exported="false" />
 
         <activity
             android:name=".Vista.CostoTotalOperacion"
             android:exported="false" />
+        <activity
+            android:name=".Vista.determinVentas"
+            android:exported="false" />
+
+        <activity
+            android:name=".Vista.costooperaction"
+            android:exported="false" />
+
 
         <activity
             android:name=".Vista.simulacion"
