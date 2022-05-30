@@ -31,7 +31,7 @@ public class DatosCredito extends AppCompatActivity {
     }
 
     public void siguiente(View view){
-        Intent i = new Intent( this, DatosEmprendimiento.class);
+        Intent i = new Intent( this, DatosEmprendimiento1.class);
         startActivity(i);
     }
 

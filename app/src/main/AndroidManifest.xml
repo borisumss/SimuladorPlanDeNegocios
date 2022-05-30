@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimuladorPlanDeNegocios">
         <activity
+            android:name=".Productos"
+            android:exported="false" />
+        <activity
+            android:name=".DatosEmprendimiento1"
+            android:exported="false" />
+        <activity
             android:name=".DatosEmprendimiento"
             android:exported="false" />
         <activity
@@ -34,19 +40,15 @@
         <activity
             android:name=".Vista.gastosFijos"
             android:exported="false" />
-
         <activity
             android:name=".Vista.CostoTotalOperacion"
             android:exported="false" />
         <activity
             android:name=".Vista.determinVentas"
             android:exported="false" />
-
         <activity
             android:name=".Vista.costooperaction"
             android:exported="false" />
-
-
         <activity
             android:name=".Vista.simulacion"
             android:exported="false" />

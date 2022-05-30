@@ -15,11 +15,12 @@ public class DatosEmprendimiento extends AppCompatActivity {
     }
 
     public void siguiente(View view){
-
+        Intent i = new Intent( this, Productos.class);
+        startActivity(i);
     }
 
     public void volver(View view){
-        Intent i = new Intent( this, DatosCredito.class);
+        Intent i = new Intent( this, DatosEmprendimiento1.class);
         startActivity(i);
     }
 }
