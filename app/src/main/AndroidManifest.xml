@@ -14,17 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimuladorPlanDeNegocios">
         <activity
+            android:name=".DatosEmprendimiento"
+            android:exported="false" />
+        <activity
+            android:name=".DatosCredito"
+            android:exported="false" />
+        <activity
+            android:name=".DatosCodeudor"
+            android:exported="false" />
+        <activity
             android:name=".DatosDeudor"
             android:exported="false" />
-
         <activity
             android:name=".Vista.Credito"
             android:exported="false" />
-
         <activity
             android:name=".Vista.CostoTotalOperacion"
             android:exported="false" />
-
         <activity
             android:name=".Vista.simulacion"
             android:exported="false" />

@@ -10,14 +10,14 @@ import android.widget.Spinner;
 
 import com.example.simuladorplandenegocios.Vista.CostoTotalOperacion;
 
-public class DatosDeudor extends AppCompatActivity {
+public class DatosCodeudor extends AppCompatActivity {
     private Spinner spinner1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datos_deudor);
+        setContentView(R.layout.activity_datos_codeudor);
 
-        spinner1 = (Spinner) findViewById(R.id.civilDeudorInput);
+        spinner1 = (Spinner) findViewById(R.id.civilCoDeudorInput);
 
         String [] opciones = {"Soltero","Casado","Divorciado"};
 
@@ -25,9 +25,15 @@ public class DatosDeudor extends AppCompatActivity {
         spinner1.setAdapter(adapter);
     }
 
-    public void siguiente(View view){
-        Intent i = new Intent( this, DatosCodeudor.class);
+    public void volver(View view){
+        Intent i = new Intent( this, DatosDeudor.class);
+        startActivity(i);
+    }
+
+    public void Siguiente(View view){
+        Intent i = new Intent( this, DatosCredito.class);
         startActivity(i);
     }
 }
+
 
