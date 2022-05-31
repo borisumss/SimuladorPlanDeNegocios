@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimuladorPlanDeNegocios">
         <activity
-            android:name=".Vista.simulacion"
-            android:exported="false" />
-        <activity
             android:name=".Vista.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -25,9 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Vista.ResultadosPDF"
-            android:exported="true" />
 
         <activity
             android:name=".Vista.MainActivity"
