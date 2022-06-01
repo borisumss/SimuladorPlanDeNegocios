@@ -52,6 +52,7 @@ public class tab2 extends Fragment {
     private TextView montoSolicitado;
     private TextView montoFinanciar;
     private TextView condicionMonto;
+    private EditText montoOtro;
     Double totalProy;//totalAP+totalR-efectivo
     //totalAP es solo el aporte total
     //el porcentaje de aporte propio solo es totalAP/totalproyecto ojo con 0/0
@@ -126,6 +127,7 @@ public class tab2 extends Fragment {
         montoSolicitado = (TextView) v.findViewById(R.id.montoSolicitado);
         montoFinanciar = (TextView) v.findViewById(R.id.montoFinanciar);
         condicionMonto = (TextView) v.findViewById(R.id.condicionMonto);
+        DecimalFormat formato = new DecimalFormat("#.00");
 
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +135,13 @@ public class tab2 extends Fragment {
                 calcularTotalAP();
                 calcularTotalR();
                 calcularTotales();
+                //no funciona obtener montoSolicitado dessde tab1
+                View viewtab1 = inflater.inflate(R.layout.fragment_tab1, container, false);
+                montoOtro = (EditText) viewtab1.findViewById(R.id.montoInput);
+                if (!montoOtro.getText().toString().isEmpty()) {
+                    Double monto = Double.parseDouble(montoOtro.getText().toString());
+                    montoSolicitado.setText("MONTO SOLICITADO " + formato.format(monto) + " Bs");//extraer de otra tabla
+                }
             }
         });
 
@@ -184,9 +193,6 @@ public class tab2 extends Fragment {
             porcentajeAportePropio.setText("% APORTE PROPIO " + formato.format(0) + "%");
             condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
         }
-
-        montoSolicitado.setText("MONTO SOLICITADO " + formato.format(0) + " Bs");//extraer de otra tabla
-
 
         if (!efectivoAP.getText().toString().isEmpty())
             montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(totalR - Double.parseDouble(efectivoAP.getText().toString())) + "Bs");
