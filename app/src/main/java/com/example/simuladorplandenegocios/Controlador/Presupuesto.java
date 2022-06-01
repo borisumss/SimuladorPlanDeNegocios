@@ -137,9 +137,10 @@ public class Presupuesto extends Fragment {
                 calcularTotales();
                 //no funciona obtener montoSolicitado dessde DeudorCredito
                 View viewtab1 = inflater.inflate(R.layout.fragment_deudor_credito, container, false);
-                montoOtro = (EditText) viewtab1.findViewById(R.id.montoInput);
+                montoOtro = (EditText) getActivity().findViewById(R.id.montoInput);
                 if (!montoOtro.getText().toString().isEmpty()) {
                     Double monto = Double.parseDouble(montoOtro.getText().toString());
+
                     montoSolicitado.setText("MONTO SOLICITADO " + formato.format(monto) + " Bs");//extraer de otra tabla
                 }
             }

@@ -88,6 +88,8 @@ public class DeudorCredito extends Fragment {
 
         montoSolicitado = v.findViewById(R.id.montoInput);
 
+
+
         return v;
 
     }

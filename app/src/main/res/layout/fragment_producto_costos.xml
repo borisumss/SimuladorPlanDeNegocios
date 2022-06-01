@@ -840,6 +840,18 @@
                 app:layout_constraintHorizontal_bias="0.734"
                 app:layout_constraintStart_toEndOf="@+id/producto4TotalPeriodoLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto4CantidadVendidaInput" />
+
+            <Button
+                android:id="@+id/calcularProductosButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="167dp"
+                android:text="Calcular Costos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4TotalPeriodoResultado" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </FrameLayout>
