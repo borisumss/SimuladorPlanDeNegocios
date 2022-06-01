@@ -171,16 +171,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaOptimistaUnidadLabel" />
 
-            <EditText
-                android:id="@+id/producto1MargenBrutoVentaUnidadInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+            <TextView
+                android:id="@+id/producto1MargenBrutoVentaUnidadResultado"
+                android:layout_width="213dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="36dp"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintHorizontal_bias="0.657"
                 app:layout_constraintStart_toEndOf="@+id/producto1MargenBrutoVentaUnidadLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaOptimistaUnidadInput" />
 
@@ -199,14 +199,14 @@
                 android:id="@+id/producto1CantidadVendidaInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
                 android:inputType="number"
                 android:text=""
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.76"
                 app:layout_constraintStart_toEndOf="@+id/producto1CantidadVendidaLabel"
-                app:layout_constraintTop_toBottomOf="@+id/producto1MargenBrutoVentaUnidadInput" />
+                app:layout_constraintTop_toBottomOf="@+id/producto1MargenBrutoVentaUnidadResultado" />
 
             <TextView
                 android:id="@+id/producto1TotalPeriodoLabel"
@@ -219,16 +219,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto1CantidadVendidaLabel" />
 
-            <EditText
-                android:id="@+id/producto1TotalPeriodoInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+            <TextView
+                android:id="@+id/producto1TotalPeriodoResultado"
+                android:layout_width="203dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
-                android:inputType="number"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintHorizontal_bias="0.734"
                 app:layout_constraintStart_toEndOf="@+id/producto1TotalPeriodoLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto1CantidadVendidaInput" />
 
@@ -265,7 +265,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.87"
                 app:layout_constraintStart_toEndOf="@+id/producto2NombreLabel"
-                app:layout_constraintTop_toBottomOf="@+id/producto1TotalPeriodoInput" />
+                app:layout_constraintTop_toBottomOf="@+id/producto1TotalPeriodoResultado" />
 
             <TextView
                 android:id="@+id/producto2TotalCostoProduccionUnidadLabel"
@@ -374,16 +374,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaOptimistaUnidadLabel" />
 
-            <EditText
-                android:id="@+id/producto2MargenBrutoVentaUnidadInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
+            <TextView
+                android:id="@+id/producto2MargenBrutoVentaUnidadResultado"
+                android:layout_width="213dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="35dp"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintHorizontal_bias="0.6"
                 app:layout_constraintStart_toEndOf="@+id/producto2MargenBrutoVentaUnidadLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaOptimistaUnidadInput" />
 
@@ -409,7 +409,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.76"
                 app:layout_constraintStart_toEndOf="@+id/producto2CantidadVendidaLabel"
-                app:layout_constraintTop_toBottomOf="@+id/producto2MargenBrutoVentaUnidadInput" />
+                app:layout_constraintTop_toBottomOf="@+id/producto2MargenBrutoVentaUnidadResultado" />
 
             <TextView
                 android:id="@+id/producto2TotalPeriodoLabel"
@@ -422,16 +422,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto2CantidadVendidaLabel" />
 
-            <EditText
-                android:id="@+id/producto2TotalPeriodoInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+            <TextView
+                android:id="@+id/producto2TotalPeriodoResultado"
+                android:layout_width="203dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="22dp"
                 android:ems="10"
-                android:inputType="number"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintHorizontal_bias="0.734"
                 app:layout_constraintStart_toEndOf="@+id/producto2TotalPeriodoLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto2CantidadVendidaInput" />
 
@@ -468,7 +468,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.87"
                 app:layout_constraintStart_toEndOf="@+id/producto3NombreLabel"
-                app:layout_constraintTop_toBottomOf="@+id/producto2TotalPeriodoInput" />
+                app:layout_constraintTop_toBottomOf="@+id/producto2TotalPeriodoResultado" />
 
             <TextView
                 android:id="@+id/producto3TotalCostoProduccionUnidadLabel"
@@ -577,16 +577,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaOptimistaUnidadLabel" />
 
-            <EditText
-                android:id="@+id/producto3MargenBrutoVentaUnidadInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
+            <TextView
+                android:id="@+id/producto3MargenBrutoVentaUnidadResultado"
+                android:layout_width="213dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintHorizontal_bias="0.657"
                 app:layout_constraintStart_toEndOf="@+id/producto3MargenBrutoVentaUnidadLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaOptimistaUnidadInput" />
 
@@ -612,7 +612,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.76"
                 app:layout_constraintStart_toEndOf="@+id/producto3CantidadVendidaLabel"
-                app:layout_constraintTop_toBottomOf="@+id/producto3MargenBrutoVentaUnidadInput" />
+                app:layout_constraintTop_toBottomOf="@+id/producto3MargenBrutoVentaUnidadResultado" />
 
             <TextView
                 android:id="@+id/producto3TotalPeriodoLabel"
@@ -625,16 +625,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto3CantidadVendidaLabel" />
 
-            <EditText
-                android:id="@+id/producto3TotalPeriodoInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+            <TextView
+                android:id="@+id/producto3TotalPeriodoResultado"
+                android:layout_width="203dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="22dp"
                 android:ems="10"
-                android:inputType="number"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintHorizontal_bias="0.734"
                 app:layout_constraintStart_toEndOf="@+id/producto3TotalPeriodoLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto3CantidadVendidaInput" />
 
@@ -671,7 +671,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.87"
                 app:layout_constraintStart_toEndOf="@+id/producto4NombreLabel"
-                app:layout_constraintTop_toBottomOf="@+id/producto3TotalPeriodoInput" />
+                app:layout_constraintTop_toBottomOf="@+id/producto3TotalPeriodoResultado" />
 
             <TextView
                 android:id="@+id/producto4TotalCostoProduccionUnidadLabel"
@@ -780,16 +780,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaOptimistaUnidadLabel" />
 
-            <EditText
-                android:id="@+id/producto4MargenBrutoVentaUnidadInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
+            <TextView
+                android:id="@+id/producto4MargenBrutoVentaUnidadResultado"
+                android:layout_width="213dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="36dp"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintHorizontal_bias="0.657"
                 app:layout_constraintStart_toEndOf="@+id/producto4MargenBrutoVentaUnidadLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaOptimistaUnidadInput" />
 
@@ -815,7 +815,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.76"
                 app:layout_constraintStart_toEndOf="@+id/producto4CantidadVendidaLabel"
-                app:layout_constraintTop_toBottomOf="@+id/producto4MargenBrutoVentaUnidadInput" />
+                app:layout_constraintTop_toBottomOf="@+id/producto4MargenBrutoVentaUnidadResultado" />
 
             <TextView
                 android:id="@+id/producto4TotalPeriodoLabel"
@@ -828,16 +828,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producto4CantidadVendidaLabel" />
 
-            <EditText
-                android:id="@+id/producto4TotalPeriodoInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+            <TextView
+                android:id="@+id/producto4TotalPeriodoResultado"
+                android:layout_width="203dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="22dp"
                 android:ems="10"
-                android:inputType="number"
-                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintHorizontal_bias="0.734"
                 app:layout_constraintStart_toEndOf="@+id/producto4TotalPeriodoLabel"
                 app:layout_constraintTop_toBottomOf="@+id/producto4CantidadVendidaInput" />
         </androidx.constraintlayout.widget.ConstraintLayout>
