@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.simuladorplandenegocios.R;
@@ -33,6 +34,8 @@ public class tab1 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    EditText montoSolicitado;
 
     public tab1() {
         // Required empty public constructor
@@ -88,6 +91,8 @@ public class tab1 extends Fragment {
         String [] opciones3 = {"Mensual","Anual"};
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,opciones3);
         spinner3.setAdapter(adapter3);
+
+        montoSolicitado = v.findViewById(R.id.montoInput);
 
         return v;
 
