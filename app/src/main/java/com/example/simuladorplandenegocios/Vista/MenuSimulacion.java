@@ -23,10 +23,10 @@ public class MenuSimulacion extends AppCompatActivity {
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpager);
 
-        tab1 = findViewById(R.id.tab1);
-        tab2 = findViewById(R.id.tab2);
+        tab1 = findViewById(R.id.deudorCredito);
+        tab2 = findViewById(R.id.presupuesto);
         tab3 = findViewById(R.id.costosProductos);
-        tab4 = findViewById(R.id.tab4);
+        tab4 = findViewById(R.id.gastosFijos);
 
         pagerAdapter = new PagerController(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);

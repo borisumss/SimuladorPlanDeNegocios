@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controlador.tab4">
+    tools:context=".Controlador.GastosFijos">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

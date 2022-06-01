@@ -14,7 +14,7 @@ import com.example.simuladorplandenegocios.R;
 
 import java.text.DecimalFormat;
 
-public class tab2 extends Fragment {
+public class Presupuesto extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -61,7 +61,7 @@ public class tab2 extends Fragment {
     //monto a financiar = totalReq - efectivo
     //condicion monto a financiar correcto ->    si monto solicitado = monto a financiar: "monto a fnianciar correcto"; monto a financiar distinto al solicitado
 
-    public tab2() {
+    public Presupuesto() {
         // Required empty public constructor
     }
 
@@ -71,11 +71,11 @@ public class tab2 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment tab2.
+     * @return A new instance of fragment Presupuesto.
      */
     // TODO: Rename and change types and number of parameters
-    public static tab2 newInstance(String param1, String param2) {
-        tab2 fragment = new tab2();
+    public static Presupuesto newInstance(String param1, String param2) {
+        Presupuesto fragment = new Presupuesto();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -96,7 +96,7 @@ public class tab2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tab2, container, false);
+        View v = inflater.inflate(R.layout.fragment_presupuesto, container, false);
 
         calcular = (Button) v.findViewById(R.id.calcular);
 
@@ -135,8 +135,8 @@ public class tab2 extends Fragment {
                 calcularTotalAP();
                 calcularTotalR();
                 calcularTotales();
-                //no funciona obtener montoSolicitado dessde tab1
-                View viewtab1 = inflater.inflate(R.layout.fragment_tab1, container, false);
+                //no funciona obtener montoSolicitado dessde DeudorCredito
+                View viewtab1 = inflater.inflate(R.layout.fragment_deudor_credito, container, false);
                 montoOtro = (EditText) viewtab1.findViewById(R.id.montoInput);
                 if (!montoOtro.getText().toString().isEmpty()) {
                     Double monto = Double.parseDouble(montoOtro.getText().toString());
