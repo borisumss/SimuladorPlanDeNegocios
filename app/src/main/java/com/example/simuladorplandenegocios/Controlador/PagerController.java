@@ -23,7 +23,7 @@ public class PagerController extends FragmentPagerAdapter{
             case 1:
                 return new tab2();
             case 2:
-                return new tab3();
+                return new ProductoCostos();
             case 3:
                 return new tab4();
             default:

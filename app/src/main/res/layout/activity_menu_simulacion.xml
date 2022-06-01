@@ -28,10 +28,10 @@
             android:text="2" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab3"
+            android:id="@+id/costosProductos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3" />
+            android:text="Costos Productos" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab4"
@@ -45,8 +45,21 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+<!--    android:layout_height="0dp"
+        android:layout_weight="8"/> -->
 
-    </androidx.viewpager.widget.ViewPager>
+    <LinearLayout
+        android:id="@+id/viewpager2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="INICIAR" />
+    </LinearLayout>
 
 
 </LinearLayout>
