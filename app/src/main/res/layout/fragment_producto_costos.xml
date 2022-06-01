@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controlador.ProductoCostos">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/productosTituloLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Productos"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/producto1SubtituloLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Producto 1:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productosTituloLabel" />
+
+            <TextView
+                android:id="@+id/producto1NombreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Nombre:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1SubtituloLabel" />
+
+            <EditText
+                android:id="@+id/producto1NombreInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintStart_toEndOf="@+id/producto1NombreLabel"
+                app:layout_constraintTop_toBottomOf="@+id/productosTituloLabel" />
+
+            <TextView
+                android:id="@+id/producto1TotalCostoProduccionUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Costo Produccion:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1NombreLabel" />
+
+            <EditText
+                android:id="@+id/producto1TotalCostoProduccionUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.757"
+                app:layout_constraintStart_toEndOf="@+id/producto1TotalCostoProduccionUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1NombreInput" />
+
+            <TextView
+                android:id="@+id/producto1PrecioDeVentaPesimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Pesimista:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1TotalCostoProduccionUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto1PrecioDeVentaPesimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toEndOf="@+id/producto1PrecioDeVentaPesimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1TotalCostoProduccionUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto1PrecioDeVentaModeradoUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaPesimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto1PrecioDeVentaModeradoUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto1PrecioDeVentaModeradoUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaPesimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto1PrecioDeVentaOptimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaModeradoUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto1PrecioDeVentaOptimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto1PrecioDeVentaOptimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaModeradoUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto1MargenBrutoVentaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Margen Bruto de Venta:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaOptimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto1MargenBrutoVentaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintStart_toEndOf="@+id/producto1MargenBrutoVentaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1PrecioDeVentaOptimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto1CantidadVendidaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Cantidad Vendida:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1MargenBrutoVentaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto1CantidadVendidaInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto1CantidadVendidaLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1MargenBrutoVentaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto1TotalPeriodoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Total del Periodo:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1CantidadVendidaLabel" />
+
+            <EditText
+                android:id="@+id/producto1TotalPeriodoInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto1TotalPeriodoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1CantidadVendidaInput" />
+
+            <TextView
+                android:id="@+id/producto2SubtituloLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Producto 2:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto1TotalPeriodoLabel" />
+
+            <TextView
+                android:id="@+id/producto2NombreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Nombre:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2SubtituloLabel" />
+
+            <EditText
+                android:id="@+id/producto2NombreInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintStart_toEndOf="@+id/producto2NombreLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto1TotalPeriodoInput" />
+
+            <TextView
+                android:id="@+id/producto2TotalCostoProduccionUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Costo Produccion:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2NombreLabel" />
+
+            <EditText
+                android:id="@+id/producto2TotalCostoProduccionUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.757"
+                app:layout_constraintStart_toEndOf="@+id/producto2TotalCostoProduccionUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2NombreInput" />
+
+            <TextView
+                android:id="@+id/producto2PrecioDeVentaPesimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Pesimista:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2TotalCostoProduccionUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto2PrecioDeVentaPesimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toEndOf="@+id/producto2PrecioDeVentaPesimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2TotalCostoProduccionUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto2PrecioDeVentaModeradoUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaPesimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto2PrecioDeVentaModeradoUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto2PrecioDeVentaModeradoUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaPesimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto2PrecioDeVentaOptimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaModeradoUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto2PrecioDeVentaOptimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto2PrecioDeVentaOptimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaModeradoUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto2MargenBrutoVentaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Margen Bruto de Venta:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaOptimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto2MargenBrutoVentaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintStart_toEndOf="@+id/producto2MargenBrutoVentaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2PrecioDeVentaOptimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto2CantidadVendidaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Cantidad Vendida:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2MargenBrutoVentaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto2CantidadVendidaInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto2CantidadVendidaLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2MargenBrutoVentaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto2TotalPeriodoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Total del Periodo:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2CantidadVendidaLabel" />
+
+            <EditText
+                android:id="@+id/producto2TotalPeriodoInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto2TotalPeriodoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2CantidadVendidaInput" />
+
+            <TextView
+                android:id="@+id/producto3SubtituloLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Producto 3:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto2TotalPeriodoLabel" />
+
+            <TextView
+                android:id="@+id/producto3NombreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Nombre:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3SubtituloLabel" />
+
+            <EditText
+                android:id="@+id/producto3NombreInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintStart_toEndOf="@+id/producto3NombreLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto2TotalPeriodoInput" />
+
+            <TextView
+                android:id="@+id/producto3TotalCostoProduccionUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Costo Produccion:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3NombreLabel" />
+
+            <EditText
+                android:id="@+id/producto3TotalCostoProduccionUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.757"
+                app:layout_constraintStart_toEndOf="@+id/producto3TotalCostoProduccionUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3NombreInput" />
+
+            <TextView
+                android:id="@+id/producto3PrecioDeVentaPesimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Pesimista:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3TotalCostoProduccionUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto3PrecioDeVentaPesimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toEndOf="@+id/producto3PrecioDeVentaPesimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3TotalCostoProduccionUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto3PrecioDeVentaModeradoUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaPesimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto3PrecioDeVentaModeradoUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto3PrecioDeVentaModeradoUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaPesimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto3PrecioDeVentaOptimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaModeradoUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto3PrecioDeVentaOptimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto3PrecioDeVentaOptimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaModeradoUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto3MargenBrutoVentaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Margen Bruto de Venta:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaOptimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto3MargenBrutoVentaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintStart_toEndOf="@+id/producto3MargenBrutoVentaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3PrecioDeVentaOptimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto3CantidadVendidaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Cantidad Vendida:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3MargenBrutoVentaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto3CantidadVendidaInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto3CantidadVendidaLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3MargenBrutoVentaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto3TotalPeriodoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Total del Periodo:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3CantidadVendidaLabel" />
+
+            <EditText
+                android:id="@+id/producto3TotalPeriodoInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto3TotalPeriodoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3CantidadVendidaInput" />
+
+            <TextView
+                android:id="@+id/producto4SubtituloLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Producto 4:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto3TotalPeriodoLabel" />
+
+            <TextView
+                android:id="@+id/producto4NombreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Nombre:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4SubtituloLabel" />
+
+            <EditText
+                android:id="@+id/producto4NombreInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintStart_toEndOf="@+id/producto4NombreLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto3TotalPeriodoInput" />
+
+            <TextView
+                android:id="@+id/producto4TotalCostoProduccionUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Costo Produccion:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4NombreLabel" />
+
+            <EditText
+                android:id="@+id/producto4TotalCostoProduccionUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.757"
+                app:layout_constraintStart_toEndOf="@+id/producto4TotalCostoProduccionUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto4NombreInput" />
+
+            <TextView
+                android:id="@+id/producto4PrecioDeVentaPesimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Pesimista:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4TotalCostoProduccionUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto4PrecioDeVentaPesimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toEndOf="@+id/producto4PrecioDeVentaPesimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto4TotalCostoProduccionUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto4PrecioDeVentaModeradoUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaPesimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto4PrecioDeVentaModeradoUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto4PrecioDeVentaModeradoUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaPesimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto4PrecioDeVentaOptimistaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Precio de Venta Moderado:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaModeradoUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto4PrecioDeVentaOptimistaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/producto4PrecioDeVentaOptimistaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaModeradoUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto4MargenBrutoVentaUnidadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Margen Bruto de Venta:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaOptimistaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto4MargenBrutoVentaUnidadInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.552"
+                app:layout_constraintStart_toEndOf="@+id/producto4MargenBrutoVentaUnidadLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto4PrecioDeVentaOptimistaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto4CantidadVendidaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Cantidad Vendida:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4MargenBrutoVentaUnidadLabel" />
+
+            <EditText
+                android:id="@+id/producto4CantidadVendidaInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto4CantidadVendidaLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto4MargenBrutoVentaUnidadInput" />
+
+            <TextView
+                android:id="@+id/producto4TotalPeriodoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:text="Total del Periodo:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/producto4CantidadVendidaLabel" />
+
+            <EditText
+                android:id="@+id/producto4TotalPeriodoInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintStart_toEndOf="@+id/producto4TotalPeriodoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/producto4CantidadVendidaInput" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
