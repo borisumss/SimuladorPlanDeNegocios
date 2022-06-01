@@ -19,14 +19,6 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="16dp">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="1800dp"
-                android:text="hoa"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="0dp" />
-
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
@@ -126,7 +118,9 @@
                 android:ems="10"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/efectivoAP" />
+                app:layout_constraintTop_toBottomOf="@+id/efectivoAP"
+                android:hint="Bs"
+                />
 
             <EditText
                 android:id="@+id/numManoAP"
@@ -135,6 +129,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/manoObraAP" />
@@ -146,6 +141,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materiaprimaAP" />
@@ -157,6 +153,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientosAP" />
@@ -168,6 +165,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infraestructuraAP" />
@@ -179,6 +177,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/maquinariaAP" />
@@ -190,6 +189,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientoAP" />
@@ -207,6 +207,16 @@
 
             <!--Requerimiento-->
 
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="750dp"
+                android:text="REQUERIMIENTO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/gastosOperativosR"
@@ -268,16 +278,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/maquinariaR" />
 
-            <TextView
-                android:id="@+id/textView50"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="750dp"
-                android:text="REQUERIMIENTO"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <EditText
                 android:id="@+id/numEfectivoR"
                 android:layout_width="wrap_content"
@@ -285,6 +285,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gastosOperativosR" />
@@ -297,6 +298,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materiaprimaR" />
@@ -308,6 +310,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientosR" />
@@ -319,6 +322,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infraestructuraR" />
@@ -330,6 +334,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/maquinariaR" />
@@ -341,6 +346,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Bs"
                 android:inputType="numberDecimal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientoR" />
@@ -356,6 +362,76 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/numLegalR" />
 
+            <TextView
+                android:id="@+id/totalProyecto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="32dp"
+                android:text="TOTAL PROYECTO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tatalR" />
+
+            <TextView
+                android:id="@+id/aportePropio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="APORTE PROPIO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalProyecto" />
+
+            <TextView
+                android:id="@+id/aportePropioPorc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="%APORTE PROPIO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aportePropio" />
+
+            <TextView
+                android:id="@+id/condicionAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aportePropioPorc" />
+
+            <TextView
+                android:id="@+id/montoSolicitado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="32dp"
+                android:text="MONTO SOLICITADO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/condicionAP" />
+
+            <TextView
+                android:id="@+id/montoFinanciar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="MONTO A FINANCIAR"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/montoSolicitado" />
+
+            <TextView
+                android:id="@+id/condicionMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/montoFinanciar" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
