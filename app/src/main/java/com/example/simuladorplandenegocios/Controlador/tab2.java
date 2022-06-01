@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.simuladorplandenegocios.R;
 
+import java.text.DecimalFormat;
+
 public class tab2 extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -138,26 +140,64 @@ public class tab2 extends Fragment {
     }
 
     private void calcularTotalAP() {
+        DecimalFormat formato = new DecimalFormat("#.00");
         EditText[] array = {efectivoAP, manoObraAP, materiaPrimaAP, promocionAP, infraestructuraAP, maquinariaAP, legalAP};
         totalAP = 0;
         for (EditText i : array) {
             if (!i.getText().toString().isEmpty())
                 totalAP += Double.parseDouble(i.getText().toString());
         }
-        totalA.setText("TOTAL Aporte Propio " + totalAP + " Bs");
+        totalA.setText("TOTAL Aporte Propio " + formato.format(totalAP) + " Bs");
     }
 
     private void calcularTotalR() {
+        DecimalFormat formato = new DecimalFormat("#.00");
         EditText[] array = {gastosR, materiaPrimaR, promocionR, infraestructuraR, maquinariaR, legalR};
         totalR = 0;
         for (EditText i : array) {
             if (!i.getText().toString().isEmpty())
-                totalAP += Double.parseDouble(i.getText().toString());
+                totalR += Double.parseDouble(i.getText().toString());
         }
-        totalReq.setText("TOTAL Requerimiento " + totalAP + " Bs");
+        totalReq.setText("TOTAL Requerimiento " + formato.format(totalR) + " Bs");
     }
 
     private void calcularTotales() {
+
+        DecimalFormat formato = new DecimalFormat("#.00");
+
+        if (efectivoAP.getText().toString().isEmpty())
+            totalProy = totalAP + totalR;
+        else
+            totalProy = totalAP + totalR - Double.parseDouble(efectivoAP.getText().toString());
+        totalProyecto.setText("TOTAL PROYECTO " + formato.format(totalProy) + " Bs");
+
+        totalAportePropio.setText("TOTAL APORTE PROPIO " + formato.format(totalAP) + " Bs");
+
+        if (totalProy != 0) {
+            porcentajeAportePropio.setText("% APORTE PROPIO " + formato.format(((totalAP / totalProy)) * 100) + "%");
+            if (totalAP / totalProy < 0.1)
+                condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
+            else {
+                condicionAP.setText("SI CUMPLE con aporte propio");
+            }
+        } else {
+            porcentajeAportePropio.setText("% APORTE PROPIO " + formato.format(0) + "%");
+            condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
+        }
+
+        montoSolicitado.setText("MONTO SOLICITADO " + formato.format(0) + " Bs");//extraer de otra tabla
+
+
+        if (!efectivoAP.getText().toString().isEmpty())
+            montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(totalR - Double.parseDouble(efectivoAP.getText().toString())) + "Bs");
+        else
+            montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(totalR) + "Bs");
+
+
+        if (montoSolicitado.getText().toString().equals(montoFinanciar.getText().toString()))
+            condicionMonto.setText("MONTO A FINANCIAR CORRECTO");
+        else
+            condicionMonto.setText("MONTO A FINANCIAR DISTINTO AL SOLICITADO");
 
     }
 
