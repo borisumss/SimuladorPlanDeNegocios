@@ -6,17 +6,321 @@
     tools:context=".Controlador.tab1">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="tab1111"
-        android:gravity="center"/>
 
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/datosDeudorLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="#358BCD"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Datos del Deudor"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/nombreDedurolabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/datosDeudorLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Nombres" />
+
+                <EditText
+                    android:id="@+id/nombreDeudorInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="42dp"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+
+                <TextView
+                    android:id="@+id/apellidoDedurolabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nombreDeudorInput"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="23dp"
+                    android:text="Apellidos" />
+
+                <EditText
+                    android:id="@+id/apellidoDeudorInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="42dp"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/civilDeudorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apellidoDeudorInput"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="23dp"
+                    android:text="Estado Civil" />
+
+                <Spinner
+                    android:id="@+id/civilDeudorInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/civilDeudorLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="42dp" />
+
+                <TextView
+                    android:id="@+id/CIDeudorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="23dp"
+                    android:text="C.I." />
+
+                <EditText
+                    android:id="@+id/ciDeudorInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/CIDeudorLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="220dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/extDeudorLabel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="234dp"
+                    android:layout_marginTop="-66dp"
+                    android:text="Extensión" />
+
+                <EditText
+                    android:id="@+id/extDeudorInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/extDeudorLabel2"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="232dp"
+                    android:layout_marginEnd="42dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+
+                <TextView
+                    android:id="@+id/telfDeudorLabel3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="23dp"
+                    android:text="Telefono" />
+
+
+                <EditText
+                    android:id="@+id/tefDeudorInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/telfDeudorLabel3"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="220dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/edadDeudorLabel4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="234dp"
+                    android:layout_marginTop="-66dp"
+                    android:text="Edad" />
+
+                <EditText
+                    android:id="@+id/edadDeudorInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edadDeudorLabel4"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="232dp"
+                    android:layout_marginEnd="42dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+
+                <TextView
+                    android:id="@+id/datosCreditoLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="50dp"
+                    android:background="#358BCD"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Datos del Crédito"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/actividadLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/datosCreditoLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Actividad" />
+
+                <Spinner
+                    android:id="@+id/actividadInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/actividadLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="42dp"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/montolabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/actividadInput"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Monto Solicitado (Bs.)" />
+
+                <EditText
+                    android:id="@+id/montoInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/montolabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="220dp"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/interesLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="234dp"
+                    android:layout_marginTop="-66dp"
+                    android:text="Tasa de interes (%)" />
+
+                <EditText
+                    android:id="@+id/interesInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/interesLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="232dp"
+                    android:layout_marginEnd="42dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/formaPagoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/interesInput"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Forma de Pago" />
+
+                <Spinner
+                    android:id="@+id/fomarpagoInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/formaPagoLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="42dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/plazoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Plazo (meses)" />
+
+                <EditText
+                    android:id="@+id/plazoInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/plazoLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="42dp"
+                    android:ems="10"
+                    android:inputType="number" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
 </FrameLayout>
