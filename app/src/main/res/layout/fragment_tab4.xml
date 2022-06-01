@@ -184,28 +184,14 @@
                     android:inputType="text" />
 
                 <TextView
-                    android:id="@+id/textView27"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/totservices"
+                    android:layout_width="333dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView23"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
-                    android:layout_toStartOf="@+id/editText14"
-                    android:text="Total Servicio" />
-
-                <EditText
-                    android:id="@+id/totalServicInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="42dp"
-                    android:ems="10"
-                    android:inputType="text" />
+                    android:layout_toStartOf="@+id/editText14" />
 
                 <TextView
                     android:id="@+id/textView28"
@@ -231,6 +217,7 @@
                     android:layout_marginEnd="44dp"
                     android:ems="10"
                     android:hint="Mantenimiento1" />
+
                 <EditText
                     android:id="@+id/mm1Input"
                     android:layout_width="match_parent"
@@ -256,6 +243,7 @@
                     android:layout_marginEnd="42dp"
                     android:ems="10"
                     android:hint="Mantenimiento2" />
+
                 <EditText
                     android:id="@+id/mm2Input"
                     android:layout_width="match_parent"
@@ -281,6 +269,7 @@
                     android:layout_marginEnd="42dp"
                     android:ems="10"
                     android:hint="Mantenimiento3" />
+
                 <EditText
                     android:id="@+id/m3input"
                     android:layout_width="match_parent"
@@ -306,6 +295,7 @@
                     android:layout_marginEnd="42dp"
                     android:ems="10"
                     android:hint="Mantenimiento4" />
+
                 <EditText
                     android:id="@+id/mm4put"
                     android:layout_width="match_parent"
@@ -321,27 +311,13 @@
 
                 <TextView
                     android:id="@+id/textView32"
-                    android:layout_width="wrap_content"
+                    android:layout_width="337dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView23"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
-                    android:layout_toStartOf="@+id/editText14"
-                    android:text="Total Mantenimiento" />
-
-                <EditText
-                    android:id="@+id/tput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="42dp"
-                    android:ems="10"
-                    android:inputType="text" />
+                    android:layout_toStartOf="@+id/editText14" />
 
                 <TextView
                     android:id="@+id/textView40"
@@ -393,35 +369,19 @@
 
                 <TextView
                     android:id="@+id/textView328"
-                    android:layout_width="wrap_content"
+                    android:layout_width="338dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView23"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
-                    android:layout_toStartOf="@+id/editText14"
-                    android:text="Total Gastos" />
-
-                <EditText
-                    android:id="@+id/totalgstosInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="42dp"
-                    android:ems="10"
-                    android:inputType="text" />
+                    android:layout_toStartOf="@+id/editText14" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Calcular"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="42dp"/>
+                    android:text="calcular" />
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>
