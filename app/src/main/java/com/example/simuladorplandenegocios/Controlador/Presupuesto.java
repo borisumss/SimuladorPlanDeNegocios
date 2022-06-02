@@ -50,7 +50,9 @@ public class Presupuesto extends Fragment {
     private TextView porcentajeAportePropio;
     private TextView condicionAP;
     private TextView montoSolicitado;
+    private double montoSol;
     private TextView montoFinanciar;
+    private double montoFin;
     private TextView condicionMonto;
     private EditText montoOtro;
     Double totalProy;//totalAP+totalR-efectivo
@@ -134,15 +136,14 @@ public class Presupuesto extends Fragment {
             public void onClick(View view) {
                 calcularTotalAP();
                 calcularTotalR();
-                calcularTotales();
                 //no funciona obtener montoSolicitado dessde DeudorCredito
                 View viewtab1 = inflater.inflate(R.layout.fragment_deudor_credito, container, false);
                 montoOtro = (EditText) getActivity().findViewById(R.id.montoInput);
                 if (!montoOtro.getText().toString().isEmpty()) {
-                    Double monto = Double.parseDouble(montoOtro.getText().toString());
-
-                    montoSolicitado.setText("MONTO SOLICITADO " + formato.format(monto) + " Bs");//extraer de otra tabla
+                    montoSol = Double.parseDouble(montoOtro.getText().toString());
+                    montoSolicitado.setText("MONTO SOLICITADO " + formato.format(montoSol) + " Bs");//extraer de otra tabla
                 }
+                calcularTotales();
             }
         });
 
@@ -195,13 +196,16 @@ public class Presupuesto extends Fragment {
             condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
         }
 
-        if (!efectivoAP.getText().toString().isEmpty())
-            montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(totalR - Double.parseDouble(efectivoAP.getText().toString())) + "Bs");
-        else
+        if (!efectivoAP.getText().toString().isEmpty()) {
+            montoFin = totalR - Double.parseDouble(efectivoAP.getText().toString());
+            montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(montoFin) + "Bs");
+        }else {
+            montoFin = 0;
             montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(totalR) + "Bs");
+        }
 
 
-        if (montoSolicitado.getText().toString().equals(montoFinanciar.getText().toString()))
+        if (montoFin==montoSol)
             condicionMonto.setText("MONTO A FINANCIAR CORRECTO");
         else
             condicionMonto.setText("MONTO A FINANCIAR DISTINTO AL SOLICITADO");
