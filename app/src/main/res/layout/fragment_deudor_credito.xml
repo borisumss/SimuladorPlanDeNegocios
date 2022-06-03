@@ -251,36 +251,16 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="42dp"
-                    android:layout_marginEnd="220dp"
+                    android:layout_marginEnd="42dp"
                     android:ems="10"
                     android:inputType="numberDecimal" />
 
-                <TextView
-                    android:id="@+id/interesLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="234dp"
-                    android:layout_marginTop="-66dp"
-                    android:text="Tasa de interes (%)" />
-
-                <EditText
-                    android:id="@+id/interesInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/interesLabel"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="232dp"
-                    android:layout_marginEnd="42dp"
-                    android:ems="10"
-                    android:inputType="number" />
 
                 <TextView
                     android:id="@+id/formaPagoLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/interesInput"
+                    android:layout_below="@+id/montoInput"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="26dp"
@@ -317,9 +297,56 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="42dp"
-                    android:layout_marginEnd="42dp"
+                    android:layout_marginEnd="150dp"
                     android:ems="10"
                     android:inputType="number" />
+
+                <Button
+                    android:id="@+id/buttonCalc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginEnd="100dp"
+                    android:onClick="change"
+                    android:text="Calcular cuota" />
+                <TextView
+                    android:id="@+id/cuotaLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Cuota" />
+
+                <TextView
+                    android:id="@+id/cuotaInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cuotaLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/interesLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Tasa de interes (%)" />
+
+                <TextView
+                    android:id="@+id/interesInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/interesLabel"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="42dp"
+                    android:textSize="18sp"/>
+
+
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>

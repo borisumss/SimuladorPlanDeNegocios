@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.simuladorplandenegocios.R;
 
@@ -28,8 +31,11 @@ public class DeudorCredito extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    EditText montoSolicitado;
+    private TextView interes, interesLabel, cuota,cuotaLabel;
+    private double monto,intereses,cuotaFinal;
+    private int plazo;
+    private Button calcular;
+    EditText montoSolicitado, plazos;
 
     public DeudorCredito() {
         // Required empty public constructor
@@ -76,6 +82,7 @@ public class DeudorCredito extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,opciones);
         spinner1.setAdapter(adapter);
 
+
         spinner2 = (Spinner) v.findViewById(R.id.actividadInput);
         String [] opciones2 = {"Productiva","Servicios"};
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,opciones2);
@@ -86,13 +93,68 @@ public class DeudorCredito extends Fragment {
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,opciones3);
         spinner3.setAdapter(adapter3);
 
-        montoSolicitado = v.findViewById(R.id.montoInput);
+        montoSolicitado = (EditText) v.findViewById(R.id.montoInput);
 
+        plazos = (EditText) v.findViewById(R.id.plazoInput);
+
+        interes = (TextView)  v.findViewById(R.id.interesInput);
+        interes.setVisibility(View.INVISIBLE);
+
+        interesLabel = (TextView)   v.findViewById(R.id.interesLabel);
+        interesLabel.setVisibility(View.INVISIBLE);
+
+        cuota = (TextView)   v.findViewById(R.id.cuotaInput);
+        cuota.setVisibility(View.INVISIBLE);
+
+        cuotaLabel = (TextView)   v.findViewById(R.id.cuotaLabel);
+        cuotaLabel.setVisibility(View.INVISIBLE);
+
+        calcular = (Button) v.findViewById(R.id.buttonCalc);
+        calcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 monto = Double.parseDouble(montoSolicitado.getText().toString());
+                 plazo = Integer.parseInt(plazos.getText().toString());
+                String aux = spinner2.getSelectedItem().toString();
+                if(aux.equals("Productiva")){
+                    interes.setText("7.00");
+                }else{
+                    interes.setText("11.50");
+                }
+                intereses = Double.parseDouble(interes.getText().toString())/100.0;
+                cuotaLabel.setVisibility(View.VISIBLE);
+                cuota.setVisibility(View.VISIBLE);
+                interesLabel.setVisibility(View.VISIBLE);
+                interes.setVisibility(View.VISIBLE);
+
+        cuotaFinal = (monto/(double)plazo)+(monto/(double)plazo)*intereses;
+        cuota.setText(cuotaFinal+"");
+            }
+        });
 
 
         return v;
 
     }
 
+    public void change(View view){
+        /*monto = Double.parseDouble(montoSolicitado.getText().toString());
+        plazo = Integer.parseInt(plazos.getText().toString());*/
+        String aux = spinner2.getSelectedItem().toString();
+        if(aux.equals("Productiva")){
+            interes.setText("5.00");
+        }else{
+            interes.setText("7.5");
+        }
+       /* intereses = Double.parseDouble(interes.getText().toString())/100.0;*/
+        cuotaLabel.setVisibility(View.VISIBLE);
+        cuota.setVisibility(View.VISIBLE);
+        interesLabel.setVisibility(View.VISIBLE);
+        interes.setVisibility(View.VISIBLE);
+
+       /* cuotaFinal = (monto/(double)plazo)+(monto/(double)plazo)*intereses;
+        cuota.setText(cuotaFinal+"");*/
+    }
 
 }
