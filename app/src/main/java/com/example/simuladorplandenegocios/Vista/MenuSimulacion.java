@@ -29,12 +29,15 @@ public class MenuSimulacion extends AppCompatActivity {
         tab4 = findViewById(R.id.gastosFijos);
         tab5 = findViewById(R.id.guardarFormulario);
 
+
+
         pagerAdapter = new PagerController(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+                //tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
                 if(tab.getPosition()==0){
                     pagerAdapter.notifyDataSetChanged();
                 }
@@ -54,7 +57,7 @@ public class MenuSimulacion extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
+                //viewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override

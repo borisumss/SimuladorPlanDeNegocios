@@ -13,7 +13,9 @@
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/nuevo">
+        android:background="@color/nuevo"
+        app:tabMode="scrollable"
+        app:tabGravity="fill">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/deudorCredito"

@@ -2,8 +2,6 @@ package com.example.simuladorplandenegocios.Controlador;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -96,19 +94,19 @@ public class GastosFijos extends Fragment {
         calcular=(Button) v.findViewById(R.id.button2);
 
         //Servicios
-        servicioLuz=(EditText) v.findViewById(R.id.sInput);
+        servicioLuz=(EditText) v.findViewById(R.id.servicioLuzInput);
         servicioAgua=(EditText) v.findViewById(R.id.servicioAguaInput);
-        servicioTelefono=(EditText) v.findViewById(R.id.ServicioTelefono);
+        servicioTelefono=(EditText) v.findViewById(R.id.servicioTelefonoIput);
         servicioCelular=(EditText) v.findViewById(R.id.servicioCelularInput);
         //totales
-        textoSalidaServicios=(TextView) v.findViewById(R.id.totservices);
+        textoSalidaServicios=(TextView) v.findViewById(R.id.totalServiciosResultado);
         //Mantenimiento
         mantenimiento1=(EditText) v.findViewById(R.id.mm1Input);
         mantenimiento2=(EditText) v.findViewById(R.id.mm2Input);
         mantenimiento3=(EditText) v.findViewById(R.id.m3input);
         mantenimiento4=(EditText) v.findViewById(R.id.mm4put);
         //totales
-        textoSalidaMantenimiento=(TextView) v.findViewById(R.id.textView32);
+        textoSalidaMantenimiento=(TextView) v.findViewById(R.id.totalMantenimientoResultado);
         //gastos aparte
         salud=(EditText) v.findViewById(R.id.eput);
         imprevistos=(EditText) v.findViewById((R.id.imprevistosinput));
@@ -116,8 +114,8 @@ public class GastosFijos extends Fragment {
         impuestos=(EditText) v.findViewById(R.id.impuestoInput);
         alimentacion=(EditText) v.findViewById(R.id.alimentacionInput);
         //totales
-        textoSalidaMantenimiento=(TextView) v.findViewById(R.id.textView32);
-        textoSalidaGastoTotal = (TextView) v.findViewById(R.id.textView328);
+        textoSalidaMantenimiento=(TextView) v.findViewById(R.id.totalMantenimientoResultado);
+        textoSalidaGastoTotal = (TextView) v.findViewById(R.id.totalGastosResultado);
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

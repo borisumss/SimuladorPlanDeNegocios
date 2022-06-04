@@ -99,7 +99,7 @@
                     android:text="Servicio de luz" />
 
                 <EditText
-                    android:id="@+id/sInput"
+                    android:id="@+id/servicioLuzInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -147,7 +147,7 @@
                     android:text="Servicio de telefono" />
 
                 <EditText
-                    android:id="@+id/ServicioTelefono"
+                    android:id="@+id/servicioTelefonoIput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -184,7 +184,7 @@
                     android:inputType="text" />
 
                 <TextView
-                    android:id="@+id/totservices"
+                    android:id="@+id/totalServiciosResultado"
                     android:layout_width="333dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView23"
@@ -310,7 +310,7 @@
                     android:inputType="text" />
 
                 <TextView
-                    android:id="@+id/textView32"
+                    android:id="@+id/totalMantenimientoResultado"
                     android:layout_width="337dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView23"
@@ -368,7 +368,7 @@
                     android:inputType="text" />
 
                 <TextView
-                    android:id="@+id/textView328"
+                    android:id="@+id/totalGastosResultado"
                     android:layout_width="338dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView23"

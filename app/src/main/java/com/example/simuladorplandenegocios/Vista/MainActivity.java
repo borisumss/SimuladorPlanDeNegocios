@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         );
 
 
-        iniciar=(Button)findViewById(R.id.iniciar);
+        iniciar=(Button)findViewById(R.id.formularioButton);
 
         iniciar.setOnClickListener(new View.OnClickListener(){
 

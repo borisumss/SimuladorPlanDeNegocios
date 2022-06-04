@@ -61,7 +61,7 @@ public class GuardarFormulario extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_guardar_formulario, container, false);
 
-
+            //AQUI ENTRA TODOS LOS GETS PARA LUEGO MANDARLO A 'FirebaseFormulario' Y QUE LO GUARDE
 
         return v;
     }
