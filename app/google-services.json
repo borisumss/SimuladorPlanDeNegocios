@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "303764649433",
+    "project_id": "simulador-plan-de-negocios",
+    "storage_bucket": "simulador-plan-de-negocios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303764649433:android:45b6f54c2ce15ea1eb15c8",
+        "android_client_info": {
+          "package_name": "com.example.simuladorplandenegocios"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303764649433-4m78pranrti7ip16r6068c59i75a77g6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.simuladorplandenegocios",
+            "certificate_hash": "3e6531ee5db51eae63b934036a7ba00ca04abd8d"
+          }
+        },
+        {
+          "client_id": "303764649433-d2ijknge85vkrhi2rcvflch0v6r40fs4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB24NTu9aTpb8P7pGHa8xxzhHnWCZ8sfPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303764649433-d2ijknge85vkrhi2rcvflch0v6r40fs4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

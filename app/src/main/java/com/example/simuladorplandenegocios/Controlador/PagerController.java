@@ -26,8 +26,10 @@ public class PagerController extends FragmentPagerAdapter{
                 return new ProductoCostos();
             case 3:
                 return new GastosFijos();
+            case 4:
+                return new GuardarFormulario();
             default:
-                return null;
+            return null;
 
         }
     }

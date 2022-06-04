@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 public class MenuSimulacion extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private TabItem tab1, tab2, tab3, tab4;
+    private TabItem tab1, tab2, tab3, tab4, tab5;
     private PagerController pagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class MenuSimulacion extends AppCompatActivity {
         tab2 = findViewById(R.id.presupuesto);
         tab3 = findViewById(R.id.costosProductos);
         tab4 = findViewById(R.id.gastosFijos);
+        tab5 = findViewById(R.id.guardarFormulario);
 
         pagerAdapter = new PagerController(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
@@ -44,6 +45,9 @@ public class MenuSimulacion extends AppCompatActivity {
                     pagerAdapter.notifyDataSetChanged();
                 }
                 if(tab.getPosition()==3){
+                    pagerAdapter.notifyDataSetChanged();
+                }
+                if(tab.getPosition()==4){
                     pagerAdapter.notifyDataSetChanged();
                 }
             }
