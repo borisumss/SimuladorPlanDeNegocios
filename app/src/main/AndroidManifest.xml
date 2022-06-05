@@ -14,9 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimuladorPlanDeNegocios">
         <activity
+            android:name=".grafica"
+            android:exported="false"
+            android:label="@string/title_activity_grafica"
+            android:theme="@style/Theme.SimuladorPlanDeNegocios.NoActionBar" />
+        <activity
             android:name=".Vista.MenuSimulacion"
             android:exported="false"
-            android:parentActivityName=".Vista.MainActivity"/>
+            android:parentActivityName=".Vista.MainActivity" />
         <activity
             android:name=".Vista.SplashActivity"
             android:exported="true">

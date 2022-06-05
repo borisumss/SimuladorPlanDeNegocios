@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nailda/Desktop/prueba/SimuladorPlanDeNegocios/app/src/main/res/layout/grafica.xml" value="0.1" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.33" />
         <entry key="..\:/Users/crisa/workspace/android studio/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
@@ -11,6 +12,8 @@
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_resultados_pdf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_simulacion.xml" value="0.264" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_ver_pdf.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/activity_vista_pdf.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/fragment_deudor_credito.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/fragment_gastos_fijos.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/hp envy/OneDrive/Escritorio/Taller simu/proyecto/SimuladorPlanDeNegocios/app/src/main/res/layout/fragment_presupuesto.xml" value="0.4" />
