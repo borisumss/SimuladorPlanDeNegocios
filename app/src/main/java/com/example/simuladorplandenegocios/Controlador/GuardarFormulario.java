@@ -47,6 +47,8 @@ public class GuardarFormulario extends Fragment {
     private float cuotaCredito;
     private float interesCredito;
 
+    private EditText nombrePlanInput;
+    private String nombrePlan;
     public GuardarFormulario() {
         // Required empty public constructor
     }
@@ -92,7 +94,7 @@ public class GuardarFormulario extends Fragment {
             //AQUI ENTRA TODOS LOS GETS PARA LUEGO MANDARLO A 'FirebaseFormulario' Y QUE LO GUARDE
             //DATOS DEL DEUDOR Y CREDITO
 
-        nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
+        /*nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
         apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
         estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
         CIInput = (EditText) getActivity().findViewById(R.id.ciDeudorInput);
@@ -124,24 +126,26 @@ public class GuardarFormulario extends Fragment {
 
         Deudor deudor = new Deudor(nombreDeudor,apellidoDeudor,estadoCivilDeudor,CIDeudor,extensionCIDeudor,telefonoDeudor,edadDedudor);
         Credito credito = new Credito(actividadCredito,montoSolicitadoCredito,formaPagoCredito,plazoCredito,cuotaCredito,interesCredito);
-        DeudorDatosCredito deudorDatosCredito = new DeudorDatosCredito(deudor,credito);
+        DeudorDatosCredito deudorDatosCredito = new DeudorDatosCredito(deudor,credito);*/
 
-        EditText nombrePlanInput = v.findViewById(R.id.nombrePlanInput);
-        String nombrePlan = nombrePlanInput.getText().toString();
+        nombrePlanInput = (EditText) getActivity().findViewById(R.id.nombrePlanInput);
+        nombrePlan = nombrePlanInput.getText().toString();
+        System.out.println(nombrePlan);
         guardarFormulario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //View viewtab1 = inflater.inflate(R.layout.fragment_deudor_credito, container, false);
                 //DeudorDatosCredito deudorDatosCredito = //extraerDatosDeudorCredito();
-                FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan,deudorDatosCredito);
-                firebaseFormulario.guardarFormularioFirebase();
+                System.out.println(nombrePlan);
+                //FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan,deudorDatosCredito);
+                //firebaseFormulario.guardarFormularioFirebase();
             }
         });
 
         return v;
     }
 
-    public DeudorDatosCredito extraerDatosDeudorCredito(){
+    /*public DeudorDatosCredito extraerDatosDeudorCredito(){
 
         apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
         estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
@@ -177,5 +181,5 @@ public class GuardarFormulario extends Fragment {
         DeudorDatosCredito deudorDatosCredito = new DeudorDatosCredito(deudor,credito);
 
         return deudorDatosCredito;
-    }
+    }*/
 }

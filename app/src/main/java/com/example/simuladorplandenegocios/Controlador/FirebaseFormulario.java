@@ -10,6 +10,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class FirebaseFormulario {
     public FirebaseFormulario(String nombrePlan,DeudorDatosCredito deudorDatosCredito){
         this.nombrePlan = nombrePlan;
         this.deudorDatosCredito = deudorDatosCredito;
-        this.db = FirebaseFirestore.getInstance();
+        System.out.println(this.nombrePlan);
     }
 
     public void guardarFormularioFirebase(){
@@ -53,9 +54,14 @@ public class FirebaseFormulario {
         deudorYCredito.put("Deudor",deudorDatos);
         deudorYCredito.put("Credito",creditoDatos);
 
-        CollectionReference plan = db.collection(""+this.nombrePlan);
-        plan.document("Deudor y Credito").set(deudorYCredito);
-        /*this.db.collection(this.nombrePlan).document("Deudor y Credito")
+        this.db = FirebaseFirestore.getInstance();
+        //this.db.collection(""+this.nombrePlan).document("Deudor y Credito").set(deudorYCredito);
+        /*CollectionReference plan = db.collection(""+this.nombrePlan);
+        plan.document("Deudor y Credito").set(deudorYCredito);*/
+
+        //this.db.collection(""+this.nombrePlan).
+
+        this.db.collection(""+this.nombrePlan).document("Deudor y Credito")
                 .set(deudorYCredito)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -68,7 +74,7 @@ public class FirebaseFormulario {
                     public void onFailure(@NonNull Exception e) {
                         //Log.w(TAG, "Error writing document", e);
                     }
-                });*/
+                });
 
     }
 }
