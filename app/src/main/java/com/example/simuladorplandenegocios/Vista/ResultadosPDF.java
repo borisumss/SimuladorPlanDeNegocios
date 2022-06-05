@@ -8,6 +8,8 @@ import androidx.core.content.ContextCompat;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
+import static java.lang.Thread.sleep;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Canvas;
@@ -24,10 +26,19 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import com.example.simuladorplandenegocios.Controlador.Triangular2;
 import com.example.simuladorplandenegocios.R;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 
 public class ResultadosPDF<pubic> extends AppCompatActivity {
 
@@ -98,9 +109,12 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
         Intent sig = new Intent(this, simulacion.class);
         startActivity(sig);
     }
-    public void generarPDF(View v){
+    public void generarPDF(View v) {
         Toast.makeText(this, "Generando PDF...", Toast.LENGTH_LONG).show();
-        pdfGenerado(v);
+            //pdfGenerado(v);
+            generarPdf(v);
+
+
     }
     public void pdfGenerado(View view){
         Toast.makeText(this, "Generando PDF...", Toast.LENGTH_LONG).show();
@@ -158,6 +172,51 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
         }
 
         pdf.close();
+    }
+
+
+    public void generarPdf(View view){
+        try{
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath()+"/ResultadoSimulacion";
+
+            File dir = new File(path);
+            if(!dir.exists()){
+                dir.mkdir();
+            }
+
+            File file = new File(dir, "negocio.pdf");
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+
+            Document documento = new Document();
+            PdfWriter.getInstance(documento,fileOutputStream);
+
+            documento.open();
+            Paragraph titulo = new Paragraph("RESULTADOS SIMULACION\n\n\n",
+                    FontFactory.getFont("arial",22,Font.BOLD, BaseColor.BLUE));
+
+            documento.add(titulo);
+
+            PdfPTable tabla = new PdfPTable(6);
+            for(int i = 0; i<header.length;i++){
+                tabla.addCell(header[i]);
+            }
+
+
+            ArrayList<String[]> matriz =  tr.getResultados();
+                for (int i = 0; i<nroCorrida;i++) {
+                    for (int j = 0; j < matriz.get(0).length; j++) {
+                        tabla.addCell(matriz.get(i)[j]);
+                    }
+                }
+            documento.add(tabla);
+            documento.close();
+
+            Intent intent = new Intent(getApplicationContext(), VistaPdf.class);
+            startActivity(intent);
+
+        }catch (FileNotFoundException | DocumentException e) {
+            e.printStackTrace();
+        }
     }
 
 

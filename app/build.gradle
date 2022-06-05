@@ -36,5 +36,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     compileOnly 'com.itextpdf:itextg:5.5.10'
+
+    //para que el pdf pueda mostrar un activity
     implementation "com.dmitryborodin:pdfview-android:1.1.0"
+
+    //otra manera de generar pdf con Itext
+    implementation 'com.itextpdf:itextg:5.5.10'
 }

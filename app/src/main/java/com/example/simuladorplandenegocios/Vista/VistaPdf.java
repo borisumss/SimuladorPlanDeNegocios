@@ -21,7 +21,8 @@ public class VistaPdf extends AppCompatActivity {
 
         vista = findViewById(R.id.vistaPdf);
 
-        File file = new File(Environment.getExternalStorageDirectory(), "Resultados.pdf");
+       // File file = new File(Environment.getExternalStorageDirectory(), "Resultados.pdf");
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/ResultadoSimulacion", "negocio.pdf");
         vista.fromFile(file);
         vista.isZoomEnabled();
 
