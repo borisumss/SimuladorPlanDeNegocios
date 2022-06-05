@@ -55,6 +55,11 @@ public class Presupuesto extends Fragment {
     private double montoFin;
     private TextView condicionMonto;
     private EditText montoOtro;
+
+    private TextView totalProyectoResultado,totalAportePropioResultado;
+    private TextView porcentajeAportePropioResultado,montoSolicitadoResultado,montoFinanciarResultado;
+
+
     Double totalProy;//totalAP+totalR-efectivo
     //totalAP es solo el aporte total
     //el porcentaje de aporte propio solo es totalAP/totalproyecto ojo con 0/0
@@ -131,6 +136,12 @@ public class Presupuesto extends Fragment {
         condicionMonto = (TextView) v.findViewById(R.id.condicionMonto);
         DecimalFormat formato = new DecimalFormat("#.00");
 
+        totalProyectoResultado = (TextView) v.findViewById(R.id.totalProyectoResultado);
+        totalAportePropioResultado = (TextView) v.findViewById(R.id.totalAportePropioResultado);
+        porcentajeAportePropioResultado = (TextView) v.findViewById(R.id.porcentajeAportePropioResultado);
+        montoSolicitadoResultado = (TextView) v.findViewById(R.id.montoSolicitadoResultado);
+        montoFinanciarResultado = (TextView) v.findViewById(R.id.montoFinanciarResultado);
+
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,7 +154,8 @@ public class Presupuesto extends Fragment {
 
                 if (!montoOtro.getText().toString().isEmpty()) {
                     montoSol = Double.parseDouble(montoOtro.getText().toString());
-                    montoSolicitado.setText("MONTO SOLICITADO " + formato.format(montoSol) + " Bs");//extraer de otra tabla
+                    montoSolicitado.setText("MONTO SOLICITADO ");//extraer de otra tabla
+                    montoSolicitadoResultado.setText(formato.format(montoSol));
                 }
                 calcularTotales();
             }
@@ -182,28 +194,37 @@ public class Presupuesto extends Fragment {
             totalProy = totalAP + totalR;
         else
             totalProy = totalAP + totalR - Double.parseDouble(efectivoAP.getText().toString());
-        totalProyecto.setText("TOTAL PROYECTO " + formato.format(totalProy) + " Bs");
+        totalProyecto.setText("TOTAL PROYECTO ");
+        totalProyectoResultado.setText(formato.format(totalProy));
 
-        totalAportePropio.setText("TOTAL APORTE PROPIO " + formato.format(totalAP) + " Bs");
+
+
+
+        totalAportePropio.setText("TOTAL APORTE PROPIO ");
+        totalAportePropioResultado.setText(formato.format(totalAP));
 
         if (totalProy != 0) {
-            porcentajeAportePropio.setText("% APORTE PROPIO " + formato.format(((totalAP / totalProy)) * 100) + "%");
+            porcentajeAportePropio.setText("% APORTE PROPIO ");
+            porcentajeAportePropioResultado.setText(formato.format(((totalAP / totalProy)) * 100));
             if (totalAP / totalProy < 0.1)
                 condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
             else {
                 condicionAP.setText("SI CUMPLE con aporte propio");
             }
         } else {
-            porcentajeAportePropio.setText("% APORTE PROPIO " + formato.format(0) + "%");
+            porcentajeAportePropio.setText("% APORTE PROPIO ");
+            porcentajeAportePropioResultado.setText(formato.format(0));
             condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
         }
 
         if (!efectivoAP.getText().toString().isEmpty()) {
             montoFin = totalR - Double.parseDouble(efectivoAP.getText().toString());
-            montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(montoFin) + "Bs");
+            montoFinanciar.setText("MONTO A FINANCIAR ");
+            montoFinanciarResultado.setText(formato.format(montoFin));
         }else {
             montoFin = 0;
-            montoFinanciar.setText("MONTO A FINANCIAR " + formato.format(totalR) + "Bs");
+            montoFinanciar.setText("MONTO A FINANCIAR ");
+            montoFinanciarResultado.setText(formato.format(totalR));
         }
 
 

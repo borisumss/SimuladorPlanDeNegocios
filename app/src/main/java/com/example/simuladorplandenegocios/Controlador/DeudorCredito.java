@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -90,7 +89,7 @@ public class DeudorCredito extends Fragment {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,opciones2);
         spinner2.setAdapter(adapter2);
 
-        spinner3 = (Spinner) v.findViewById(R.id.fomarpagoInput);
+        spinner3 = (Spinner) v.findViewById(R.id.formaPagoInput);
         String [] opciones3 = {"Mensual","Anual"};
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,opciones3);
         spinner3.setAdapter(adapter3);

@@ -267,7 +267,7 @@
                     android:text="Forma de Pago" />
 
                 <Spinner
-                    android:id="@+id/fomarpagoInput"
+                    android:id="@+id/formaPagoInput"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_below="@+id/formaPagoLabel"

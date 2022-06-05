@@ -442,6 +442,51 @@ tools:context=".Controlador.Presupuesto">
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/totalR" />
 
+            <TextView
+                android:id="@+id/totalProyectoResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="56dp"
+                app:layout_constraintStart_toEndOf="@+id/totalProyecto"
+                app:layout_constraintTop_toBottomOf="@+id/calcular" />
+
+            <TextView
+                android:id="@+id/totalAportePropioResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toEndOf="@+id/aportePropio"
+                app:layout_constraintTop_toBottomOf="@+id/totalProyectoResultado" />
+
+            <TextView
+                android:id="@+id/porcentajeAportePropioResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toEndOf="@+id/aportePropioPorc"
+                app:layout_constraintTop_toBottomOf="@+id/totalAportePropioResultado" />
+
+            <TextView
+                android:id="@+id/montoSolicitadoResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toEndOf="@+id/montoSolicitado"
+                app:layout_constraintTop_toBottomOf="@+id/condicionAP" />
+
+            <TextView
+                android:id="@+id/montoFinanciarResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toEndOf="@+id/montoFinanciar"
+                app:layout_constraintTop_toBottomOf="@+id/montoSolicitadoResultado" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
