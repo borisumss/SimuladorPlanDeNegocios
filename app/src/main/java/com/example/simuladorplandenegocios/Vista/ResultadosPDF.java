@@ -149,6 +149,9 @@ public class ResultadosPDF<pubic> extends AppCompatActivity {
             pdf.writeTo(new FileOutputStream(file));
             Toast.makeText(this, "Se creo el pdf correctamente", Toast.LENGTH_LONG).show();
 
+            Intent intent = new Intent(getApplicationContext(), VistaPdf.class);
+            startActivity(intent);
+
         }catch (Exception e){
             e.printStackTrace();
             Toast.makeText(this, "ERROR!!!!"+e, Toast.LENGTH_LONG).show();

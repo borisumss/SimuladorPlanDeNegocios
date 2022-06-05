@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimuladorPlanDeNegocios">
         <activity
+            android:name=".Vista.VistaPdf"
+            android:exported="false" />
+        <activity
             android:name=".Vista.simulacion"
             android:exported="false" />
         <activity
@@ -28,7 +31,6 @@
         <activity
             android:name=".Vista.ResultadosPDF"
             android:exported="true" />
-
         <activity
             android:name=".Vista.MainActivity"
             android:exported="true" />
