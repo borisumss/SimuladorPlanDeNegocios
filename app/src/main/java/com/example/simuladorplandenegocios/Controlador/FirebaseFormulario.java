@@ -7,6 +7,7 @@ import com.example.simuladorplandenegocios.Modelo.Deudor;
 import com.example.simuladorplandenegocios.Modelo.DeudorDatosCredito;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -52,7 +53,9 @@ public class FirebaseFormulario {
         deudorYCredito.put("Deudor",deudorDatos);
         deudorYCredito.put("Credito",creditoDatos);
 
-        this.db.collection(this.nombrePlan).document("Deudor y Credito")
+        CollectionReference plan = db.collection(""+this.nombrePlan);
+        plan.document("Deudor y Credito").set(deudorYCredito);
+        /*this.db.collection(this.nombrePlan).document("Deudor y Credito")
                 .set(deudorYCredito)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -65,7 +68,7 @@ public class FirebaseFormulario {
                     public void onFailure(@NonNull Exception e) {
                         //Log.w(TAG, "Error writing document", e);
                     }
-                });
+                });*/
 
     }
 }
