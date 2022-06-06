@@ -193,18 +193,18 @@ tools:context=".Controlador.Presupuesto">
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientoAP" />
 
+            <!--Requerimiento-->
+
+
             <TextView
                 android:id="@+id/totalAP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.401"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/numLegalAP" />
-
-            <!--Requerimiento-->
-
 
             <TextView
                 android:id="@+id/textView50"
@@ -491,7 +491,7 @@ tools:context=".Controlador.Presupuesto">
                 android:id="@+id/totalAPResultado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-100dp"
+                android:layout_marginStart="-50dp"
                 android:layout_marginTop="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.486"
@@ -502,7 +502,6 @@ tools:context=".Controlador.Presupuesto">
                 android:id="@+id/totalRResultado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-15dp"
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.172"

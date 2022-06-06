@@ -53,6 +53,8 @@ public class GastosFijos extends Fragment {
     private EditText impuestos;
     private EditText alimentacion;
 
+    private TextView totalServiciosRes,totalMantenimientoRes,totalGastosRes;
+
     public GastosFijos() {
         // Required empty public constructor
     }
@@ -115,6 +117,11 @@ public class GastosFijos extends Fragment {
         //totales
         textoSalidaMantenimiento=(TextView) v.findViewById(R.id.totalMantenimientoResultado);
         textoSalidaGastoTotal = (TextView) v.findViewById(R.id.totalGastosResultado);
+
+        totalServiciosRes = (TextView) v.findViewById(R.id.totalServiciosRes);
+        totalMantenimientoRes = (TextView) v.findViewById(R.id.totalMantenimientoRes);
+        totalGastosRes = (TextView) v.findViewById(R.id.totalGastosRes);
+
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,6 +142,7 @@ public class GastosFijos extends Fragment {
                 totalServicio = totalServicio+Double.parseDouble(i.getText().toString());
         }
         textoSalidaServicios.setText("Total en servicios es :  "+ formato.format(totalServicio)+"Bs");
+        totalServiciosRes.setText(formato.format(totalServicio));
     }
 
     public void calcularTotalMantenimiento(){
@@ -146,17 +154,19 @@ public class GastosFijos extends Fragment {
                 totalMantenimiento = totalMantenimiento+Double.parseDouble(i.getText().toString());
         }
         textoSalidaMantenimiento.setText("Total en mantenimiento es : "+ formato.format(totalMantenimiento)+"Bs");
+        totalMantenimientoRes.setText(formato.format(totalMantenimiento));
     }
 
     public void calcularTotalGastos(){
         DecimalFormat formato = new DecimalFormat("#.00");
-        EditText[]arra = {mantenimiento1,mantenimiento2,mantenimiento3,mantenimiento4,impuestos,alimentacion,servicioTelefono,servicioLuz,servicioAgua,servicioCelular,salud};
+        EditText[]arra = {mantenimiento1,mantenimiento2,mantenimiento3,mantenimiento4,impuestos,alimentacion,servicioTelefono,servicioLuz,servicioAgua,servicioCelular,salud,imprevistos};
         totalGastos = 0;
         for(EditText i : arra){
             if (!i.getText().toString().isEmpty())
                 totalGastos = totalGastos+Double.parseDouble(i.getText().toString());
         }
         textoSalidaGastoTotal.setText("Total en gastos es : "+ formato.format(totalGastos)+"Bs");
+        totalGastosRes.setText(formato.format(totalGastos));
     }
 
 }

@@ -49,7 +49,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView22"
@@ -74,7 +74,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView16"
@@ -109,7 +109,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView24"
@@ -133,7 +133,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView25"
@@ -157,7 +157,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView26"
@@ -181,7 +181,14 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/totalServiciosRes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalServiciosResultado"
@@ -229,7 +236,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:id="@+id/m2Input"
@@ -255,7 +262,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:id="@+id/m3nput"
@@ -281,7 +288,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:id="@+id/mm4Input"
@@ -307,7 +314,14 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/totalMantenimientoRes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalMantenimientoResultado"
@@ -341,7 +355,7 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:id="@+id/textView47"
@@ -365,7 +379,14 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/totalGastosRes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalGastosResultado"
