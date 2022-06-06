@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void salir(View view){
-        finish();
-        System.exit(0);
+        Intent i = new Intent( this, MenuSimulacion2.class);
+        startActivity(i);
     }
 }
