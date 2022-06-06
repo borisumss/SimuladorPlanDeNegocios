@@ -9,6 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.simuladorplandenegocios.R;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +32,7 @@ public class Grafica extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    LineChart mpLineChart;
     public Grafica() {
         // Required empty public constructor
     }
@@ -60,7 +67,29 @@ public class Grafica extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grafica, container, false);
+        View v= inflater.inflate(R.layout.fragment_grafica, container, false);
+        mpLineChart=(LineChart)v.findViewById(R.id.line_chart);
+        LineDataSet lineDataSet1 = new LineDataSet(Año1(),"Año 1");
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(lineDataSet1);
+        LineData data = new LineData(dataSets);
+        mpLineChart.setData(data);
+        mpLineChart.invalidate();
+        return v;
     }
+    private ArrayList<Entry> Año1(){
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(0,20));
+        dataVals.add(new Entry(1,24));
+        dataVals.add(new Entry(2,2));
+        dataVals.add(new Entry(3,10));
+        dataVals.add(new Entry(4,28));
+        return dataVals;
+    }
+
 }
+
+
+
