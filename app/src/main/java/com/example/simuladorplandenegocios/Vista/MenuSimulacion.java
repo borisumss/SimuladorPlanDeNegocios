@@ -20,6 +20,10 @@ public class MenuSimulacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_simulacion);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8639591ee810bb729ab882f0ece70f5c7303c73b
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpager);
 

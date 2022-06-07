@@ -1,18 +1,19 @@
 package com.example.simuladorplandenegocios.Modelo;
 
-public class Presupuesto {
+public class PresupuestoResumen {
     private AportePropio aportePropio;
     private Requerimiento requerimiento;
     private float totalAportePropio;
     private float totalRequerimiento;
     private float totalProyecto;
+    private float aportePropioCalculado;
     private float porcentajeAportePropio;
     private String mensajeCumplimientoAporte;
     private float montoSolicitado;
     private float montoFinanciado;
     private String mensajeFinanciamiento;
 
-    public Presupuesto(AportePropio aportePropio,Requerimiento requerimiento,String mensajeCumplimientoAporte,String mensajeFinanciamiento){
+    public PresupuestoResumen(AportePropio aportePropio,Requerimiento requerimiento,String mensajeCumplimientoAporte,String mensajeFinanciamiento){
         this.aportePropio = aportePropio;
         this.requerimiento = requerimiento;
         this.mensajeCumplimientoAporte = mensajeCumplimientoAporte;
@@ -20,6 +21,7 @@ public class Presupuesto {
         this.totalAportePropio = 0f;
         this.totalRequerimiento = 0f;
         this.totalProyecto = 0f;
+        this.aportePropioCalculado = 0f;
         this.porcentajeAportePropio = 0f;
         this.montoSolicitado = 0f;
         this.montoFinanciado = 0f;
@@ -63,6 +65,14 @@ public class Presupuesto {
 
     public float getTotalProyecto() {
         return this.totalProyecto;
+    }
+
+    public void setAportePropioCalculado(float aportePropioCalculado) {
+        this.aportePropioCalculado = aportePropioCalculado;
+    }
+
+    public float getAportePropioCalculado() {
+        return this.aportePropioCalculado;
     }
 
     public void setPorcentajeAportePropio(float porcentajeAportePropio) {

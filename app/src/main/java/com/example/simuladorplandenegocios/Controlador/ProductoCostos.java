@@ -151,7 +151,7 @@ public class ProductoCostos extends Fragment {
                             if(!productoPrecioVentaOptimista[i].getText().toString().isEmpty()){
                                 if(!productoCantidadVendida[i].getText().toString().isEmpty()){
                                     float margenBruto = (Float.parseFloat(productoPrecioVentaModerado[i].getText().toString()) - Float.parseFloat(productoCostoProduccion[i].getText().toString()))/(Float.parseFloat(productoPrecioVentaModerado[i].getText().toString()));
-                                    margenBrutoProducto[i] = Float.toString(margenBruto);
+                                    margenBrutoProducto[i] = Float.toString(margenBruto*100);
                                     float totalPeriodo = Float.parseFloat(productoPrecioVentaModerado[i].getText().toString()) * Float.parseFloat(productoCantidadVendida[i].getText().toString());
                                     totalPeriodoProducto[i] = Float.toString(totalPeriodo);
                                 }else{

@@ -193,18 +193,18 @@ tools:context=".Controlador.Presupuesto">
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientoAP" />
 
+            <!--Requerimiento-->
+
+
             <TextView
                 android:id="@+id/totalAP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.401"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/numLegalAP" />
-
-            <!--Requerimiento-->
-
 
             <TextView
                 android:id="@+id/textView50"
@@ -353,7 +353,7 @@ tools:context=".Controlador.Presupuesto">
                 android:id="@+id/totalR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
@@ -486,6 +486,27 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toEndOf="@+id/montoFinanciar"
                 app:layout_constraintTop_toBottomOf="@+id/montoSolicitadoResultado" />
+
+            <TextView
+                android:id="@+id/totalAPResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-50dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintStart_toEndOf="@+id/totalAP"
+                app:layout_constraintTop_toBottomOf="@+id/numLegalAP" />
+
+            <TextView
+                android:id="@+id/totalRResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.172"
+                app:layout_constraintStart_toEndOf="@+id/totalR"
+                app:layout_constraintTop_toBottomOf="@+id/numLegalR" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

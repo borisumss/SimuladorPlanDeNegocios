@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controlador.G">
+    tools:context=".Controlador.GuardarFormulario">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,14 +54,44 @@
                 app:layout_constraintTop_toBottomOf="@+id/productosTituloLabel" />
 
             <Button
-                android:id="@+id/guardarFormularioButton"
+                android:id="@+id/guardarDatosPersonalesYCreditoButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Guardar Formulario"
+                android:text="Guardar Datos personales y Credito"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nombrePlanInput" />
+
+            <Button
+                android:id="@+id/guardarPresupuestoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Guardar Presupuesto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guardarDatosPersonalesYCreditoButton" />
+
+            <Button
+                android:id="@+id/guardarProductosButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Guardar Productos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guardarPresupuestoButton" />
+
+            <Button
+                android:id="@+id/guardarGastosButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Guardar Gastos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guardarProductosButton" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -42,6 +42,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     compileOnly 'com.itextpdf:itextg:5.5.10'
+<<<<<<< HEAD
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     // Import the BoM for the Firebase platform
@@ -58,4 +59,8 @@ dependencies {
 
     //otra manera de generar pdf con Itext
     implementation 'com.itextpdf:itextg:5.5.10'
+=======
+    implementation "com.dmitryborodin:pdfview-android:1.1.0"
+    implementation 'com.itextpdf:itextg:5.5.10'
+>>>>>>> 8639591ee810bb729ab882f0ece70f5c7303c73b
 }
