@@ -31,14 +31,14 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/nombrePlanlabel"
+                android:id="@+id/nombrePlanlabel1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/datosPlanLabel"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="44dp"
                 android:layout_marginTop="26dp"
-                android:text="Inserte el nombre de su plan" />
+                android:text="emprendimiento" />
 
             <EditText
                 android:id="@+id/nombreSimu"

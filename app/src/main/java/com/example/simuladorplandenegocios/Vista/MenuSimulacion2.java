@@ -20,7 +20,7 @@ public class MenuSimulacion2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_simulacion2);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpager);
 

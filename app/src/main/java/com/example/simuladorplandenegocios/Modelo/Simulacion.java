@@ -54,7 +54,23 @@ public class Simulacion extends Fragment implements View.OnClickListener{
 
 
     @Override
+<<<<<<< HEAD
     public void onClick(View v) {
 
+=======
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        t1 = view.findViewById(R.id.nombreSimu);
+        botonCorrerSimulacion = view.findViewById(R.id.correrSimu);
+        botonCorrerSimulacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String resultado = t1.getText().toString();
+//                Bundle bundle= new Bundle();
+//                bundle.putString("NombreProyecto",String.valueOf(resultado));
+//                getParentFragmentManager().setFragmentResult("nombre",bundle);
+            }
+        });
+>>>>>>> 8d633182e7109f920536f71a05424b21f8599111
     }
 }
