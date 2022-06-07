@@ -41,7 +41,7 @@ public class GuardarFormulario extends Fragment {
     private Button guardarProductos;
     private Button guardarGastos;
 
-    /*private EditText nombreInput,apellidoInput;
+    private EditText nombreInput,apellidoInput;
     private Spinner estadoCivilInput;
     private EditText CIInput,extensionInput,telefonoInput,edadInput;
 
@@ -58,7 +58,7 @@ public class GuardarFormulario extends Fragment {
     private String formaPagoCredito;
     private int plazoCredito;
     private float cuotaCredito;
-    private float interesCredito;*/
+    private float interesCredito;
 
 
     private EditText efectivoAPInput,manoObraAPInput,materiaInsumosAPInput,equiposAPInput,infraestructuraAPInput,reqPromocionalesAPInput,reqLegalesAPInput;
@@ -141,7 +141,7 @@ public class GuardarFormulario extends Fragment {
         //AQUI ENTRA TODOS LOS GETS PARA LUEGO MANDARLO A 'FirebaseFormulario' Y QUE LO GUARDE
 
         //DATOS DEL DEUDOR Y CREDITO
-        /*nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
+        nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
         apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
         estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
         CIInput = (EditText) getActivity().findViewById(R.id.ciDeudorInput);
@@ -154,7 +154,7 @@ public class GuardarFormulario extends Fragment {
         formaPagoInput = (Spinner) getActivity().findViewById(R.id.formaPagoInput);
         plazoInput = (EditText) getActivity().findViewById(R.id.plazoInput);
         cuotaResultado = (TextView) getActivity().findViewById(R.id.cuotaInput);
-        interesResultado = (TextView) getActivity().findViewById(R.id.interesInput);*/
+        interesResultado = (TextView) getActivity().findViewById(R.id.interesInput);
 
         guardarDatosPersonaCredito.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,7 +162,7 @@ public class GuardarFormulario extends Fragment {
                 nombrePlanInput = (EditText) v.findViewById(R.id.nombrePlanInput);
                 nombrePlan = nombrePlanInput.getText().toString();
 
-                EditText nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
+                /*EditText nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
                 EditText apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
                 Spinner estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
                 EditText CIInput = (EditText) getActivity().findViewById(R.id.ciDeudorInput);
@@ -197,7 +197,45 @@ public class GuardarFormulario extends Fragment {
                 float cuotaCredito = Float.parseFloat(cuotaResultado.getText().toString());
                 System.out.println(cuotaCredito);
                 float interesCredito = Float.parseFloat(interesResultado.getText().toString());
+                System.out.println(interesCredito);*/
+
+                /*nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
+                apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
+                estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
+                CIInput = (EditText) getActivity().findViewById(R.id.ciDeudorInput);
+                extensionInput = (EditText) getActivity().findViewById(R.id.extDeudorInput);
+                telefonoInput = (EditText) getActivity().findViewById(R.id.tefDeudorInput);
+                edadInput = (EditText) getActivity().findViewById(R.id.edadDeudorInput);
+
+                actividadInput = (Spinner) getActivity().findViewById(R.id.actividadInput);
+                montoSolicitadoInput = (EditText) getActivity().findViewById(R.id.montoInput);
+                formaPagoInput = (Spinner) getActivity().findViewById(R.id.formaPagoInput);
+                 plazoInput = (EditText) getActivity().findViewById(R.id.plazoInput);
+                 cuotaResultado = (TextView) getActivity().findViewById(R.id.cuotaInput);
+                 interesResultado = (TextView) getActivity().findViewById(R.id.interesInput);*/
+
+
+                 nombreDeudor = nombreInput.getText().toString();
+                 apellidoDeudor = apellidoInput.getText().toString();
+                 estadoCivilDeudor = estadoCivilInput.getSelectedItem().toString();
+                 CIDeudor = CIInput.getText().toString();
+                 extensionCIDeudor = extensionInput.getText().toString();
+                 telefonoDeudor = telefonoInput.getText().toString();
+                 edadDedudor = edadInput.getText().toString();
+
+                 actividadCredito = actividadInput.getSelectedItem().toString();
+                System.out.println(actividadCredito);
+                 montoSolicitadoCredito = Float.parseFloat(montoSolicitadoInput.getText().toString());
+                System.out.println(montoSolicitadoCredito);
+                 formaPagoCredito = formaPagoInput.getSelectedItem().toString();
+                System.out.println(formaPagoCredito);
+                 plazoCredito = Integer.parseInt(plazoInput.getText().toString());
+                System.out.println(plazoCredito);
+                 cuotaCredito = Float.parseFloat(cuotaResultado.getText().toString());
+                System.out.println(cuotaCredito);
+                 interesCredito = Float.parseFloat(interesResultado.getText().toString());
                 System.out.println(interesCredito);
+
 
                 Deudor deudor = new Deudor(nombreDeudor,apellidoDeudor,estadoCivilDeudor,CIDeudor,extensionCIDeudor,telefonoDeudor,edadDedudor);
                 Credito credito = new Credito(actividadCredito,montoSolicitadoCredito,formaPagoCredito,plazoCredito,cuotaCredito,interesCredito);
