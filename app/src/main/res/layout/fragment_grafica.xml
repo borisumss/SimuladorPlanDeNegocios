@@ -33,11 +33,17 @@
                 android:textColor="#000000"
                 android:textSize="24sp" />
 
+            <Button
+                android:id="@+id/mostrarGrafica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mostrar grafica" />
+
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/line_chart"
                 android:layout_width="match_parent"
                 android:layout_height="520dp"
-                android:layout_marginTop="60dp" />
+                android:layout_marginTop="10dp" />
 
         </LinearLayout>
     </ScrollView>

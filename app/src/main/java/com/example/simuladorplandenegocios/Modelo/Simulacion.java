@@ -51,10 +51,10 @@ public class Simulacion extends Fragment {
         botonCorrerSimulacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String resultado = t1.getText().toString();
-                Bundle bundle= new Bundle();
-                bundle.putString("NombreProyecto",String.valueOf(resultado));
-                getParentFragmentManager().setFragmentResult("nombre",bundle);
+//                String resultado = t1.getText().toString();
+//                Bundle bundle= new Bundle();
+//                bundle.putString("NombreProyecto",String.valueOf(resultado));
+//                getParentFragmentManager().setFragmentResult("nombre",bundle);
             }
         });
     }
