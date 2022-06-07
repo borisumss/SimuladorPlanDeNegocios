@@ -27,11 +27,9 @@
         <activity
             android:name=".Vista.MenuSimulacion"
             android:exported="false"
-<<<<<<< HEAD
+
             android:parentActivityName=".Vista.MainActivity" />
-=======
-            android:parentActivityName=".Vista.MainActivity"/>
->>>>>>> 8639591ee810bb729ab882f0ece70f5c7303c73b
+
         <activity
             android:name=".Vista.SplashActivity"
             android:exported="true">

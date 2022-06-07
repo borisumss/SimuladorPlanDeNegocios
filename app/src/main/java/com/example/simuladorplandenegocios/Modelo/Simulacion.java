@@ -1,6 +1,5 @@
 package com.example.simuladorplandenegocios.Modelo;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -46,7 +45,7 @@ public class Simulacion extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        t1 = view.findViewById(R.id.nombreSimu);
+        t1 = view.findViewById(R.id.nombreDeudorInput);
         botonCorrerSimulacion = view.findViewById(R.id.correrSimu);
         botonCorrerSimulacion.setOnClickListener(new View.OnClickListener() {
             @Override

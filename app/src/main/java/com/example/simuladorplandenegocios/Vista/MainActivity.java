@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-<<<<<<< HEAD
+
         simulacion.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-=======
->>>>>>> 8639591ee810bb729ab882f0ece70f5c7303c73b
+
     }
 
 
