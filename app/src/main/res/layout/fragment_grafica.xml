@@ -7,11 +7,13 @@
     tools:ignore="MissingClass">
 
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -46,5 +48,6 @@
                 android:layout_marginTop="10dp" />
 
         </LinearLayout>
-    </ScrollView>
+       </ScrollView>
+    </RelativeLayout>
 </FrameLayout>

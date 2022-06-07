@@ -38,7 +38,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="44dp"
                 android:layout_marginTop="26dp"
-                android:text="emprendimiento" />
+                android:text="Ingrese el nombre de su proyecto" />
 
             <EditText
                 android:id="@+id/nombreSimu"
@@ -50,7 +50,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="42dp"
                 android:layout_marginEnd="42dp"
-                android:ems="10"
                 android:inputType="text" />
 
             <Button
@@ -60,11 +59,8 @@
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="70dp"
-                android:text="Correr Simulación"
                 android:enabled="true"
-                />
-
-
+                android:text="Correr Simulación" />
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>
