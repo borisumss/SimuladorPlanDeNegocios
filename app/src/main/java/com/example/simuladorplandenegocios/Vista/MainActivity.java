@@ -12,6 +12,7 @@ import com.example.simuladorplandenegocios.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button iniciar;
+    private Button simulacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         iniciar=(Button)findViewById(R.id.formularioButton);
+        simulacion=(Button)findViewById(R.id.simulacionButton);
 
         iniciar.setOnClickListener(new View.OnClickListener(){
 
@@ -31,11 +33,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        simulacion.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent( MainActivity.this, MenuSimulacion2.class);
+                startActivity(i);
+            }
+        });
+
 
     }
 
     public void salir(View view){
-        Intent i = new Intent( this, MenuSimulacion2.class);
-        startActivity(i);
+        finish();
+        System.exit(0);
     }
 }
