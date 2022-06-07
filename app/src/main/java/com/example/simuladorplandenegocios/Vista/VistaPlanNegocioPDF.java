@@ -10,19 +10,16 @@ import com.pdfview.PDFView;
 
 import java.io.File;
 
-public class VistaPdf extends AppCompatActivity {
-
-    PDFView vista;
-
+public class VistaPlanNegocioPDF extends AppCompatActivity {
+    private PDFView vista;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vista_pdf);
-
+        setContentView(R.layout.activity_vista_plan_negocio_pdf);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         vista = findViewById(R.id.vistaPdf);
-
-       // File file = new File(Environment.getExternalStorageDirectory(), "Resultados.pdf");
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/ResultadoSimulacion", "negocio.pdf");
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Simulacion", "PlanDeNegocio.pdf");
+        //File file = new File(Environment.getExternalStorageDirectory(), "Resultados.pdf");
         vista.fromFile(file);
         vista.isZoomEnabled();
 
