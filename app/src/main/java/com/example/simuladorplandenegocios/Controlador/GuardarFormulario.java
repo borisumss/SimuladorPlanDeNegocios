@@ -24,19 +24,22 @@ import com.example.simuladorplandenegocios.Modelo.Requerimiento;
 import com.example.simuladorplandenegocios.Modelo.Servicios;
 import com.example.simuladorplandenegocios.R;
 
-import java.sql.Date;
+
 
 public class GuardarFormulario extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private Spinner spinner1,spinner2,spinner3;
+    //private Spinner spinner1,spinner2,spinner3;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    private Button guardarFormulario;
+    private Button guardarDatosPersonaCredito;
+    private Button guadarPresupuesto;
+    private Button guardarProductos;
+    private Button guardarGastos;
 
     private EditText nombreInput,apellidoInput;
     private Spinner estadoCivilInput;
@@ -56,6 +59,7 @@ public class GuardarFormulario extends Fragment {
     private int plazoCredito;
     private float cuotaCredito;
     private float interesCredito;
+
 
     private EditText efectivoAPInput,manoObraAPInput,materiaInsumosAPInput,equiposAPInput,infraestructuraAPInput,reqPromocionalesAPInput,reqLegalesAPInput;
     private EditText gastosOperativosRInput,materiaInsumosRInput,equiposRInput,infraestructuraRInput,reqPromocionalesRInput,reqLegalesRInput;
@@ -129,7 +133,10 @@ public class GuardarFormulario extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_guardar_formulario, container, false);
-        guardarFormulario = (Button) v.findViewById(R.id.guardarFormularioButton);
+        guardarDatosPersonaCredito = (Button) v.findViewById(R.id.guardarDatosPersonalesYCreditoButton);
+        guadarPresupuesto = (Button) v.findViewById(R.id.guardarPresupuestoButton);
+        guardarProductos = (Button) v.findViewById(R.id.guardarProductosButton);
+        guardarGastos = (Button) v.findViewById(R.id.guardarGastosButton);
 
         //AQUI ENTRA TODOS LOS GETS PARA LUEGO MANDARLO A 'FirebaseFormulario' Y QUE LO GUARDE
 
@@ -148,6 +155,43 @@ public class GuardarFormulario extends Fragment {
         plazoInput = (EditText) getActivity().findViewById(R.id.plazoInput);
         cuotaResultado = (TextView) getActivity().findViewById(R.id.cuotaInput);
         interesResultado = (TextView) getActivity().findViewById(R.id.interesInput);
+
+        guardarDatosPersonaCredito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View vista) {
+                nombrePlanInput = (EditText) v.findViewById(R.id.nombrePlanInput);
+                nombrePlan = nombrePlanInput.getText().toString();
+
+                nombreDeudor = nombreInput.getText().toString();
+                apellidoDeudor = apellidoInput.getText().toString();
+                estadoCivilDeudor = estadoCivilInput.getSelectedItem().toString();
+                CIDeudor = CIInput.getText().toString();
+                extensionCIDeudor = extensionInput.getText().toString();
+                telefonoDeudor = telefonoInput.getText().toString();
+                edadDedudor = edadInput.getText().toString();
+
+                actividadCredito = actividadInput.getSelectedItem().toString();
+                System.out.println(actividadCredito);
+                montoSolicitadoCredito = Float.parseFloat(montoSolicitadoInput.getText().toString());
+                System.out.println(montoSolicitadoCredito);
+                formaPagoCredito = formaPagoInput.getSelectedItem().toString();
+                System.out.println(formaPagoCredito);
+                plazoCredito = Integer.parseInt(plazoInput.getText().toString());
+                System.out.println(plazoCredito);
+                cuotaCredito = Float.parseFloat(cuotaResultado.getText().toString());
+                System.out.println(cuotaCredito);
+                interesCredito = Float.parseFloat(interesResultado.getText().toString());
+                System.out.println(interesCredito);
+
+                Deudor deudor = new Deudor(nombreDeudor,apellidoDeudor,estadoCivilDeudor,CIDeudor,extensionCIDeudor,telefonoDeudor,edadDedudor);
+                Credito credito = new Credito(actividadCredito,montoSolicitadoCredito,formaPagoCredito,plazoCredito,cuotaCredito,interesCredito);
+                DeudorDatosCredito deudorDatosCredito = new DeudorDatosCredito(deudor,credito);
+
+                FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan);
+                firebaseFormulario.guardarDeudorYCredito(deudorDatosCredito);
+            }
+        });
+
 
         //DATOS DEL PRESUPUESTO
         //APORTE PROPIO
@@ -176,6 +220,54 @@ public class GuardarFormulario extends Fragment {
         //MENSAJES PRESUPUESTO
         mensajeAportePropio = (TextView) getActivity().findViewById(R.id.condicionAP);
         mensajeFinanciamiento = (TextView) getActivity().findViewById(R.id.condicionMonto);
+
+        guadarPresupuesto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View vista) {
+                nombrePlanInput = (EditText) v.findViewById(R.id.nombrePlanInput);
+                nombrePlan = nombrePlanInput.getText().toString();
+
+                efectivoAP = Float.parseFloat(efectivoAPInput.getText().toString());
+                manoObraAP = Float.parseFloat(manoObraAPInput.getText().toString());
+                materiaInsumosAP = Float.parseFloat(materiaInsumosAPInput.getText().toString());
+                equiposAP = Float.parseFloat(equiposAPInput.getText().toString());
+                infraestructuraAP = Float.parseFloat(infraestructuraAPInput.getText().toString());
+                reqPromocionalesAP = Float.parseFloat(reqPromocionalesAPInput.getText().toString());
+                reqLegalesAP = Float.parseFloat(reqLegalesAPInput.getText().toString());
+                //REQUERIMIENTO
+                gastosOperativosR = Float.parseFloat(gastosOperativosRInput.getText().toString());
+                materiaInsumosR = Float.parseFloat(materiaInsumosRInput.getText().toString());
+                equiposR = Float.parseFloat(equiposRInput.getText().toString());
+                infraestructuraR = Float.parseFloat(infraestructuraRInput.getText().toString());
+                reqPromocionalesR = Float.parseFloat(reqPromocionalesRInput.getText().toString());
+                reqLegalesR = Float.parseFloat(reqLegalesRInput.getText().toString());
+                //TOTALES
+                totalAP = Float.parseFloat(totalAPResultado.getText().toString().replace(',','.'));
+                totalR = Float.parseFloat(totalRResultado.getText().toString().replace(',','.'));
+                totalProyecto = Float.parseFloat(totalProyectoResultado.getText().toString().replace(',','.'));
+                aportePropio = Float.parseFloat(aportePropioResultado.getText().toString().replace(',','.'));
+                porcentajeAportePropio = Float.parseFloat(porcentajeAportePropioResultado.getText().toString().replace(',','.'));
+                montoSolicitado = Float.parseFloat(montoSolicitadoResultado.getText().toString().replace(',','.'));
+                montoFinanciar = Float.parseFloat(montoFinanciarResultado.getText().toString().replace(',','.'));
+                //MENSAJES
+                msAportePropio = mensajeAportePropio.getText().toString();
+                msFinanciamiento = mensajeFinanciamiento.getText().toString();
+
+                AportePropio AP = new AportePropio(efectivoAP,manoObraAP,materiaInsumosAP,reqPromocionalesAP,infraestructuraAP,equiposAP,reqLegalesAP);
+                Requerimiento R = new Requerimiento(gastosOperativosR,materiaInsumosR,reqPromocionalesR,infraestructuraR,equiposR,reqLegalesR);
+                PresupuestoResumen presupuestoResumen = new PresupuestoResumen(AP,R,msAportePropio,msFinanciamiento);
+                presupuestoResumen.setTotalAportePropio(totalAP);
+                presupuestoResumen.setTotalRequerimiento(totalR);
+                presupuestoResumen.setTotalProyecto(totalProyecto);
+                presupuestoResumen.setAportePropioCalculado(aportePropio);
+                presupuestoResumen.setPorcentajeAportePropio(porcentajeAportePropio);
+                presupuestoResumen.setMontoSolicitado(montoSolicitado);
+                presupuestoResumen.setMontoFinanciado(montoFinanciar);
+
+                FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan);
+                firebaseFormulario.guardarPresupuestoResumen(presupuestoResumen);
+            }
+        });
 
         //COSTSO PRODUCTOS
         //PRODUCTO 1
@@ -219,94 +311,12 @@ public class GuardarFormulario extends Fragment {
         p4MargenBrutoVentaUnidadResultado = (TextView) getActivity().findViewById(R.id.producto4MargenBrutoVentaUnidadResultado);
         p4TotalPeriodoResultado = (TextView) getActivity().findViewById(R.id.producto4TotalPeriodoResultado);
 
-        //GASTOS FIJOS
-        impuestosInput = (EditText) getActivity().findViewById(R.id.impuestoInput);
-        alimentacionInput = (EditText) getActivity().findViewById(R.id.alimentacionInput);
-        servicioLuzInput = (EditText) getActivity().findViewById(R.id.servicioLuzInput);
-        servicioAguaInput = (EditText) getActivity().findViewById(R.id.servicioAguaInput);
-        servicioTelefonoInput = (EditText) getActivity().findViewById(R.id.servicioTelefonoIput);
-        servicioCelularInput = (EditText) getActivity().findViewById(R.id.servicioCelularInput);
-        mm1NombreInput = (EditText) getActivity().findViewById(R.id.m1Input);
-        mm2NombreInput = (EditText) getActivity().findViewById(R.id.m2Input);
-        mm3NombreInput = (EditText) getActivity().findViewById(R.id.m3nput);
-        mm4NombreInput = (EditText) getActivity().findViewById(R.id.mm4Input);
-        mantenimiento1Input = (EditText) getActivity().findViewById(R.id.mm1Input);
-        mantenimiento2Input = (EditText) getActivity().findViewById(R.id.mm2Input);
-        mantenimiento3Input = (EditText) getActivity().findViewById(R.id.m3input);
-        mantenimiento4Input = (EditText) getActivity().findViewById(R.id.mm4put);
-        saludInput = (EditText) getActivity().findViewById(R.id.eput);
-        imprevistosInput = (EditText) getActivity().findViewById(R.id.imprevistosinput);
-
-        totalServiciosResultado = (TextView) getActivity().findViewById(R.id.totalServiciosRes);
-        totalMantenimientoResultado = (TextView) getActivity().findViewById(R.id.totalMantenimientoRes);
-        totalGastosResultado = (TextView) getActivity().findViewById(R.id.totalGastosRes);
-
-        guardarFormulario.setOnClickListener(new View.OnClickListener() {
+        guardarProductos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vista) {
                 nombrePlanInput = (EditText) v.findViewById(R.id.nombrePlanInput);
                 nombrePlan = nombrePlanInput.getText().toString();
-                ///DATOS EXTRAIDOS DEL INPUT
 
-                nombreDeudor = nombreInput.getText().toString();
-                apellidoDeudor = apellidoInput.getText().toString();
-                estadoCivilDeudor = estadoCivilInput.getSelectedItem().toString();
-                CIDeudor = CIInput.getText().toString();
-                extensionCIDeudor = extensionInput.getText().toString();
-                telefonoDeudor = telefonoInput.getText().toString();
-                edadDedudor = edadInput.getText().toString();
-
-                actividadCredito = actividadInput.getSelectedItem().toString();
-                montoSolicitadoCredito = Float.parseFloat(montoSolicitadoInput.getText().toString());
-                formaPagoCredito = formaPagoInput.getSelectedItem().toString();
-                plazoCredito = Integer.parseInt(plazoInput.getText().toString());
-                cuotaCredito = Float.parseFloat(cuotaResultado.getText().toString());
-                interesCredito = Float.parseFloat(interesResultado.getText().toString());
-
-                Deudor deudor = new Deudor(nombreDeudor,apellidoDeudor,estadoCivilDeudor,CIDeudor,extensionCIDeudor,telefonoDeudor,edadDedudor);
-                Credito credito = new Credito(actividadCredito,montoSolicitadoCredito,formaPagoCredito,plazoCredito,cuotaCredito,interesCredito);
-                DeudorDatosCredito deudorDatosCredito = new DeudorDatosCredito(deudor,credito);
-
-                //EXTRACCION DE PRESUPUESTO
-                //APORTE PROPIO
-                efectivoAP = Float.parseFloat(efectivoAPInput.getText().toString());
-                manoObraAP = Float.parseFloat(manoObraAPInput.getText().toString());
-                materiaInsumosAP = Float.parseFloat(materiaInsumosAPInput.getText().toString());
-                equiposAP = Float.parseFloat(equiposAPInput.getText().toString());
-                infraestructuraAP = Float.parseFloat(infraestructuraAPInput.getText().toString());
-                reqPromocionalesAP = Float.parseFloat(reqPromocionalesAPInput.getText().toString());
-                reqLegalesAP = Float.parseFloat(reqLegalesAPInput.getText().toString());
-                //REQUERIMIENTO
-                gastosOperativosR = Float.parseFloat(gastosOperativosRInput.getText().toString());
-                materiaInsumosR = Float.parseFloat(materiaInsumosRInput.getText().toString());
-                equiposR = Float.parseFloat(equiposRInput.getText().toString());
-                infraestructuraR = Float.parseFloat(infraestructuraRInput.getText().toString());
-                reqPromocionalesR = Float.parseFloat(reqPromocionalesRInput.getText().toString());
-                reqLegalesR = Float.parseFloat(reqLegalesRInput.getText().toString());
-                //TOTALES
-                totalAP = Float.parseFloat(totalAPResultado.getText().toString().replace(',','.'));
-                totalR = Float.parseFloat(totalRResultado.getText().toString().replace(',','.'));
-                totalProyecto = Float.parseFloat(totalProyectoResultado.getText().toString().replace(',','.'));
-                aportePropio = Float.parseFloat(aportePropioResultado.getText().toString().replace(',','.'));
-                porcentajeAportePropio = Float.parseFloat(porcentajeAportePropioResultado.getText().toString().replace(',','.'));
-                montoSolicitado = Float.parseFloat(montoSolicitadoResultado.getText().toString().replace(',','.'));
-                montoFinanciar = Float.parseFloat(montoFinanciarResultado.getText().toString().replace(',','.'));;
-                //MENSAJES
-                msAportePropio = mensajeAportePropio.getText().toString();
-                msFinanciamiento = mensajeFinanciamiento.getText().toString();
-
-                AportePropio AP = new AportePropio(efectivoAP,manoObraAP,materiaInsumosAP,reqPromocionalesAP,infraestructuraAP,equiposAP,reqLegalesAP);
-                Requerimiento R = new Requerimiento(gastosOperativosR,materiaInsumosR,reqPromocionalesR,infraestructuraR,equiposR,reqLegalesR);
-                PresupuestoResumen presupuestoResumen = new PresupuestoResumen(AP,R,msAportePropio,msFinanciamiento);
-                presupuestoResumen.setTotalAportePropio(totalAP);
-                presupuestoResumen.setTotalRequerimiento(totalR);
-                presupuestoResumen.setTotalProyecto(totalProyecto);
-                presupuestoResumen.setAportePropioCalculado(aportePropio);
-                presupuestoResumen.setPorcentajeAportePropio(porcentajeAportePropio);
-                presupuestoResumen.setMontoSolicitado(montoSolicitado);
-                presupuestoResumen.setMontoFinanciado(montoFinanciar);
-
-                //PRODUCTOS COSTOS
                 Producto p1 = new Producto();
                 Producto p2 = new Producto();
                 Producto p3 = new Producto();
@@ -363,8 +373,168 @@ public class GuardarFormulario extends Fragment {
                         productos[i].setNombre("NINGUNO");
                     }
                 }
+
                 CostosProductos costosProductos = new CostosProductos(productos[0],productos[1],productos[2],productos[3]);
 
+                FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan);
+                firebaseFormulario.guardarCostosProductos(costosProductos);
+            }
+        });
+
+        //GASTOS FIJOS
+        impuestosInput = (EditText) getActivity().findViewById(R.id.impuestoInput);
+        alimentacionInput = (EditText) getActivity().findViewById(R.id.alimentacionInput);
+        servicioLuzInput = (EditText) getActivity().findViewById(R.id.servicioLuzInput);
+        servicioAguaInput = (EditText) getActivity().findViewById(R.id.servicioAguaInput);
+        servicioTelefonoInput = (EditText) getActivity().findViewById(R.id.servicioTelefonoIput);
+        servicioCelularInput = (EditText) getActivity().findViewById(R.id.servicioCelularInput);
+        mm1NombreInput = (EditText) getActivity().findViewById(R.id.m1Input);
+        mm2NombreInput = (EditText) getActivity().findViewById(R.id.m2Input);
+        mm3NombreInput = (EditText) getActivity().findViewById(R.id.m3nput);
+        mm4NombreInput = (EditText) getActivity().findViewById(R.id.mm4Input);
+        mantenimiento1Input = (EditText) getActivity().findViewById(R.id.mm1Input);
+        mantenimiento2Input = (EditText) getActivity().findViewById(R.id.mm2Input);
+        mantenimiento3Input = (EditText) getActivity().findViewById(R.id.m3input);
+        mantenimiento4Input = (EditText) getActivity().findViewById(R.id.mm4put);
+        saludInput = (EditText) getActivity().findViewById(R.id.eput);
+        imprevistosInput = (EditText) getActivity().findViewById(R.id.imprevistosinput);
+
+        totalServiciosResultado = (TextView) getActivity().findViewById(R.id.totalServiciosRes);
+        totalMantenimientoResultado = (TextView) getActivity().findViewById(R.id.totalMantenimientoRes);
+        totalGastosResultado = (TextView) getActivity().findViewById(R.id.totalGastosRes);
+
+        guardarGastos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View vista) {
+                nombrePlanInput = (EditText) v.findViewById(R.id.nombrePlanInput);
+                nombrePlan = nombrePlanInput.getText().toString();
+                ///DATOS EXTRAIDOS DEL INPUT
+
+                //extraerDatosDeudorCredito();
+
+                /*nombreDeudor = nombreInput.getText().toString();
+                apellidoDeudor = apellidoInput.getText().toString();
+                estadoCivilDeudor = estadoCivilInput.getSelectedItem().toString();
+                CIDeudor = CIInput.getText().toString();
+                extensionCIDeudor = extensionInput.getText().toString();
+                telefonoDeudor = telefonoInput.getText().toString();
+                edadDedudor = edadInput.getText().toString();*/
+
+                /*actividadCredito = actividadInput.getSelectedItem().toString();
+                System.out.println(actividadCredito);
+                montoSolicitadoCredito = Float.parseFloat(montoSolicitadoInput.getText().toString());
+                System.out.println(montoSolicitadoCredito);
+                formaPagoCredito = formaPagoInput.getSelectedItem().toString();
+                System.out.println(formaPagoCredito);
+                plazoCredito = Integer.parseInt(plazoInput.getText().toString());
+                System.out.println(plazoCredito);
+                cuotaCredito = Float.parseFloat(cuotaResultado.getText().toString());
+                System.out.println(cuotaCredito);
+                interesCredito = Float.parseFloat(interesResultado.getText().toString());
+                System.out.println(interesCredito);*/
+
+                /*Deudor deudor = new Deudor(nombreDeudor,apellidoDeudor,estadoCivilDeudor,CIDeudor,extensionCIDeudor,telefonoDeudor,edadDedudor);
+                Credito credito = new Credito(actividadCredito,montoSolicitadoCredito,formaPagoCredito,plazoCredito,cuotaCredito,interesCredito);
+                DeudorDatosCredito deudorDatosCredito = new DeudorDatosCredito(deudor,credito);*/
+
+                //EXTRACCION DE PRESUPUESTO
+                //APORTE PROPIO
+                /*efectivoAP = Float.parseFloat(efectivoAPInput.getText().toString());
+                manoObraAP = Float.parseFloat(manoObraAPInput.getText().toString());
+                materiaInsumosAP = Float.parseFloat(materiaInsumosAPInput.getText().toString());
+                equiposAP = Float.parseFloat(equiposAPInput.getText().toString());
+                infraestructuraAP = Float.parseFloat(infraestructuraAPInput.getText().toString());
+                reqPromocionalesAP = Float.parseFloat(reqPromocionalesAPInput.getText().toString());
+                reqLegalesAP = Float.parseFloat(reqLegalesAPInput.getText().toString());
+                //REQUERIMIENTO
+                gastosOperativosR = Float.parseFloat(gastosOperativosRInput.getText().toString());
+                materiaInsumosR = Float.parseFloat(materiaInsumosRInput.getText().toString());
+                equiposR = Float.parseFloat(equiposRInput.getText().toString());
+                infraestructuraR = Float.parseFloat(infraestructuraRInput.getText().toString());
+                reqPromocionalesR = Float.parseFloat(reqPromocionalesRInput.getText().toString());
+                reqLegalesR = Float.parseFloat(reqLegalesRInput.getText().toString());
+                //TOTALES
+                totalAP = Float.parseFloat(totalAPResultado.getText().toString().replace(',','.'));
+                totalR = Float.parseFloat(totalRResultado.getText().toString().replace(',','.'));
+                totalProyecto = Float.parseFloat(totalProyectoResultado.getText().toString().replace(',','.'));
+                aportePropio = Float.parseFloat(aportePropioResultado.getText().toString().replace(',','.'));
+                porcentajeAportePropio = Float.parseFloat(porcentajeAportePropioResultado.getText().toString().replace(',','.'));
+                montoSolicitado = Float.parseFloat(montoSolicitadoResultado.getText().toString().replace(',','.'));
+                montoFinanciar = Float.parseFloat(montoFinanciarResultado.getText().toString().replace(',','.'));
+                //MENSAJES
+                msAportePropio = mensajeAportePropio.getText().toString();
+                msFinanciamiento = mensajeFinanciamiento.getText().toString();
+
+                AportePropio AP = new AportePropio(efectivoAP,manoObraAP,materiaInsumosAP,reqPromocionalesAP,infraestructuraAP,equiposAP,reqLegalesAP);
+                Requerimiento R = new Requerimiento(gastosOperativosR,materiaInsumosR,reqPromocionalesR,infraestructuraR,equiposR,reqLegalesR);
+                PresupuestoResumen presupuestoResumen = new PresupuestoResumen(AP,R,msAportePropio,msFinanciamiento);
+                presupuestoResumen.setTotalAportePropio(totalAP);
+                presupuestoResumen.setTotalRequerimiento(totalR);
+                presupuestoResumen.setTotalProyecto(totalProyecto);
+                presupuestoResumen.setAportePropioCalculado(aportePropio);
+                presupuestoResumen.setPorcentajeAportePropio(porcentajeAportePropio);
+                presupuestoResumen.setMontoSolicitado(montoSolicitado);
+                presupuestoResumen.setMontoFinanciado(montoFinanciar);*/
+
+                //PRODUCTOS COSTOS
+                /*Producto p1 = new Producto();
+                Producto p2 = new Producto();
+                Producto p3 = new Producto();
+                Producto p4 = new Producto();
+                //PRODUCTOS
+                Producto[] productos = {p1,p2,p3,p4};
+                EditText[] productoNombre = {p1NombreInput,p2NombreInput,p3NombreInput,p4NombreInput};
+                EditText[] productoCostoProduccion = {p1TotalCostoProduccionUnidadInput,p2TotalCostoProduccionUnidadInput,p3TotalCostoProduccionUnidadInput,p4TotalCostoProduccionUnidadInput};
+                EditText[] productoPrecioVentaPesimista = {p1PrecioDeVentaPesimistaUnidadInput,p2PrecioDeVentaPesimistaUnidadInput,p3PrecioDeVentaPesimistaUnidadInput,p4PrecioDeVentaPesimistaUnidadInput};
+                EditText[] productoPrecioVentaModerado = {p1PrecioDeVentaModeradoUnidadInput,p2PrecioDeVentaModeradoUnidadInput,p3PrecioDeVentaModeradoUnidadInput,p4PrecioDeVentaModeradoUnidadInput};
+                EditText[] productoPrecioVentaOptimista = {p1PrecioDeVentaOptimistaUnidadInput,p2PrecioDeVentaOptimistaUnidadInput,p3PrecioDeVentaOptimistaUnidadInput,p4PrecioDeVentaOptimistaUnidadInput};
+                EditText[] productoCantidadVendida = {p1CantidadVendidaInput,p2CantidadVendidaInput,p3CantidadVendidaInput,p4CantidadVendidaInput};
+                TextView[] productoMargenBrutoVentaUnidadResultado= {p1MargenBrutoVentaUnidadResultado,p2MargenBrutoVentaUnidadResultado,p3MargenBrutoVentaUnidadResultado,p4MargenBrutoVentaUnidadResultado};
+                TextView[] productoTotalPeriodoResultado = {p1TotalPeriodoResultado,p2TotalPeriodoResultado,p3TotalPeriodoResultado,p4TotalPeriodoResultado};
+                for(int i=0;i<4;i++) {
+                    if (!productoNombre[i].getText().toString().isEmpty()) {
+                        if (!productoCostoProduccion[i].getText().toString().isEmpty()) {
+                            if (!productoPrecioVentaPesimista[i].getText().toString().isEmpty()) {
+                                if (!productoPrecioVentaModerado[i].getText().toString().isEmpty()) {
+                                    if (!productoPrecioVentaOptimista[i].getText().toString().isEmpty()) {
+                                        if (!productoCantidadVendida[i].getText().toString().isEmpty()) {
+                                            String pNombre = productoNombre[i].getText().toString();
+                                            float pTotalCostoProduccionUnidad = Float.parseFloat(productoCostoProduccion[i].getText().toString());
+                                            float pPrecioDeVentaPesimistaUnidad = Float.parseFloat(productoPrecioVentaPesimista[i].getText().toString());
+                                            float pPrecioDeVentaModeradoUnidad = Float.parseFloat(productoPrecioVentaModerado[i].getText().toString());
+                                            float pPrecioDeVentaOptimistaUnidad = Float.parseFloat(productoPrecioVentaOptimista[i].getText().toString());
+                                            int pCantidadVendida = Integer.parseInt(productoCantidadVendida[i].getText().toString());
+                                            float pMargenBrutoVentaUnidad = Float.parseFloat(productoMargenBrutoVentaUnidadResultado[i].getText().toString());
+                                            float pTotalPeriodo = Float.parseFloat(productoTotalPeriodoResultado[i].getText().toString());
+                                            productos[i].setNombre(pNombre);
+                                            productos[i].setCostoProduccion(pTotalCostoProduccionUnidad);
+                                            productos[i].setPrecioVentaPesimista(pPrecioDeVentaPesimistaUnidad);
+                                            productos[i].setPrecioVentaModerado(pPrecioDeVentaModeradoUnidad);
+                                            productos[i].setPrecioVentaOptimista(pPrecioDeVentaOptimistaUnidad);
+                                            productos[i].setCantidadVendida(pCantidadVendida);
+                                            productos[i].setMargenBrutoVenta(pMargenBrutoVentaUnidad);
+                                            productos[i].setTotalPeriodo(pTotalPeriodo);
+                                        } else {
+                                            productos[i].setNombre("NINGUNO");
+                                        }
+                                    } else {
+                                        productos[i].setNombre("NINGUNO");
+                                    }
+                                } else {
+                                    productos[i].setNombre("NINGUNO");
+                                }
+                            } else {
+                                productos[i].setNombre("NINGUNO");
+                            }
+                        } else {
+                            productos[i].setNombre("NINGUNO");
+                        }
+                    } else {
+                        productos[i].setNombre("NINGUNO");
+                    }
+                }
+                CostosProductos costosProductos = new CostosProductos(productos[0],productos[1],productos[2],productos[3]);
+                */
                 //GASTOS FIJOS
                 Mantenimiento m1 = new Mantenimiento();
                 Mantenimiento m2 = new Mantenimiento();
@@ -424,9 +594,13 @@ public class GuardarFormulario extends Fragment {
                 float totalGastos = Float.parseFloat(totalGastosResultado.getText().toString().replace(',','.'));
                 Gastos gastos = new Gastos(servicios,mantenimientos[0],mantenimientos[1],mantenimientos[2],mantenimientos[3],totalServicios,totalMantenimiento,totalGastos);
 
+                FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan);
+                firebaseFormulario.guardarGastosFijos(gastos);
+
                 ////FIREBASE
-                FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan,deudorDatosCredito,presupuestoResumen,costosProductos,gastos);
-                firebaseFormulario.guardarFormularioFirebase();
+                //FirebaseFormulario firebaseFormulario = new FirebaseFormulario(nombrePlan,presupuestoResumen,costosProductos,gastos);
+                //deudorDatosCredito
+                //firebaseFormulario.guardarFormularioFirebase();
 
             }
         });
@@ -451,10 +625,9 @@ public class GuardarFormulario extends Fragment {
         cuotaCredito = Float.parseFloat(cuotaResultado.getText().toString());
         interesCredito = Float.parseFloat(interesResultado.getText().toString());
 
-        Deudor deudor = new Deudor(nombreDeudor,apellidoDeudor,estadoCivilDeudor,CIDeudor,extensionCIDeudor,telefonoDeudor,edadDedudor);
-        Credito credito = new Credito(actividadCredito,montoSolicitadoCredito,formaPagoCredito,plazoCredito,cuotaCredito,interesCredito);
-        DeudorDatosCredito ddc = new DeudorDatosCredito(deudor,credito);
+        deudor = new Deudor(nombreDeudor,apellidoDeudor,estadoCivilDeudor,CIDeudor,extensionCIDeudor,telefonoDeudor,edadDedudor);
+        credito = new Credito(actividadCredito,montoSolicitadoCredito,formaPagoCredito,plazoCredito,cuotaCredito,interesCredito);
+        deudorDatosCredito = new DeudorDatosCredito(deudor,credito);
 
-        //return ddc;
     }*/
 }

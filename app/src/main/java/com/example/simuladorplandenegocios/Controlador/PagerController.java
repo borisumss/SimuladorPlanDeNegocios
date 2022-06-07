@@ -16,7 +16,18 @@ public class PagerController extends FragmentPagerAdapter{
     @NonNull
     @Override
     public Fragment getItem(int position) {
-
+        /*Fragment f = new DeudorCredito();
+        if( position == 0 ){
+            f = new DeudorCredito();
+        }else if( position ==1 ){
+            f = new Presupuesto();
+        }else if( position ==2 ){
+            f = new ProductoCostos();
+        }else if( position ==3 ){
+            f = new GastosFijos();
+        }else if ( position == 4 ){
+            f = new GuardarFormulario();
+        }*/
         switch (position){
             case 0:
                 return new DeudorCredito();
@@ -30,8 +41,8 @@ public class PagerController extends FragmentPagerAdapter{
                 return new GuardarFormulario();
             default:
                 return null;
-
         }
+        //return f;
     }
 
     @Override

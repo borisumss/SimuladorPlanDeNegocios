@@ -38,23 +38,24 @@ public class FirebaseFormulario {
     private FirebaseFirestore db;
     private String nombrePlan;
 
-    public FirebaseFormulario(String nombrePlan, DeudorDatosCredito deudorDatosCredito, PresupuestoResumen presupuestoResumen, CostosProductos costosProductos, Gastos gastos){
+    public FirebaseFormulario(String nombrePlan){//, PresupuestoResumen presupuestoResumen,CostosProductos costosProductos, Gastos gastos){
         this.nombrePlan = nombrePlan;
-        this.deudorDatosCredito = deudorDatosCredito;
-        this.presupuestoResumen = presupuestoResumen;
+        //this.deudorDatosCredito = deudorDatosCredito;
+        /*this.presupuestoResumen = presupuestoResumen;
         this.costosProductos = costosProductos;
-        this.gastos = gastos;
+        this.gastos = gastos;*/
         this.db = FirebaseFirestore.getInstance();
     }
 
     public void guardarFormularioFirebase(){
-        guardarDeudorYCredito();
-        guardarPresupuestoResumen();
-        guardarCostosProductos();
-        guardarGastosFijos();
+        //guardarDeudorYCredito();
+        //guardarPresupuestoResumen();
+        //guardarCostosProductos();
+        //guardarGastosFijos();
     }
 
-    public void guardarGastosFijos(){
+    public void guardarGastosFijos(Gastos gastos){
+        this.gastos = gastos;
         this.servicios = this.gastos.getServicios();
         this.mantenimiento1 = this.gastos.getMantenimiento1();
         this.mantenimiento2 = this.gastos.getMantenimiento2();
@@ -109,7 +110,8 @@ public class FirebaseFormulario {
 
     }
 
-    public void guardarCostosProductos(){
+    public void guardarCostosProductos(CostosProductos costosProductos){
+        this.costosProductos = costosProductos;
         this.producto1 = this.costosProductos.getProducto1();
         this.producto2 = this.costosProductos.getProducto2();
         this.producto3 = this.costosProductos.getProducto3();
@@ -135,6 +137,7 @@ public class FirebaseFormulario {
         producto2Datos.put("Cantidad Vendida",this.producto2.getCantidadVendida());
         producto2Datos.put("Total Periodo",this.producto2.getTotalPeriodo());
         Map<String, Object> producto3Datos = new HashMap<>();
+        producto3Datos.put("Nombre Producto",this.producto3.getNombre());
         producto3Datos.put("Costo Produccion Unidad",this.producto3.getCostoProduccion());
         producto3Datos.put("Precio Venta Pesimista",this.producto3.getPrecioVentaPesimista());
         producto3Datos.put("Precio Venta Moderado",this.producto3.getPrecioVentaModerado());
@@ -143,6 +146,7 @@ public class FirebaseFormulario {
         producto3Datos.put("Cantidad Vendida",this.producto3.getCantidadVendida());
         producto3Datos.put("Total Periodo",this.producto3.getTotalPeriodo());
         Map<String, Object> producto4Datos = new HashMap<>();
+        producto4Datos.put("Nombre Producto",this.producto4.getNombre());
         producto4Datos.put("Costo Produccion Unidad",this.producto4.getCostoProduccion());
         producto4Datos.put("Precio Venta Pesimista",this.producto4.getPrecioVentaPesimista());
         producto4Datos.put("Precio Venta Moderado",this.producto4.getPrecioVentaModerado());
@@ -172,7 +176,8 @@ public class FirebaseFormulario {
                 });
     }
 
-    public void guardarPresupuestoResumen(){
+    public void guardarPresupuestoResumen(PresupuestoResumen presupuestoResumen){
+        this.presupuestoResumen = presupuestoResumen;
         this.aportePropio = this.presupuestoResumen.getAportePropio();
         this.requerimiento = this.presupuestoResumen.getRequerimiento();
 
@@ -224,7 +229,8 @@ public class FirebaseFormulario {
 
     }
 
-    public void guardarDeudorYCredito(){
+    public void guardarDeudorYCredito(DeudorDatosCredito deudorDatosCredito){
+        this.deudorDatosCredito = deudorDatosCredito;
         this.deudor = this.deudorDatosCredito.getDeudor();
         this.credito = this.deudorDatosCredito.getCredito();
         Map<String, Object> deudorYCredito = new HashMap<>();
