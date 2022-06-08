@@ -31,7 +31,7 @@ public class Simulacion extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        t1 = view.findViewById(R.id.nombreSimu);
+        t1 = view.findViewById(R.id.nombrePlanInput);
 
         botonCorrerSimulacion = view.findViewById(R.id.correrSimu);
         botonCorrerSimulacion.setOnClickListener(new View.OnClickListener() {
@@ -63,23 +63,11 @@ public class Simulacion extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_simulacion, container, false);
-
     }
 
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        t1 = view.findViewById(R.id.nombreDeudorInput);
-        botonCorrerSimulacion = view.findViewById(R.id.correrSimu);
-        botonCorrerSimulacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String resultado = t1.getText().toString();
-                Bundle bundle= new Bundle();
-                bundle.putString("NombreProyecto",String.valueOf(resultado));
-                getParentFragmentManager().setFragmentResult("nombre",bundle);
-            }
-        });
+    public void onClick(View v) {
+
     }
 }

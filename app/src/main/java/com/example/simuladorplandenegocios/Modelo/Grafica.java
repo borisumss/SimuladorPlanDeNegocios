@@ -2,6 +2,7 @@ package com.example.simuladorplandenegocios.Modelo;
 
 import static android.content.ContentValues.TAG;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,8 @@ import android.widget.TextView;
 
 import com.example.simuladorplandenegocios.R;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -47,6 +50,8 @@ public class Grafica extends Fragment {
     LineChart mpLineChart;
     Button mostrarGrafica;
     String nombreSimulacion;
+    String [] legendName = {"Año 1" ,"Año 2","Año 3","Año 4","Año 5","Año 6","Año 7"};
+    int color = Color.BLUE;
 
     private int year1;
     private int year2;
@@ -92,8 +97,27 @@ public class Grafica extends Fragment {
                 //grafico
                 mpLineChart= v.findViewById(R.id.line_chart);
                 LineDataSet lineDataSet1 = new LineDataSet(Año1(),"Año 1");
+                LineDataSet lineDataSet2 = new LineDataSet(Año2(),"Año 2");
+                LineDataSet lineDataSet3 = new LineDataSet(Año3(),"Año 3");
+                LineDataSet lineDataSet4 = new LineDataSet(Año4(),"Año 4");
+                LineDataSet lineDataSet5 = new LineDataSet(Año5(),"Año 5");
+                LineDataSet lineDataSet6 = new LineDataSet(Año6(),"Año 6");
+                LineDataSet lineDataSet7 = new LineDataSet(Año7(),"Año 7");
+                lineDataSet1.setColor(Color.BLUE);
+                lineDataSet2.setColor(Color.RED);
+                lineDataSet3.setColor(Color.BLACK);
+                lineDataSet4.setColor(Color.CYAN);
+                lineDataSet5.setColor(Color.MAGENTA);
+                lineDataSet6.setColor(Color.YELLOW);
+                lineDataSet7.setColor(Color.GREEN);
                 ArrayList<ILineDataSet> dataSets = new ArrayList<>();
                 dataSets.add(lineDataSet1);
+                dataSets.add(lineDataSet2);
+                dataSets.add(lineDataSet3);
+                dataSets.add(lineDataSet4);
+                dataSets.add(lineDataSet5);
+                dataSets.add(lineDataSet6);
+                dataSets.add(lineDataSet7);
                 LineData data = new LineData(dataSets);
                 mpLineChart.setData(data);
                 mpLineChart.invalidate();
@@ -104,6 +128,30 @@ public class Grafica extends Fragment {
     }
     private ArrayList<Entry> Año1(){
         ArrayList<Entry> dataVals = new ArrayList<Entry>();
+
+        // Legends
+/*        Legend legend = mpLineChart.getLegend();
+        legend.setEnabled(true);
+        legend.setTextColor(Color.BLACK);
+        legend.setTextSize(15);
+        legend.setForm(Legend.LegendForm.LINE);
+        legend.setFormSize(12);
+        legend.setXEntrySpace(2);
+        legend.setFormToTextSpace(2);
+        mpLineChart.setBorderColor(Color.BLUE);
+
+
+        //Poner legends
+        LegendEntry[] legendEntries = new LegendEntry[7];
+        for(int i = 0 ; i<legendEntries.length;i++){
+            LegendEntry entry  = new LegendEntry();
+            entry.formColor = color;
+            entry.label = String.valueOf(legendName[i]);
+            legendEntries[i] = entry;
+        }
+
+        legend.setCustom(legendEntries);
+*/
         //firebase
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("graficas").document(resultado);
@@ -132,10 +180,41 @@ public class Grafica extends Fragment {
 
         dataVals.add(new Entry(0,0));
         dataVals.add(new Entry(1,year1));
+        return dataVals;
+    }
+
+    private ArrayList<Entry> Año2(){
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(1,year1));
+        dataVals.add(new Entry(2,year2));
+        return dataVals;
+    }
+    private ArrayList<Entry> Año3(){
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
         dataVals.add(new Entry(2,year2));
         dataVals.add(new Entry(3,year3));
+        return dataVals;
+    }
+    private ArrayList<Entry> Año4(){
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(3,year3));
+        dataVals.add(new Entry(4,year4));
+        return dataVals;
+    }
+    private ArrayList<Entry> Año5(){
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
         dataVals.add(new Entry(4,year4));
         dataVals.add(new Entry(5,year5));
+        return dataVals;
+    }
+    private ArrayList<Entry> Año6(){
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(5,year5));
+        dataVals.add(new Entry(6,year6));
+        return dataVals;
+    }
+    private ArrayList<Entry> Año7(){
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
         dataVals.add(new Entry(6,year6));
         dataVals.add(new Entry(7,year7));
         return dataVals;

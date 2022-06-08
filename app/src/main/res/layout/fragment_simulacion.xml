@@ -41,7 +41,7 @@
                 android:text="Ingrese el nombre de su proyecto" />
 
             <EditText
-                android:id="@+id/nombreDeudorInput"
+                android:id="@+id/nombrePlanInput"
                 android:layout_width="293dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
