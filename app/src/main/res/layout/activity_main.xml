@@ -7,12 +7,12 @@
     tools:context=".Vista.MainActivity">
 
     <LinearLayout
-        android:layout_width="416dp"
-        android:layout_height="581dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
         android:layout_marginStart="8dp"
 
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
@@ -30,46 +30,63 @@
 
             <Button
                 android:id="@+id/formularioButton"
-                android:layout_width="230dp"
+                android:layout_width="match_parent"
+                app:backgroundTint="@null"
+                android:background="@drawable/custom_butons"
                 android:layout_height="70dp"
-                android:layout_marginStart="-30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginTop="70dp"
-                android:text="Llenar Formulario Plan de Negocios"
+                android:text="Registrar Plan de Negocios"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:cornerRadius="10dp"/>
 
             <Button
                 android:id="@+id/simulacionButton"
-                android:layout_width="230dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginStart="-30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginTop="40dp"
                 android:text="Iniciar Simulacion Plan de Negocios"
+                app:backgroundTint="@null"
+                android:background="@drawable/custom_butons"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/formularioButton" />
+                app:layout_constraintTop_toBottomOf="@+id/formularioButton"
+                app:cornerRadius="10dp"/>
 
             <Button
                 android:id="@+id/ayudaButton"
-                android:layout_width="230dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginStart="-30dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginTop="40dp"
                 android:text="Ayuda"
+                app:backgroundTint="@null"
+                android:background="@drawable/custom_butons"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/simulacionButton"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                app:cornerRadius="10dp"/>
 
             <Button
                 android:id="@+id/salirButton"
-                android:layout_width="230dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginStart="-30dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="50dp"
                 android:onClick="salir"
                 android:text="Salir"
+
+                app:backgroundTint="@null"
+                android:background="@drawable/custom_butons"
+                app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ayudaButton"
@@ -83,7 +100,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="@string/simulador_opciones"
         android:textColor="@color/black"
         android:textSize="60px"
