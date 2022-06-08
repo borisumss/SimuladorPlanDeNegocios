@@ -30,7 +30,7 @@
                 android:paddingBottom="5dp"
                 android:text="Resultados De La Simulación"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
             <ImageView
@@ -101,6 +101,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
+                android:drawableEnd="@drawable/ic_down_white"
                 android:text="Informe del plan en PDF" />
 
             <Button
@@ -110,6 +111,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
+                android:drawableEnd="@drawable/ic_down_white"
                 android:text="Resultados simulación en PDF" />
 
         </LinearLayout>
