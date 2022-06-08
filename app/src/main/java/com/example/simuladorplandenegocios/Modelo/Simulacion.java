@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.simuladorplandenegocios.Controlador.Triangular;
 import com.example.simuladorplandenegocios.R;
 
 public class Simulacion extends Fragment {
@@ -54,6 +55,9 @@ public class Simulacion extends Fragment {
                 Bundle bundle= new Bundle();
                 bundle.putString("NombreProyecto",String.valueOf(resultado));
                 getParentFragmentManager().setFragmentResult("nombre",bundle);
+                Triangular triangular = new Triangular(resultado);
+                triangular.ejecutarSimulacion();
+
             }
         });
     }
