@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Modelo.Simulacion">
-    <RelativeLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -110,5 +111,5 @@
                 android:text="Resultados simulación en PDF" />
 
         </LinearLayout>
-    </RelativeLayout>
+    </ScrollView>
 </FrameLayout>
