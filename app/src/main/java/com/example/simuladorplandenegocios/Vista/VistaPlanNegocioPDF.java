@@ -22,7 +22,6 @@ public class VistaPlanNegocioPDF extends AppCompatActivity {
         //File file = new File(Environment.getExternalStorageDirectory(), "Resultados.pdf");
         vista.fromFile(file);
         vista.isZoomEnabled();
-
         vista.show();
     }
 }

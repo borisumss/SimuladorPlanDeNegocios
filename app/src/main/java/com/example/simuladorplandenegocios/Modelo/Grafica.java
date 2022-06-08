@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.simuladorplandenegocios.R;
@@ -36,12 +38,15 @@ import java.util.ArrayList;
  */
 public class Grafica extends Fragment {
 
-   private TextView tv1;
+//   private TextView tv1;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String resultado;
     LineChart mpLineChart;
+    Button mostrarGrafica;
+    String nombreSimulacion;
 
     private int year1;
     private int year2;
@@ -67,10 +72,8 @@ public class Grafica extends Fragment {
         getParentFragmentManager().setFragmentResultListener("nombre", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                String resultado = result.getString("NombreProyecto");
-                tv1.setText(resultado);
+                resultado = result.getString("NombreProyecto");
             }
-
         });
     }
 
@@ -78,30 +81,32 @@ public class Grafica extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
+
         View v= inflater.inflate(R.layout.fragment_grafica, container, false);
 
+        mostrarGrafica = v.findViewById(R.id.mostrarGrafica);
+        mostrarGrafica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View vista2 = inflater.inflate(R.layout.fragment_simulacion, container, false);
+                //grafico
+                mpLineChart= v.findViewById(R.id.line_chart);
+                LineDataSet lineDataSet1 = new LineDataSet(Año1(),"Año 1");
+                ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+                dataSets.add(lineDataSet1);
+                LineData data = new LineData(dataSets);
+                mpLineChart.setData(data);
+                mpLineChart.invalidate();
+            }
+        });
 
-
-        //grafico
-        mpLineChart=(LineChart)v.findViewById(R.id.line_chart);
-        LineDataSet lineDataSet1 = new LineDataSet(Año1(),"Año 1");
-        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-        dataSets.add(lineDataSet1);
-        LineData data = new LineData(dataSets);
-        mpLineChart.setData(data);
-        mpLineChart.invalidate();
         return v;
     }
     private ArrayList<Entry> Año1(){
         ArrayList<Entry> dataVals = new ArrayList<Entry>();
-
         //firebase
-
-        String nombreSimulacion = "emprendimiento";
-
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("graficas").document(nombreSimulacion);
+        DocumentReference docRef = db.collection("graficas").document(resultado);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -139,7 +144,6 @@ public class Grafica extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tv1= view.findViewById(R.id.SimulacionR);
     }
 }
 
