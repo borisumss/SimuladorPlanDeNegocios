@@ -120,7 +120,7 @@ public class Resultados extends Fragment {
 
             @Override
             public void onClick(View view) {
-                TextView aux = (TextView) getActivity().findViewById(R.id.nombreDeudorInput);
+                TextView aux = (TextView) getActivity().findViewById(R.id.nombreSimuInput);
                 nombreBD = aux.getText().toString();
                 rescatarDatos(view);
 
