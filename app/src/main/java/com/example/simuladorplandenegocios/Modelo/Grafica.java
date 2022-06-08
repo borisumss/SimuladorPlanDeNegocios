@@ -91,18 +91,14 @@ public class Grafica extends Fragment {
                 View vista2 = inflater.inflate(R.layout.fragment_simulacion, container, false);
                 //grafico
                 mpLineChart= v.findViewById(R.id.line_chart);
-                LineDataSet lineDataSet1 = new LineDataSet(Año1(),"Año 1");
-                ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-                dataSets.add(lineDataSet1);
-                LineData data = new LineData(dataSets);
-                mpLineChart.setData(data);
-                mpLineChart.invalidate();
+                Año1();
+
             }
         });
 
         return v;
     }
-    private ArrayList<Entry> Año1(){
+    private void Año1(){
         ArrayList<Entry> dataVals = new ArrayList<Entry>();
         //firebase
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -121,6 +117,21 @@ public class Grafica extends Fragment {
                         year5 = document.getLong("year5").intValue();
                         year6 = document.getLong("year6").intValue();
                         year7 = document.getLong("year7").intValue();
+                        dataVals.add(new Entry(0,0));
+                        dataVals.add(new Entry(1,year1));
+                        dataVals.add(new Entry(2,year2));
+                        dataVals.add(new Entry(3,year3));
+                        dataVals.add(new Entry(4,year4));
+                        dataVals.add(new Entry(5,year5));
+                        dataVals.add(new Entry(6,year6));
+                        dataVals.add(new Entry(7,year7));
+
+
+                        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+                        dataSets.add(new LineDataSet(dataVals,"Año 1"));
+                        LineData data = new LineData(dataSets);
+                        mpLineChart.setData(data);
+                        mpLineChart.invalidate();
                     } else {
                         Log.d(TAG, "No such document");
                     }
@@ -130,15 +141,6 @@ public class Grafica extends Fragment {
             }
         });
 
-        dataVals.add(new Entry(0,0));
-        dataVals.add(new Entry(1,year1));
-        dataVals.add(new Entry(2,year2));
-        dataVals.add(new Entry(3,year3));
-        dataVals.add(new Entry(4,year4));
-        dataVals.add(new Entry(5,year5));
-        dataVals.add(new Entry(6,year6));
-        dataVals.add(new Entry(7,year7));
-        return dataVals;
     }
 
     @Override
