@@ -34,6 +34,8 @@ public class Presupuesto extends Fragment {
     private EditText legalAP;
     private double totalAP;
     private TextView totalA;
+    private TextView totalAPResultado;
+
     //    requerimientos
     private EditText gastosR;
     private EditText materiaPrimaR;
@@ -43,6 +45,7 @@ public class Presupuesto extends Fragment {
     private EditText legalR;
     private double totalR;
     private TextView totalReq;
+    private TextView totalRResultado;
 
     //    totales
     private TextView totalProyecto;
@@ -117,6 +120,7 @@ public class Presupuesto extends Fragment {
         legalAP = (EditText) v.findViewById(R.id.numLegalAP);
         //total ap
         totalA = (TextView) v.findViewById(R.id.totalAP);
+        totalAPResultado = (TextView) v.findViewById(R.id.totalAPResultado);
         //Requerimiento
         gastosR = (EditText) v.findViewById(R.id.gastosR);
         materiaPrimaR = (EditText) v.findViewById(R.id.numMateriaR);
@@ -126,6 +130,7 @@ public class Presupuesto extends Fragment {
         legalR = (EditText) v.findViewById(R.id.numLegalR);
         //total R
         totalReq = (TextView) v.findViewById(R.id.totalR);
+        totalRResultado = (TextView) v.findViewById(R.id.totalRResultado);
         //totales
         totalProyecto = (TextView) v.findViewById(R.id.totalProyecto);
         totalAportePropio = (TextView) v.findViewById(R.id.aportePropio);
@@ -172,7 +177,8 @@ public class Presupuesto extends Fragment {
             if (!i.getText().toString().isEmpty())
                 totalAP += Double.parseDouble(i.getText().toString());
         }
-        totalA.setText("TOTAL Aporte Propio " + formato.format(totalAP) + " Bs");
+        totalA.setText("TOTAL Aporte Propio ");
+        totalAPResultado.setText(formato.format(totalAP));
     }
 
     private void calcularTotalR() {
@@ -183,7 +189,8 @@ public class Presupuesto extends Fragment {
             if (!i.getText().toString().isEmpty())
                 totalR += Double.parseDouble(i.getText().toString());
         }
-        totalReq.setText("TOTAL Requerimiento " + formato.format(totalR) + " Bs");
+        totalReq.setText("TOTAL Requerimiento ");
+        totalRResultado.setText(formato.format(totalR));
     }
 
     private void calcularTotales() {

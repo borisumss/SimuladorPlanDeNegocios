@@ -24,14 +24,11 @@ public class MainActivity extends AppCompatActivity {
         iniciar=(Button)findViewById(R.id.formularioButton);
         simulacion=(Button)findViewById(R.id.simulacionButton);
 
-        iniciar.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent( MainActivity.this, MenuSimulacion.class);
-                startActivity(i);
-            }
+        iniciar.setOnClickListener(view -> {
+            Intent i = new Intent( MainActivity.this, MenuSimulacion.class);
+            startActivity(i);
         });
+
 
         simulacion.setOnClickListener(new View.OnClickListener(){
 
@@ -43,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
+
 
     public void salir(View view){
         finish();
