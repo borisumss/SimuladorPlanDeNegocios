@@ -30,6 +30,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -166,7 +168,80 @@ public class Resultados extends Fragment {
     }
     public void rescatarDatos(View v){
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseFirestore db2 = FirebaseFirestore.getInstance();
+        db2.collection(nombreBD)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+                                String name = document.getId();
+                                if(name.equals("Deudor y Credito")){
+                                    HashMap aux = (HashMap) document.get("Deudor");
+                                    nombreCliente= (String) aux.get("Nombre");
+                                    apellidoCliente= (String) aux.get("Apellido");
+                                    ciCliente= (String) aux.get("CI");
+                                    edadClient= (String) aux.get("Edad");
+                                    estado= (String) aux.get("Estado Civil");
+                                    telef= (String) aux.get("Telefono");
+
+                                    HashMap aux2 = (HashMap) document.get("Credito");
+                                    monto= (String) aux2.get("Monto Solicitado").toString();
+                                    activ= (String) aux2.get("Actividad").toString();
+                                    plazo= (String) aux2.get("Plazo").toString();
+                                    interes= (String) aux2.get("Interes").toString();
+                                    formaPago= (String) aux2.get("Forma de Pago").toString();
+                                }else if(name.equals("Presupuesto Resumen")){
+                                    HashMap aux = (HashMap) document.get("Aporte Propio");
+                                    equipos= (String) aux.get("Equipos Vehiculos Maquinaria").toString();
+                                    infra= (String) aux.get("Infraestructura").toString();
+                                    matPrima= (String) aux.get("Materia Prima Insumos").toString();
+                                    reqLegal= (String) aux.get("Requerimientos Legales").toString();
+                                    reqPromo= (String) aux.get("Requerimientos Promocionales").toString();
+                                    manoObra= (String) aux.get("Mano de Obra Emprendedor").toString();
+                                    efectivo= (String) aux.get("Efectivo").toString();
+
+                                    totalAportePropio = (String) document.get("Total Aporte Propio").toString();
+
+                                    HashMap aux2 = (HashMap) document.get("Requerimiento");
+                                    equipoReque= (String) aux2.get("Equipos Vehiculos Maquinaria").toString();
+                                    gastosOpe= (String) aux2.get("Gastos Operativos").toString();
+                                    infraReque= (String) aux2.get("Infraestructura").toString();
+                                    matPrimaReque= (String) aux2.get("Materia Prima Insumos").toString();
+                                    reqLegalReque= (String) aux2.get("Requerimientos Legales").toString();
+                                    reqPromoReque= (String) aux2.get("Requerimientos Promocionales").toString();
+                                    totalReque = (String) document.get("Total Requerimiento").toString();
+
+                                    totalProyecto = (String) document.get("Total Proyecto").toString();
+                                    aportePropioResumen = (String) document.get("Aporte Propio Resumen").toString();
+                                    aportePropioPorcentaje = (String) document.get("Porcentaje Aporte Propio").toString();
+                                    cumplimiento = (String) document.get("Cumplimiento Aporte Propio").toString();
+                                    montoSolicitado = (String) document.get("Monto Solicitado").toString();
+                                    montoFinanciar = (String) document.get("Monto Financiado").toString();
+                                    montoCorrecto = (String) document.get("Cumplimiento Financiamiento").toString();
+                                }else if (name.equals("Costos Productos")){
+                                    for(int i = 1 ;i<=4;i++){
+                                        HashMap aux = (HashMap) document.get("Producto "+i);
+                                        cantidades[i-1]= (String) aux.get("Cantidad Vendida").toString();
+                                        costoProduc[i-1]= (String) aux.get("Costo Produccion Unidad").toString();
+                                        margenBruto[i-1]= (String) aux.get("Margen Bruto Venta").toString();
+                                        nombreProducto[i-1]= (String) aux.get("Nombre Producto").toString();
+                                        totalPeriodo[i-1]= (String) aux.get("Total Periodo").toString();
+                                        precioVenta[i-1]= (String) aux.get("Precio Venta Moderado").toString();
+                                    }
+                                }else if(name.equals("Gastos Fijos")){
+                                    totalGastos = (String) document.get("Total Gastos").toString();
+                                }
+                            }
+                            generarPdf(v);
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+        /*FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection(nombreBD).document("Deudor y Credito");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -290,7 +365,7 @@ public class Resultados extends Fragment {
                     Log.d(TAG, "get failed with ", task.getException());
                 }
             }
-        });
+        });*/
     }
     public void clienteCredito(Document documento){
         try {
