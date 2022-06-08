@@ -141,7 +141,7 @@ public class GuardarFormulario extends Fragment {
         //AQUI ENTRA TODOS LOS GETS PARA LUEGO MANDARLO A 'FirebaseFormulario' Y QUE LO GUARDE
 
         //DATOS DEL DEUDOR Y CREDITO
-        nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
+        nombreInput = (EditText) getActivity().findViewById(R.id.nombreSimuInput);
         apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
         estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
         CIInput = (EditText) getActivity().findViewById(R.id.ciDeudorInput);
@@ -162,7 +162,7 @@ public class GuardarFormulario extends Fragment {
                 nombrePlanInput = (EditText) v.findViewById(R.id.nombrePlanInput);
                 nombrePlan = nombrePlanInput.getText().toString();
 
-                /*EditText nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
+                /*EditText nombreInput = (EditText) getActivity().findViewById(R.id.nombreSimuInput);
                 EditText apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
                 Spinner estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
                 EditText CIInput = (EditText) getActivity().findViewById(R.id.ciDeudorInput);
@@ -199,7 +199,7 @@ public class GuardarFormulario extends Fragment {
                 float interesCredito = Float.parseFloat(interesResultado.getText().toString());
                 System.out.println(interesCredito);*/
 
-                /*nombreInput = (EditText) getActivity().findViewById(R.id.nombreDeudorInput);
+                /*nombreInput = (EditText) getActivity().findViewById(R.id.nombreSimuInput);
                 apellidoInput = (EditText) getActivity().findViewById(R.id.apellidoDeudorInput);
                 estadoCivilInput = (Spinner) getActivity().findViewById(R.id.civilDeudorInput);
                 CIInput = (EditText) getActivity().findViewById(R.id.ciDeudorInput);
