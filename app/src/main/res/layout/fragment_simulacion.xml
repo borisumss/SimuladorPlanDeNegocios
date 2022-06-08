@@ -31,17 +31,17 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/nombrePlanlabel"
+                android:id="@+id/nombrePlanlabel1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/datosPlanLabel"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="44dp"
                 android:layout_marginTop="26dp"
-                android:text="Inserte el nombre de su plan" />
+                android:text="Ingrese el nombre de su proyecto" />
 
             <EditText
-                android:id="@+id/nombreDeudorInput"
+                android:id="@+id/nombreSimuInput"
                 android:layout_width="293dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -50,7 +50,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="42dp"
                 android:layout_marginEnd="42dp"
-                android:ems="10"
                 android:inputType="text" />
 
             <Button
@@ -60,9 +59,8 @@
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="70dp"
+                android:enabled="true"
                 android:text="Correr Simulación" />
-
-
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>

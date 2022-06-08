@@ -231,7 +231,7 @@ public class Resultados extends Fragment {
                         montoSolicitado = (String) document.get("Monto Solicitado").toString();
                         montoFinanciar = (String) document.get("Monto Financiado").toString();
                         montoCorrecto = (String) document.get("Cumplimiento Financiamiento").toString();
-                        
+
                     } else {
                         Log.d(TAG, "No such document");
                     }
