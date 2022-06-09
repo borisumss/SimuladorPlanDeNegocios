@@ -374,9 +374,8 @@ public class Triangular {
 
         double costoProduccionVentas = 0d;
         for(int i=0; i<margenesBrutosVentas.length;i++){
-
             double dif = 1.0d - margenesBrutosVentas[i];
-            if(totalPeriodos[i]*dif < 0){
+            if(!(totalPeriodos[i] != 0d)){
                 costoProduccionVentas = costoProduccionVentas + 0d;
             }else {
                 costoProduccionVentas = costoProduccionVentas + (totalPeriodos[i]*dif);
