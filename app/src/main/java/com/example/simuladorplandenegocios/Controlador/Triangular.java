@@ -79,7 +79,6 @@ public class Triangular {
 
                         double TREMA = (double) (interesCredito + inflacion + interesCredito*inflacion);
                         long n = 10000;//CORRIDAS
-                        double[] fcAnual = new double[8];
                         double viabilidadResultado = 0l;
                         long viabilidad = 0l;
                         long atractividad = 0l;
@@ -90,7 +89,8 @@ public class Triangular {
                             String viable="";
                             String atractivo="";
                             long plazoCuota = plazoCredito;
-                            fcAnual[0]=montoSolicitadoCredito;//INVERSION INICIAL
+                            double[] fcAnual = new double[8];
+                            fcAnual[0]=-montoSolicitadoCredito;//INVERSION INICIAL
                             double saldoInicial = montoSolicitadoCredito + aportePropio;//EN EL MES 1
                             double saldoVariable = saldoInicial;
                             double[] variables = new double[2];//0->SALDO  1->FLUJO
@@ -102,7 +102,7 @@ public class Triangular {
                             //CALCULO FLUJO CAJA MES
                             for(int j=1; j<=84 ;j++){
                                 if(plazoCuota > 0){
-                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito);
+                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito,j);
                                     plazoCuota--;
                                     saldoVariable = variables [0];
                                     flujoMensual = flujoMensual + variables [1];
@@ -114,7 +114,7 @@ public class Triangular {
                                     }
                                 }else {
                                     cuotaVariable = 0d;
-                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito);
+                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito,j);
                                     saldoVariable = variables [0];
                                     flujoMensual = flujoMensual + variables [1];
                                     contadorMeses++;
@@ -128,7 +128,7 @@ public class Triangular {
 
                             for(int j=0 ;j<=7;j++){
                                 if(j==0){
-                                    VAN = fcAnual[j];
+                                    VAN =  fcAnual[j];
                                 }else{
                                     VAN = VAN + (double) (fcAnual[j]/Math.pow(1+interesCredito, j));
                                 }
@@ -155,6 +155,8 @@ public class Triangular {
                                 viable = "NO";
                                 atractivo="NO";
                             }
+                            System.out.println("ES EL TIR"+TIR);
+                            System.out.println(i);
                         }
                         String atractivoFinal = "";
                         double porcentajeAtractividad = (double) atractividad/n;
@@ -163,6 +165,9 @@ public class Triangular {
                         }else{
                             atractivoFinal = "NO ES ATRACTIVO";
                         }
+                        System.out.println(atractividad);
+                        System.out.println(porcentajeAtractividad);
+                        System.out.println(viabilidad);
                         viabilidadResultado = 100*((double) viabilidad/n);
 
                         System.out.println(viabilidadResultado);
@@ -251,7 +256,7 @@ public class Triangular {
         return TIR;
     }
 
-    public double[] flujoCajaMes(HashMap productos,double cuotaVariable,double saldoVariable,double costosFijos,double inversionInicial){
+    public double[] flujoCajaMes(HashMap productos,double cuotaVariable,double saldoVariable,double costosFijos,double inversionInicial,int j){
         double[] variables = new double[2];
         HashMap p1 = (HashMap) productos.get("Producto 1");
         HashMap p2 = (HashMap) productos.get("Producto 2");
@@ -265,70 +270,129 @@ public class Triangular {
         double r1 = (double)Math.random();
         double r2 = (double)Math.random();
 
-        if(r1 < (((double)p1.get("Precio Venta Moderado")-(double)p1.get("Precio Venta Pesimista"))/((double)p1.get("Precio Venta Optimista")-(double)p1.get("Precio Venta Pesimista")))){
-            ventas[0] = (double)p1.get("Precio Venta Pesimista") + ((double)p1.get("Precio Venta Moderado")-(double)p1.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
-        }else{
-            ventas[0] = (double)p1.get("Precio Venta Optimista") - ((double)p1.get("Precio Venta Optimista")-(double)p1.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+        if(!p1.get("Nombre Producto").equals("NINGUNO")){
+            if(r1 < (((double)p1.get("Precio Venta Moderado")-(double)p1.get("Precio Venta Pesimista"))/((double)p1.get("Precio Venta Optimista")-(double)p1.get("Precio Venta Pesimista")))){
+                ventas[0] = (double)p1.get("Precio Venta Pesimista") + ((double)p1.get("Precio Venta Moderado")-(double)p1.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
+            }else{
+                ventas[0] = (double)p1.get("Precio Venta Optimista") - ((double)p1.get("Precio Venta Optimista")-(double)p1.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+            }
+        }else {
+            ventas[0] = 0d;
         }
-
-        if(r1 < (((double)p2.get("Precio Venta Moderado")-(double)p2.get("Precio Venta Pesimista"))/((double)p2.get("Precio Venta Optimista")-(double)p2.get("Precio Venta Pesimista")))){
-            ventas[1] = (double)p2.get("Precio Venta Pesimista") + ((double)p2.get("Precio Venta Moderado")-(double)p2.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
-        }else{
-            ventas[1] = (double)p2.get("Precio Venta Optimista") - ((double)p2.get("Precio Venta Optimista")-(double)p2.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+        if(!p2.get("Nombre Producto").equals("NINGUNO")){
+            if(r1 < (((double)p2.get("Precio Venta Moderado")-(double)p2.get("Precio Venta Pesimista"))/((double)p2.get("Precio Venta Optimista")-(double)p2.get("Precio Venta Pesimista")))){
+                ventas[1] = (double)p2.get("Precio Venta Pesimista") + ((double)p2.get("Precio Venta Moderado")-(double)p2.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
+            }else{
+                ventas[1] = (double)p2.get("Precio Venta Optimista") - ((double)p2.get("Precio Venta Optimista")-(double)p2.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+            }
+        }else {
+            ventas[1] = 0d;
         }
-
-        if(r1 < (((double)p3.get("Precio Venta Moderado")-(double)p3.get("Precio Venta Pesimista"))/((double)p3.get("Precio Venta Optimista")-(double)p3.get("Precio Venta Pesimista")))){
-            ventas[2] = (double)p3.get("Precio Venta Pesimista") + ((double)p3.get("Precio Venta Moderado")-(double)p3.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
-        }else{
-            ventas[2] = (double)p3.get("Precio Venta Optimista") - ((double)p3.get("Precio Venta Optimista")-(double)p3.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+        if(!p3.get("Nombre Producto").equals("NINGUNO")){
+            if(r1 < (((double)p3.get("Precio Venta Moderado")-(double)p3.get("Precio Venta Pesimista"))/((double)p3.get("Precio Venta Optimista")-(double)p3.get("Precio Venta Pesimista")))){
+                ventas[2] = (double)p3.get("Precio Venta Pesimista") + ((double)p3.get("Precio Venta Moderado")-(double)p3.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
+            }else{
+                ventas[2] = (double)p3.get("Precio Venta Optimista") - ((double)p3.get("Precio Venta Optimista")-(double)p3.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+            }
+        }else {
+            ventas[2] = 0d;
         }
-
-        if(r1 < (((double)p4.get("Precio Venta Moderado")-(double)p4.get("Precio Venta Pesimista"))/((double)p4.get("Precio Venta Optimista")-(double)p4.get("Precio Venta Pesimista")))){
-            ventas[3] = (double)p4.get("Precio Venta Pesimista") + ((double)p4.get("Precio Venta Moderado")-(double)p4.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
-        }else{
-            ventas[3] = (double)p4.get("Precio Venta Optimista") - ((double)p4.get("Precio Venta Optimista")-(double)p4.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+        if(!p4.get("Nombre Producto").equals("NINGUNO")){
+            if(r1 < (((double)p4.get("Precio Venta Moderado")-(double)p4.get("Precio Venta Pesimista"))/((double)p4.get("Precio Venta Optimista")-(double)p4.get("Precio Venta Pesimista")))){
+                ventas[3] = (double)p4.get("Precio Venta Pesimista") + ((double)p4.get("Precio Venta Moderado")-(double)p4.get("Precio Venta Pesimista"))*(double) Math.pow(r2, 0.5d);
+            }else{
+                ventas[3] = (double)p4.get("Precio Venta Optimista") - ((double)p4.get("Precio Venta Optimista")-(double)p4.get("Precio Venta Moderado"))*(double)Math.pow(1-r2, 0.5d);
+            }
+        }else {
+            ventas[3] = 0d;
         }
 
         ///MARGENES BRUTOS DE PRODUCTOS
         double[] costos = new double[4];
-        costos[0] = (double) p1.get("Costo Produccion Unidad");
-        costos[1] = (double) p2.get("Costo Produccion Unidad");
-        costos[2] = (double) p3.get("Costo Produccion Unidad");
-        costos[3] = (double) p4.get("Costo Produccion Unidad");
+        if(!p1.get("Nombre Producto").equals("NINGUNO")){
+            costos[0] = (double) p1.get("Costo Produccion Unidad");
+        }else {
+            costos[0] = 0d;
+        }
+        if(!p2.get("Nombre Producto").equals("NINGUNO")){
+            costos[1] = (double) p2.get("Costo Produccion Unidad");
+        }else {
+            costos[1] = 0d;
+        }
+        if(!p3.get("Nombre Producto").equals("NINGUNO")){
+            costos[2] = (double) p3.get("Costo Produccion Unidad");
+        }else {
+            costos[2] = 0d;
+        }
+        if(!p4.get("Nombre Producto").equals("NINGUNO")){
+            costos[3] = (double) p4.get("Costo Produccion Unidad");
+        }else {
+            costos[3] = 0d;
+        }
 
         double[] margenesBrutosVentas = new double[4];
-        for (int i= 0; i<4 ;i++){
-            margenesBrutosVentas[i] = (double) ((ventas[i] - costos[i])/ventas[i]);
+        for (int i= 0; i<ventas.length ;i++){
+            if(ventas[i] != 0){
+                margenesBrutosVentas[i] = (ventas[i] - costos[i])/ventas[i];
+            }else {
+                margenesBrutosVentas[i] = 0;
+            }
+
         }
 
-        double[] cantidadesVendidas = new double[4];
-        cantidadesVendidas[0] = (long) p1.get("Cantidad Vendida");
-        cantidadesVendidas[1] = (long) p2.get("Cantidad Vendida");
-        cantidadesVendidas[2] = (long) p3.get("Cantidad Vendida");
-        cantidadesVendidas[3] = (long) p4.get("Cantidad Vendida");
+        long[] cantidadesVendidas = new long[4];
+        if(!p1.get("Nombre Producto").equals("NINGUNO")){
+            cantidadesVendidas[0] = (long) p1.get("Cantidad Vendida");
+        }else {
+            cantidadesVendidas[0] = 0l;
+        }
+        if(!p2.get("Nombre Producto").equals("NINGUNO")){
+            cantidadesVendidas[1] = (long) p2.get("Cantidad Vendida");
+        }else {
+            cantidadesVendidas[1] = 0l;
+        }
+        if(!p3.get("Nombre Producto").equals("NINGUNO")){
+            cantidadesVendidas[2] = (long) p3.get("Cantidad Vendida");
+        }else {
+            cantidadesVendidas[2] = 0l;
+        }
+        if(!p4.get("Nombre Producto").equals("NINGUNO")){
+            cantidadesVendidas[3] = (long) p4.get("Cantidad Vendida");
+        }else {
+            cantidadesVendidas[3] = 0l;
+        }
+
 
         double[] totalPeriodos = new double[4];
-        for(int i=0; i<4;i++){
-            totalPeriodos[i] = (double) ventas[i]*cantidadesVendidas[i];
+        for(int i=0; i<ventas.length;i++){
+            totalPeriodos[i] = ventas[i] *cantidadesVendidas[i];
         }
         double totalVentas = 0d;
-        for(int i=0; i<4;i++){
+        for(int i=0; i<totalPeriodos.length;i++){
             totalVentas = totalVentas + totalPeriodos[i];
         }
 
         double costoProduccionVentas = 0d;
-        for(int i=0; i<4;i++){
-            costoProduccionVentas = costoProduccionVentas + totalPeriodos[i]*(1-margenesBrutosVentas[i]);
+        for(int i=0; i<margenesBrutosVentas.length;i++){
+
+            double dif = 1.0d - margenesBrutosVentas[i];
+            if(totalPeriodos[i]*dif < 0){
+                costoProduccionVentas = costoProduccionVentas + 0d;
+            }else {
+                costoProduccionVentas = costoProduccionVentas + (totalPeriodos[i]*dif);
+            }
+
         }
 
         double margenBrutoProduccionVentas = (double) (totalVentas - costoProduccionVentas)/totalVentas;
 
-        double ingresos = 0f;
-        double costoProduccion = 0f;
+        double ingresos = 0d;
+        double costoProduccion = 0d;
         Random mes = new Random();
-        if(mes.nextInt(2) ==1){
+        int hayVenta = mes.nextInt(2);
+        if( hayVenta ==1){
             ingresos = totalVentas;
-            costoProduccion = (float)(ingresos*(1-margenBrutoProduccionVentas));
+            costoProduccion = (double) (ingresos*(double) (1.0d-margenBrutoProduccionVentas));
         }else{
             ingresos = 0f;
             costoProduccion = 0f;
@@ -336,7 +400,11 @@ public class Triangular {
 
         utilidadBruta = (double) (ingresos - costoProduccion);
         utilidadNeta = (double) (utilidadBruta - costosFijos);
-        flCaja = (float) (utilidadNeta - cuotaVariable - inversionInicial + saldoVariable);
+        if (j == 1){
+            flCaja = (double) (utilidadNeta - cuotaVariable - inversionInicial + saldoVariable);
+        }else {
+            flCaja = (double) (utilidadNeta - cuotaVariable + saldoVariable);
+        }
 
         variables[0] = flCaja;
         variables[1] = flCaja;
