@@ -35,7 +35,7 @@
                     android:paddingBottom="5dp"
                     android:text="Datos del Deudor"
                     android:textAlignment="center"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
                 <TextView
@@ -46,7 +46,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="26dp"
-                    android:text="Nombres" />
+                    android:text="Nombres"
+                    android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/nombreSimuInput"
@@ -70,7 +71,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="23dp"
-                    android:text="Apellidos" />
+                    android:text="Apellidos"
+                    android:textColor="#000000" />
 
                 <EditText
                     android:id="@+id/apellidoDeudorInput"
@@ -93,7 +95,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="23dp"
-                    android:text="Estado Civil" />
+                    android:text="Estado Civil"
+                    android:textColor="#000000" />
 
                 <Spinner
                     android:id="@+id/civilDeudorInput"
@@ -113,6 +116,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="23dp"
+                    android:textColor="#000000"
                     android:text="C.I." />
 
                 <EditText
@@ -134,6 +138,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="234dp"
                     android:layout_marginTop="-66dp"
+                    android:textColor="#000000"
                     android:text="Extensión" />
 
                 <EditText
@@ -157,6 +162,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="23dp"
+                    android:textColor="#000000"
                     android:text="Telefono" />
 
 
@@ -179,6 +185,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="234dp"
                     android:layout_marginTop="-66dp"
+                    android:textColor="#000000"
                     android:text="Edad" />
 
                 <EditText
@@ -208,7 +215,7 @@
                     android:paddingBottom="5dp"
                     android:text="Datos del Crédito"
                     android:textAlignment="center"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
                 <TextView
@@ -219,6 +226,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="26dp"
+                    android:textColor="#000000"
                     android:text="Actividad" />
 
                 <Spinner
@@ -239,6 +247,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="26dp"
+                    android:textColor="#000000"
                     android:text="Monto Solicitado (Bs.)" />
 
                 <EditText
@@ -264,6 +273,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="26dp"
+                    android:textColor="#000000"
                     android:text="Forma de Pago" />
 
                 <Spinner
@@ -285,6 +295,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="42dp"
                     android:layout_marginTop="26dp"
+                    android:textColor="#000000"
                     android:text="Plazo (meses)" />
 
                 <EditText
@@ -310,6 +321,7 @@
                     android:layout_marginEnd="100dp"
                     android:onClick="change"
                     android:text="Calcular cuota" />
+
                 <TextView
                     android:id="@+id/cuotaLabel"
                     android:layout_width="wrap_content"
@@ -317,6 +329,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="42dp"
                     android:layout_marginTop="26dp"
+                    android:textColor="#000000"
                     android:text="Cuota" />
 
                 <TextView
@@ -326,7 +339,8 @@
                     android:layout_below="@+id/cuotaLabel"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="42dp"
-                    android:textSize="18sp"/>
+                    android:textColor="#3F51B5"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/interesLabel"
@@ -335,6 +349,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="42dp"
                     android:layout_marginTop="26dp"
+                    android:textColor="#000000"
                     android:text="Tasa de interes (%)" />
 
                 <TextView
@@ -344,7 +359,8 @@
                     android:layout_below="@+id/interesLabel"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="42dp"
-                    android:textSize="18sp"/>
+                    android:textColor="#3F51B5"
+                    android:textSize="18sp" />
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>

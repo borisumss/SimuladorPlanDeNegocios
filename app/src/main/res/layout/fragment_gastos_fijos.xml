@@ -19,14 +19,18 @@
 
                 <TextView
                     android:id="@+id/textView15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="154dp"
-                    android:layout_marginTop="54dp"
-                    android:layout_marginEnd="78dp"
+                    android:layout_marginStart="0dp"
+
+                    android:layout_marginEnd="0dp"
+                    android:background="#358BCD"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
                     android:text="Gastos fijos" />
 
                 <TextView
@@ -78,14 +82,16 @@
 
                 <TextView
                     android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="154dp"
                     android:layout_marginTop="54dp"
-                    android:layout_marginEnd="78dp"
+                    android:background="#358BCD"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
                     android:text="Servicios" />
 
                 <TextView
@@ -202,14 +208,16 @@
 
                 <TextView
                     android:id="@+id/textView28"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="154dp"
                     android:layout_marginTop="54dp"
-                    android:layout_marginEnd="78dp"
+                    android:background="#358BCD"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
                     android:text="Mantenimiento" />
 
                 <EditText

@@ -25,6 +25,8 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="PRESUPUESTO"
+                android:textColor="#000000"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +39,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="36dp"
                 android:text="Efectivo"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <TextView
@@ -47,6 +50,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="60dp"
                 android:text="Mano de obra del emprendedor"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toBottomOf="@+id/efectivoAP" />
 
             <TextView
@@ -57,6 +61,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="60dp"
                 android:text="Materia prima, insumos"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toBottomOf="@+id/manoObraAP" />
 
             <TextView
@@ -66,6 +71,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="60dp"
                 android:text="Requerimientos promocionales"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materiaprimaAP" />
 
@@ -77,6 +83,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="60dp"
                 android:text="Infraestructura y/ terrenos y/o plantines"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientosAP" />
 
             <TextView
@@ -86,6 +93,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="60dp"
                 android:text="Maquinaria, equipos, vehiculos"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infraestructuraAP" />
 
@@ -96,6 +104,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="60dp"
                 android:text="Requerimientos legales"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/maquinariaAP" />
 
@@ -106,7 +115,9 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="56dp"
                 android:text="APORTE PROPIO"
+
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -214,6 +225,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="750dp"
                 android:text="REQUERIMIENTO"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -224,6 +236,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="36dp"
                 android:text="Gastos operativos"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
             <TextView
@@ -234,6 +247,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginTop="60dp"
                 android:text="Materia prima, insumos"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
                 app:layout_constraintTop_toBottomOf="@+id/gastosOperativosR" />
 
             <TextView
@@ -243,6 +257,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="60dp"
                 android:text="Requerimientos promocionales"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materiaprimaR" />
 
@@ -253,6 +268,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="60dp"
                 android:text="Infraestructura y/ terrenos y/o plantines"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/requerimientosR" />
 
@@ -263,6 +279,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="60dp"
                 android:text="Maquinaria, equipos, vehiculos"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infraestructuraR" />
 
@@ -273,6 +290,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="60dp"
                 android:text="Requerimientos legales"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/maquinariaR" />
 
@@ -365,6 +383,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="148dp"
+                android:textColor="#000000"
                 android:text="TOTAL PROYECTO"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/totalR" />
@@ -375,6 +394,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
+                android:textColor="#000000"
                 android:text="APORTE PROPIO"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/totalProyecto" />
@@ -385,6 +405,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
+                android:textColor="#000000"
                 android:text="%APORTE PROPIO"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/aportePropio" />
@@ -406,6 +427,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="32dp"
                 android:text="MONTO SOLICITADO"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/condicionAP" />
 
@@ -415,6 +437,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
+                android:textColor="#000000"
                 android:text="MONTO A FINANCIAR"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/montoSolicitado" />
@@ -448,6 +471,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="56dp"
+                android:textColor="#3F51B5"
                 app:layout_constraintStart_toEndOf="@+id/totalProyecto"
                 app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
@@ -457,6 +481,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="15dp"
+                android:textColor="#3F51B5"
                 app:layout_constraintStart_toEndOf="@+id/aportePropio"
                 app:layout_constraintTop_toBottomOf="@+id/totalProyectoResultado" />
 
@@ -466,6 +491,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
                 android:layout_marginTop="15dp"
+                android:textColor="#3F51B5"
                 app:layout_constraintStart_toEndOf="@+id/aportePropioPorc"
                 app:layout_constraintTop_toBottomOf="@+id/totalAportePropioResultado" />
 
@@ -475,6 +501,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
+                android:textColor="#3F51B5"
                 app:layout_constraintStart_toEndOf="@+id/montoSolicitado"
                 app:layout_constraintTop_toBottomOf="@+id/condicionAP" />
 
@@ -484,6 +511,7 @@ tools:context=".Controlador.Presupuesto">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
+                android:textColor="#3F51B5"
                 app:layout_constraintStart_toEndOf="@+id/montoFinanciar"
                 app:layout_constraintTop_toBottomOf="@+id/montoSolicitadoResultado" />
 

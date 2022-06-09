@@ -20,18 +20,21 @@
             android:id="@+id/simulacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:icon="@drawable/ic_simu"
             android:text="simulacion" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/resultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:icon="@drawable/ic_resultado"
             android:text="resultado" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/grafica"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:icon="@drawable/ic_grafica"
             android:text="grafica" />
 
 
