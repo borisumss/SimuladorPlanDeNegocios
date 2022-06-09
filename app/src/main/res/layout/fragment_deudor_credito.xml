@@ -33,7 +33,7 @@
                     android:background="#358BCD"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:text="Datos del Deudor"
+                    android:text="DATOS DEL DEUDOR"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
@@ -213,7 +213,7 @@
                     android:background="#358BCD"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:text="Datos del Crédito"
+                    android:text="DATOS DEL CREDITO"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />

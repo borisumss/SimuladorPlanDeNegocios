@@ -1,5 +1,6 @@
 package com.example.simuladorplandenegocios.Controlador;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -235,11 +236,13 @@ public class Presupuesto extends Fragment {
         }
 
 
-        if (montoFin==montoSol)
+        if (montoFin==montoSol) {
             condicionMonto.setText("MONTO A FINANCIAR CORRECTO");
-        else
+            condicionMonto.setTextColor(Color.GREEN);
+        } else {
             condicionMonto.setText("MONTO A FINANCIAR DISTINTO AL SOLICITADO");
-
+            condicionMonto.setTextColor(Color.RED);
+        }
     }
 
 }
