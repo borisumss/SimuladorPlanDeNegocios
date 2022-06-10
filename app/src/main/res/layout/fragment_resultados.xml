@@ -47,10 +47,10 @@
                     android:text="La viabilidad del proyecto es de "
                     android:textColor="#000000" />
 
-                <EditText
+                <TextView
                     android:id="@+id/viabilidadInput"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
@@ -58,7 +58,9 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
 
                 <TextView
                     android:id="@+id/atractivo"
@@ -71,10 +73,10 @@
                     android:text="¿El proyecto es atractivo? "
                     android:textColor="#000000" />
 
-                <EditText
+                <TextView
                     android:id="@+id/atractivoInput"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
@@ -82,7 +84,9 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textSize="30dp"
+                    android:textAlignment="center"/>
 
                 <Button
                     android:id="@+id/informe"

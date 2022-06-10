@@ -2,6 +2,11 @@ package com.example.simuladorplandenegocios.Controlador;
 
 
 
+import android.graphics.Color;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,8 +25,16 @@ public class Triangular {
 
     private String nombrePlanNegocio;
     private FirebaseFirestore db;
+    private String atract;
+    private double viable;
 
+    public double getViable() {
+        return viable;
+    }
 
+    public String getAtract() {
+        return atract;
+    }
 
     public Triangular(String nombrePlanNegocio){
         this.nombrePlanNegocio = nombrePlanNegocio;
@@ -30,7 +43,7 @@ public class Triangular {
         //this.fca = new float[8];
     }
 
-    public void ejecutarSimulacion(){
+    public void ejecutarSimulacion(TextView atrac, TextView via, ProgressBar progressBar){
 
 
         this.db.collection(""+this.nombrePlanNegocio)
@@ -46,7 +59,7 @@ public class Triangular {
                         double aportePropio = 0d;
                         double costosFijos = 0d;
                         HashMap<String,Object> productos = new HashMap<>();
-
+                        progressBar.setProgress(10);
 
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
@@ -71,7 +84,7 @@ public class Triangular {
                                 }else if(nameDoc.equals("Gastos Fijos")){
                                     costosFijos = (double) document.get("Total Gastos");
                                 }
-
+                                progressBar.setProgress(30);
                             }
                         } else {
                             //Log.d(TAG, "Error getting documents: ", task.getException());
@@ -125,7 +138,7 @@ public class Triangular {
                                     }
                                 }
                             }
-
+                            progressBar.setProgress(50);
                             for(int j=0 ;j<=7;j++){
                                 if(j==0){
                                     VAN =  fcAnual[j];
@@ -133,6 +146,7 @@ public class Triangular {
                                     VAN = VAN + (double) (fcAnual[j]/Math.pow(1+interesCredito, j));
                                 }
                             }
+                            progressBar.setProgress(60);
 
                             if(VAN > 0.0d){
                                 TIR = (double) estimarTIR(fcAnual,interesCredito);
@@ -155,6 +169,7 @@ public class Triangular {
                                 viable = "NO";
                                 atractivo="NO";
                             }
+                            progressBar.setProgress(70);
                             System.out.println("ES EL TIR"+TIR);
                             System.out.println(i);
                         }
@@ -162,9 +177,14 @@ public class Triangular {
                         double porcentajeAtractividad = (double) atractividad/n;
                         if(porcentajeAtractividad>0.50){
                             atractivoFinal = "ES ATRACTIVO";
+                            atrac.setText(atractivoFinal);
+                            atrac.setTextColor(Color.GREEN);
                         }else{
                             atractivoFinal = "NO ES ATRACTIVO";
+                            atrac.setText(atractivoFinal);
+                            atrac.setTextColor(Color.RED);
                         }
+                        progressBar.setProgress(80);
                         System.out.println(atractividad);
                         System.out.println(porcentajeAtractividad);
                         System.out.println(viabilidad);
@@ -173,8 +193,14 @@ public class Triangular {
                         System.out.println(viabilidadResultado);
                         System.out.println(atractivoFinal);
 
-                        guardarResultados(viabilidadResultado,atractivoFinal);
-
+                        via.setText(""+viabilidadResultado);
+                        if(viabilidadResultado<50.0){
+                            via.setTextColor(Color.RED);
+                        }else{
+                            via.setTextColor(Color.GREEN);
+                        }
+                        progressBar.setProgress(90);
+                        guardarResultados(viabilidadResultado,atractivoFinal,progressBar);
                     }
                 });
 
@@ -211,7 +237,9 @@ public class Triangular {
 
     }
 
-    public void guardarResultados(double viabilidadResultado,String atractivoFinal){
+    public void guardarResultados(double viabilidadResultado,String atractivoFinal,ProgressBar progressBar){
+        viable = viabilidadResultado;
+        atract = atractivoFinal;
         Map<String, Object> resultadosSimulacion = new HashMap<>();
         resultadosSimulacion.put("Viabilidad",viabilidadResultado);
         resultadosSimulacion.put("Atractivo",atractivoFinal);
@@ -229,6 +257,7 @@ public class Triangular {
                         //Log.w(TAG, "Error writing document", e);
                     }
                 });
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     public double estimarTIR(double fcAnual[],double interes){
