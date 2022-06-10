@@ -4,6 +4,7 @@ package com.example.simuladorplandenegocios.Controlador;
 
 import androidx.annotation.NonNull;
 
+import com.example.simuladorplandenegocios.Modelo.Anio;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -12,6 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -82,6 +84,8 @@ public class Triangular {
                         double viabilidadResultado = 0l;
                         long viabilidad = 0l;
                         long atractividad = 0l;
+                        //REGRESION
+                        HashMap<String,Object> aniosCorridas = new HashMap<>();
 
                         for(long i=1 ;i<=n; i++){
                             double VAN = 0d;
@@ -98,6 +102,9 @@ public class Triangular {
                             long contadorMeses = 0l;
                             int contadorAnios = 1;
                             double flujoMensual = 0d;
+                            //REGRESION
+                            ArrayList<Anio> anios = new ArrayList<>();
+                            Anio anio = new Anio();
 
                             //CALCULO FLUJO CAJA MES
                             for(int j=1; j<=84 ;j++){
@@ -107,24 +114,41 @@ public class Triangular {
                                     saldoVariable = variables [0];
                                     flujoMensual = flujoMensual + variables [1];
                                     contadorMeses++;
+
                                     if (contadorMeses == 12){
                                         fcAnual[contadorAnios] = flujoMensual;
                                         contadorAnios++;
-                                        contadorMeses = 0l;
+                                        anio.asignarGananciaMensual(contadorMeses,flujoMensual);//REGRESION
+                                        anios.add(anio);//REGRESION
+                                        anio.vaciarAnio();//REGRESION
+                                        contadorMeses = 0L;
+                                    }else {
+                                        anio.asignarGananciaMensual(contadorMeses,flujoMensual);//REGRESION
                                     }
+
                                 }else {
                                     cuotaVariable = 0d;
                                     variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito,j);
                                     saldoVariable = variables [0];
                                     flujoMensual = flujoMensual + variables [1];
                                     contadorMeses++;
+
                                     if (contadorMeses == 12){
                                         fcAnual[contadorAnios] = flujoMensual;
                                         contadorAnios++;
-                                        contadorMeses = 0l;
+                                        anio.asignarGananciaMensual(contadorMeses,flujoMensual);//REGRESION
+                                        anios.add(anio);//REGRESION
+                                        anio.vaciarAnio();//REGRESION
+                                        contadorMeses = 0L;
+                                    }else {
+                                        anio.asignarGananciaMensual(contadorMeses,flujoMensual);//REGRESION
                                     }
+
                                 }
                             }
+
+                            //REGRESION
+                            aniosCorridas.put(""+i,anios);
 
                             for(int j=0 ;j<=7;j++){
                                 if(j==0){
@@ -158,6 +182,10 @@ public class Triangular {
                             System.out.println("ES EL TIR"+TIR);
                             System.out.println(i);
                         }
+                        //REGRESION
+                        RegresionLineal regresionLineal = new RegresionLineal(n,aniosCorridas,nombrePlanNegocio);
+                        regresionLineal.ejecutarRegresion();
+
                         String atractivoFinal = "";
                         double porcentajeAtractividad = (double) atractividad/n;
                         if(porcentajeAtractividad>0.50){
@@ -177,37 +205,6 @@ public class Triangular {
 
                     }
                 });
-
-        /*docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        credito = (HashMap) document.get("Credito");
-
-
-
-                        //Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                    } else {
-                        //Log.d(TAG, "No such document");
-                    }
-                } else {
-                    //Log.d(TAG, "get failed with ", task.getException());
-                }
-                /*System.out.println(credito.get("Interes"));
-                double p = (double)credito.get("Interes");
-                long plazo = (long) credito.get("Plazo");
-                String mensual = (String) credito.get("Forma de Pago");
-                prueba(p,plazo,mensual);*/
-            //}
-        //});
-
-        //float interes = this.db.collection(""+this.nombrePlanNegocio).document();
-        //float TREMA =
-        //System.out.println(credito.get("Interes"));
-
 
     }
 
