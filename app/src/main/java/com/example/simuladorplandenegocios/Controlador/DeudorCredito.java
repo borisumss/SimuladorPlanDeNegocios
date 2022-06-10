@@ -126,12 +126,14 @@ public class DeudorCredito extends Fragment {
                         interes.setText("11.50");
                     }
                     intereses = Double.parseDouble(interes.getText().toString())/100.0;
+                    intereses=Math.round(intereses*100.0)/100.0;
                     cuotaLabel.setVisibility(View.VISIBLE);
                     cuota.setVisibility(View.VISIBLE);
                     interesLabel.setVisibility(View.VISIBLE);
                     interes.setVisibility(View.VISIBLE);
 
                     cuotaFinal = (monto/(double)plazo)+(monto/(double)plazo)*intereses;
+                    cuotaFinal=Math.round(cuotaFinal*100.0)/100.0;
                     cuota.setText(cuotaFinal+"");
 
                 }catch (Exception e){

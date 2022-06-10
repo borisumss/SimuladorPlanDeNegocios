@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.os.Environment;
 import android.util.Log;
@@ -21,10 +22,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.simuladorplandenegocios.Controlador.Triangular;
 import com.example.simuladorplandenegocios.R;
 import com.example.simuladorplandenegocios.Vista.MainActivity;
 import com.example.simuladorplandenegocios.Vista.MenuSimulacion2;
 import com.example.simuladorplandenegocios.Vista.VistaPlanNegocioPDF;
+import com.example.simuladorplandenegocios.Vista.VistaResultadosPDF;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -47,6 +50,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -69,9 +73,11 @@ public class Resultados extends Fragment {
     private String activ, cuota, formaPago,interes,monto,plazo;
     private String efectivo,manoObra,reqLegal,matPrima,infra,equipos,reqPromo,totalAportePropio,totalGastos;
     private String equipoReque, gastosOpe, infraReque, matPrimaReque, reqLegalReque, reqPromoReque, totalReque;
-    private Button inf;
+    private Button inf,resul;
     private String totalProyecto,aportePropioResumen,aportePropioPorcentaje,cumplimiento,montoSolicitado,montoFinanciar,montoCorrecto;
     private String [] cantidades= new String[4],costoProduc= new String[4],margenBruto= new String[4],nombreProducto= new String[4],totalPeriodo= new String[4],precioVenta = new String[4];
+    private Triangular tr;
+    private String[] header={"Corrida","VAN","TIR","TREMA","VIABILIDAD","ATRACTIVIDAD"};
     public Resultados() {
         // Required empty public constructor
     }
@@ -101,6 +107,20 @@ public class Resultados extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        getParentFragmentManager().setFragmentResultListener("resultados", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                tr = (Triangular) result.getSerializable("Triangular");
+            }
+        });
+
+        getParentFragmentManager().setFragmentResultListener("nombre", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                nombreBD = result.getString("NombreProyecto");
+            }
+        });
     }
 
     @Override
@@ -124,10 +144,30 @@ public class Resultados extends Fragment {
             public void onClick(View view) {
                 TextView aux = (TextView) getActivity().findViewById(R.id.nombreSimuInput);
                 nombreBD = aux.getText().toString();
-                rescatarDatos(view);
+                if(nombreBD!=null && nombreBD.length()>0){
+                    rescatarDatos(view);
+                }else{
+                    Toast.makeText(getContext(), "Asegurese de ejecutar la corrida", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
+
+        resul = (Button) v.findViewById(R.id.Resultado);
+        resul.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                if(tr!=null){
+                    generarResultados(view);
+                }else{
+                    Toast.makeText(getContext(), "Asegurese de ejecutar la corrida", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
         return v;
     }
 
@@ -166,6 +206,53 @@ public class Resultados extends Fragment {
             e.printStackTrace();
         }
     }
+
+    public void generarResultados(View view){
+        try{
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath()+"/Simulacion";
+
+            File dir = new File(path);
+            if(!dir.exists()){
+                dir.mkdir();
+            }
+
+            File file = new File(dir, "ResultadosSimulacion.pdf");
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+
+            Document documento = new Document();
+            PdfWriter.getInstance(documento,fileOutputStream);
+
+            documento.open();
+            //Inicio de ingreso de datos en el PDF
+
+            Paragraph titulo = new Paragraph("RESULTADOS SIMULACION\n\n",
+                    FontFactory.getFont("arial",30, Font.BOLD, BaseColor.BLUE));
+            titulo.setAlignment(Element.ALIGN_CENTER);
+            documento.add(titulo);
+
+            PdfPTable tabla = new PdfPTable(6);
+            for(int i = 0; i<header.length;i++){
+                tabla.addCell(header[i]);
+            }
+            ArrayList<String[]> matriz =  tr.getResultados();
+            for (int i = 0; i<10000;i++) {
+                for (int j = 0; j < matriz.get(0).length; j++) {
+                    tabla.addCell(matriz.get(i)[j]);
+                }
+            }
+            documento.add(tabla);
+            //fin ingreso datos en el PDF
+            documento.close();
+
+            Intent i = new Intent( getContext(), VistaResultadosPDF.class);
+            startActivity(i);
+
+        }catch (FileNotFoundException | DocumentException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void rescatarDatos(View v){
 
         FirebaseFirestore db2 = FirebaseFirestore.getInstance();
@@ -569,7 +656,7 @@ public class Resultados extends Fragment {
             double costoProducVentas = 0;
             for(int i =0 ; i<4;i++){
                 totalVentas+= Double.parseDouble(totalPeriodo[i]);
-                costoProducVentas+=Double.parseDouble(totalPeriodo[i])*(1.0-Double.parseDouble(margenBruto[i]));
+                costoProducVentas+=Double.parseDouble(totalPeriodo[i])*(1.0-(Double.parseDouble(margenBruto[i])/100.0));
             }
 
             tabla.addCell(""+totalVentas);
@@ -613,7 +700,7 @@ public class Resultados extends Fragment {
             tabla.addCell("Costo variable total");
             double costoProducVentas = 0;
             for(int i =0 ; i<4;i++){
-                costoProducVentas+=Double.parseDouble(totalPeriodo[i])*(1.0-Double.parseDouble(margenBruto[i]));
+                costoProducVentas+=Double.parseDouble(totalPeriodo[i])*(1.0-(Double.parseDouble(margenBruto[i])/100.0));
             }
             tabla.addCell(""+costoProducVentas);
             double totalOperacion = costoProducVentas+ Double.parseDouble(totalGastos);
@@ -706,7 +793,7 @@ public class Resultados extends Fragment {
                 totalVentas+= Double.parseDouble(totalPeriodo[i]);
                 tabla.addCell(margenBruto[i]);
 
-                costoProducVentas+=Double.parseDouble(totalPeriodo[i])*(1.0-Double.parseDouble(margenBruto[i]));
+                costoProducVentas+=Double.parseDouble(totalPeriodo[i])*(1.0-(Double.parseDouble(margenBruto[i])/100.0));
             }
 
             Paragraph total = new Paragraph("TOTAL VENTAS:",
