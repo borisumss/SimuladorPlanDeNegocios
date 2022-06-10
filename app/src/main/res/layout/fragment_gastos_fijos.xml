@@ -28,10 +28,10 @@
 
                     android:layout_marginEnd="0dp"
                     android:background="#358BCD"
+                    android:text="Gastos fijos"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:text="Gastos fijos" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/textView21"
@@ -40,7 +40,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="26dp"
-                    android:text="Impuestos" />
+                    android:text="Impuestos"
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/impuestoInput"
@@ -64,7 +65,8 @@
                     android:layout_marginStart="47dp"
                     android:layout_marginTop="27dp"
                     android:layout_toStartOf="@+id/editText11"
-                    android:text="Alimentacion" />
+                    android:text="Alimentacion"
+                    android:textColor="@color/black"/>
 
 
                 <EditText
@@ -89,10 +91,10 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="54dp"
                     android:background="#358BCD"
+                    android:text="Servicios"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:text="Servicios" />
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/textView23"
@@ -102,7 +104,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
-                    android:text="Servicio de luz" />
+                    android:text="Servicio de luz"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/servicioLuzInput"
@@ -126,7 +129,8 @@
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
                     android:layout_toStartOf="@+id/editText14"
-                    android:text="Servicio de agua" />
+                    android:text="Servicio de agua"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/servicioAguaInput"
@@ -150,7 +154,8 @@
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
                     android:layout_toStartOf="@+id/editText14"
-                    android:text="Servicio de telefono" />
+                    android:text="Servicio de telefono"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/servicioTelefonoIput"
@@ -174,7 +179,8 @@
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
                     android:layout_toStartOf="@+id/editText14"
-                    android:text="Servicio de celular" />
+                    android:text="Servicio de celular"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/servicioCelularInput"
@@ -193,8 +199,11 @@
                     android:id="@+id/totalServiciosRes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@color/white" />
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="27dp"
+                    android:text=""
+                    android:textColor="@color/purple_700"
+                    />
 
                 <TextView
                     android:id="@+id/totalServiciosResultado"
@@ -204,7 +213,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
-                    android:layout_toStartOf="@+id/editText14" />
+                    android:layout_toStartOf="@+id/editText14"
+                    android:textColor="@color/purple_700" />
 
                 <TextView
                     android:id="@+id/textView28"
@@ -215,10 +225,10 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="54dp"
                     android:background="#358BCD"
+                    android:text="Mantenimiento"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    android:text="Mantenimiento" />
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/m1Input"
@@ -328,8 +338,10 @@
                     android:id="@+id/totalMantenimientoRes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@color/white" />
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="27dp"
+                    android:text=""
+                    android:textColor="@color/purple_700" />
 
                 <TextView
                     android:id="@+id/totalMantenimientoResultado"
@@ -339,7 +351,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
-                    android:layout_toStartOf="@+id/editText14" />
+                    android:layout_toStartOf="@+id/editText14"
+                    android:textColor="@color/purple_700" />
 
                 <TextView
                     android:id="@+id/textView40"
@@ -350,7 +363,8 @@
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
                     android:layout_toStartOf="@+id/editText14"
-                    android:text="Salud" />
+                    android:text="Salud"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/eput"
@@ -374,7 +388,8 @@
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
                     android:layout_toStartOf="@+id/editText14"
-                    android:text="Otros imprevistos" />
+                    android:text="Otros imprevistos"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/imprevistosinput"
@@ -387,14 +402,17 @@
                     android:layout_marginStart="42dp"
                     android:layout_marginEnd="42dp"
                     android:ems="10"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    />
 
                 <TextView
                     android:id="@+id/totalGastosRes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@color/white" />
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="27dp"
+                    android:text=""
+                    android:textColor="@color/purple_700" />
 
                 <TextView
                     android:id="@+id/totalGastosResultado"
@@ -404,12 +422,15 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="27dp"
-                    android:layout_toStartOf="@+id/editText14" />
+                    android:layout_toStartOf="@+id/editText14"
+                    android:textColor="@color/purple_700" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="75dp"
+                    android:layout_marginEnd="75dp"
                     android:text="calcular" />
 
             </LinearLayout>

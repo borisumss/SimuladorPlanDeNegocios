@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Modelo.Grafica"
-    tools:ignore="MissingClass">
+    tools:ignore="MissingClass"
+    android:background="#52FFFFFF">
 
 
     <RelativeLayout
@@ -19,33 +21,24 @@
             android:orientation="vertical">
 
             <!-- TODO: Update blank fragment layout -->
-            <TextView
-                android:id="@+id/SimulacionR"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:background="#358BCD"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="Resultados De La Simulación"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/mostrarGrafica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mostrar grafica" />
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="15dp"
+                android:text="Mostrar grafica"
+                android:background="@drawable/custom_butons"
+                app:backgroundTint="@null"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/line_chart"
                 android:layout_width="match_parent"
                 android:layout_height="520dp"
                 android:layout_marginTop="10dp" />
+
 
         </LinearLayout>
        </ScrollView>
