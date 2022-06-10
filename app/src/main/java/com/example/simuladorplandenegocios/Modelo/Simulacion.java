@@ -67,12 +67,13 @@ public class Simulacion extends Fragment implements View.OnClickListener {
                     Bundle bundle= new Bundle();
                     bundle.putString("NombreProyecto",String.valueOf(resultado));
                     getParentFragmentManager().setFragmentResult("nombre",bundle);
-                    progressBar.setVisibility(View.VISIBLE);
+                  /*  progressBar.setVisibility(View.VISIBLE);
                     Toast.makeText(getContext(), "Generando Resultados", Toast.LENGTH_SHORT).show();
                     Triangular triangular = new Triangular(resultado);
                     atrac =(TextView) getActivity().findViewById(R.id.atractivoInput);
                     via =(TextView) getActivity().findViewById(R.id.viabilidadInput);
                     triangular.ejecutarSimulacion(atrac,via,progressBar);
+                */
                 }catch (Exception e){
                     Toast.makeText(getContext(), "Algo salio mal, intente nuevamente", Toast.LENGTH_SHORT).show();
                 }
