@@ -1,5 +1,6 @@
 package com.example.simuladorplandenegocios.Controlador;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -213,15 +214,18 @@ public class Presupuesto extends Fragment {
         if (totalProy != 0) {
             porcentajeAportePropio.setText("% APORTE PROPIO ");
             porcentajeAportePropioResultado.setText(formato.format(((totalAP / totalProy)) * 100));
-            if (totalAP / totalProy < 0.1)
+            if (totalAP / totalProy < 0.1) {
                 condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
-            else {
+                condicionAP.setTextColor(Color.RED);
+            }else {
                 condicionAP.setText("SI CUMPLE con aporte propio");
+                condicionAP.setTextColor(Color.GREEN);
             }
         } else {
             porcentajeAportePropio.setText("% APORTE PROPIO ");
             porcentajeAportePropioResultado.setText(formato.format(0));
             condicionAP.setText("NO CUMPLE con aporte propio minimo del 10%");
+            condicionAP.setTextColor(Color.RED);
         }
 
         if (!efectivoAP.getText().toString().isEmpty()) {
@@ -235,11 +239,13 @@ public class Presupuesto extends Fragment {
         }
 
 
-        if (montoFin==montoSol)
+        if (montoFin==montoSol) {
             condicionMonto.setText("MONTO A FINANCIAR CORRECTO");
-        else
+            condicionMonto.setTextColor(Color.GREEN);
+        } else {
             condicionMonto.setText("MONTO A FINANCIAR DISTINTO AL SOLICITADO");
-
+            condicionMonto.setTextColor(Color.RED);
+        }
     }
 
 }

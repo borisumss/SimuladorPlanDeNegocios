@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Modelo.Simulacion">
+    tools:context=".Modelo.Simulacion"
+    android:background="#80FFFFFF">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,21 +15,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/Simulacion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:background="#358BCD"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:text="Simulación"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/nombrePlanlabel1"
@@ -38,11 +24,12 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="44dp"
                 android:layout_marginTop="26dp"
-                android:text="Ingrese el nombre de su proyecto" />
+                android:text="Ingrese el nombre de su proyecto"
+                android:textColor="#000000" />
 
             <EditText
                 android:id="@+id/nombreSimuInput"
-                android:layout_width="293dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -59,8 +46,22 @@
                 android:layout_marginStart="70dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="70dp"
+                android:background="@drawable/custom_butons"
                 android:enabled="true"
-                android:text="Correr Simulación" />
+                android:text="Correr Simulación"
+                app:backgroundTint="@null" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="70dp"
+                android:max="100"
+                android:visibility="invisible" />
         </LinearLayout>
+
     </RelativeLayout>
 </FrameLayout>

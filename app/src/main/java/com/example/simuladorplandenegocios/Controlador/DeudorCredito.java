@@ -12,8 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.simuladorplandenegocios.R;
+import com.google.firestore.v1.TargetOrBuilder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -114,23 +116,27 @@ public class DeudorCredito extends Fragment {
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try{
+                    monto = Double.parseDouble(montoSolicitado.getText().toString());
+                    plazo = Integer.parseInt(plazos.getText().toString());
+                    String aux = spinner2.getSelectedItem().toString();
+                    if(aux.equals("Productiva")){
+                        interes.setText("7.00");
+                    }else{
+                        interes.setText("11.50");
+                    }
+                    intereses = Double.parseDouble(interes.getText().toString())/100.0;
+                    cuotaLabel.setVisibility(View.VISIBLE);
+                    cuota.setVisibility(View.VISIBLE);
+                    interesLabel.setVisibility(View.VISIBLE);
+                    interes.setVisibility(View.VISIBLE);
 
-                monto = Double.parseDouble(montoSolicitado.getText().toString());
-                plazo = Integer.parseInt(plazos.getText().toString());
-                String aux = spinner2.getSelectedItem().toString();
-                if(aux.equals("Productiva")){
-                    interes.setText("7.00");
-                }else{
-                    interes.setText("11.50");
+                    cuotaFinal = (monto/(double)plazo)+(monto/(double)plazo)*intereses;
+                    cuota.setText(cuotaFinal+"");
+
+                }catch (Exception e){
+                    Toast.makeText(getContext(), "Asegurese de llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }
-                intereses = Double.parseDouble(interes.getText().toString())/100.0;
-                cuotaLabel.setVisibility(View.VISIBLE);
-                cuota.setVisibility(View.VISIBLE);
-                interesLabel.setVisibility(View.VISIBLE);
-                interes.setVisibility(View.VISIBLE);
-
-                cuotaFinal = (monto/(double)plazo)+(monto/(double)plazo)*intereses;
-                cuota.setText(cuotaFinal+"");
             }
         });
 

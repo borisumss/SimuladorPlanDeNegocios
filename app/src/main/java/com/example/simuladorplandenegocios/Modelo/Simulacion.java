@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.simuladorplandenegocios.Controlador.Triangular;
 import com.example.simuladorplandenegocios.R;
@@ -21,7 +24,8 @@ public class Simulacion extends Fragment implements View.OnClickListener {
     private EditText t1;
     private TextInputEditText vista1;
     private Button botonCorrerSimulacion;
-
+    private TextView atrac, via;
+    private ProgressBar progressBar;
 
     public Simulacion() {
         // Required empty public constructor
@@ -52,18 +56,26 @@ public class Simulacion extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        progressBar = view.findViewById(R.id.progressBar);
         t1 = view.findViewById(R.id.nombreSimuInput);
         botonCorrerSimulacion = view.findViewById(R.id.correrSimu);
         botonCorrerSimulacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String resultado = t1.getText().toString();
-                Bundle bundle= new Bundle();
-                bundle.putString("NombreProyecto",String.valueOf(resultado));
-                getParentFragmentManager().setFragmentResult("nombre",bundle);
-                Triangular triangular = new Triangular(resultado);
-                triangular.ejecutarSimulacion();
-
+                try{
+                    String resultado = t1.getText().toString();
+                    Bundle bundle= new Bundle();
+                    bundle.putString("NombreProyecto",String.valueOf(resultado));
+                    getParentFragmentManager().setFragmentResult("nombre",bundle);
+                    progressBar.setVisibility(View.VISIBLE);
+                    Toast.makeText(getContext(), "Generando Resultados", Toast.LENGTH_SHORT).show();
+                    Triangular triangular = new Triangular(resultado);
+                    atrac =(TextView) getActivity().findViewById(R.id.atractivoInput);
+                    via =(TextView) getActivity().findViewById(R.id.viabilidadInput);
+                    triangular.ejecutarSimulacion(atrac,via,progressBar);
+                }catch (Exception e){
+                    Toast.makeText(getContext(), "Algo salio mal, intente nuevamente", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

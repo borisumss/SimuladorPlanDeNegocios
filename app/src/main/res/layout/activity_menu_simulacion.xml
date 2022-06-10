@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Vista.MenuSimulacion"
     android:orientation="vertical"
+    android:background="@drawable/img_9"
     >
 
 
@@ -13,7 +14,7 @@
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/nuevo"
+        android:background="#AEFFFFFF"
         app:tabMode="scrollable"
         app:tabGravity="fill">
 
