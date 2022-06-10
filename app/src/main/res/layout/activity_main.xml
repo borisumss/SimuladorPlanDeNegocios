@@ -20,7 +20,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.677"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.735"
         tools:ignore="MissingConstraints">
@@ -66,16 +65,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/custom_butons"
+                android:onClick="ayuda"
                 android:text="Ayuda"
                 app:backgroundTint="@null"
-                android:background="@drawable/custom_butons"
+                app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/simulacionButton"
-                tools:ignore="MissingConstraints"
-                app:cornerRadius="10dp"/>
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/salirButton"

@@ -1,11 +1,15 @@
 package com.example.simuladorplandenegocios.Vista;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.simuladorplandenegocios.R;
 
@@ -47,5 +51,10 @@ public class MainActivity extends AppCompatActivity {
     public void salir(View view){
         finish();
         System.exit(0);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.R)
+    public void ayuda(View view){
+        Toast.makeText(this, Environment.getStorageDirectory().getAbsolutePath(), Toast.LENGTH_LONG).show();
     }
 }

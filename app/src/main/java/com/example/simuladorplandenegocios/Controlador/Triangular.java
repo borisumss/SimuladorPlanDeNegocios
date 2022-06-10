@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -18,17 +19,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class Triangular {
+public class Triangular implements Serializable {
 
     private String nombrePlanNegocio;
     private FirebaseFirestore db;
     private String atract;
     private double viable;
+    private ArrayList<String[]> resultados;
 
     public double getViable() {
         return viable;
@@ -43,6 +46,7 @@ public class Triangular {
         this.db = FirebaseFirestore.getInstance();
         //this.inflacion = (float)((0.000049f + 0.0147f + 0.0151f + 0.0271f + 0.04f)/5);
         //this.fca = new float[8];
+        resultados = new ArrayList<String[]>();
     }
 
     public void ejecutarSimulacion(TextView atrac, TextView via, ProgressBar progressBar){
@@ -171,7 +175,6 @@ public class Triangular {
                                     VAN = VAN + (double) (fcAnual[j]/Math.pow(1+interesCredito, j));
                                 }
                             }
-                            progressBar.setProgress(60);
 
                             if(VAN > 0.0d){
                                 TIR = (double) estimarTIR(fcAnual,interesCredito);
@@ -194,7 +197,11 @@ public class Triangular {
                                 viable = "NO";
                                 atractivo="NO";
                             }
-                            progressBar.setProgress(70);
+                            double VAN2 = Math.round((double)VAN*100.0)/100.0;
+                            double TIR2 = Math.round((double) TIR*100.0)/100.0;
+                            double TREMA2 = Math.round((double) TREMA*100.0)/100.0;
+                            String [] aux = {""+(i),""+VAN2,""+(float)TIR2*100+"%",""+(float)TREMA2*100+"%",""+viable,atractivo};
+                            resultados.add(aux);
                             System.out.println("ES EL TIR"+TIR);
                             System.out.println(i);
                         }
@@ -256,6 +263,7 @@ public class Triangular {
                     }
                 });
         progressBar.setVisibility(View.INVISIBLE);
+        Toast.makeText(progressBar.getContext(), "Simulacion Exitosa", Toast.LENGTH_LONG).show();
     }
 
     public double estimarTIR(double fcAnual[],double interes){
@@ -440,4 +448,8 @@ public class Triangular {
     /*public void prueba(double interes,long plazo,String mensual){
         System.out.println(mensual);
     }*/
+
+    public ArrayList<String[]> getResultados(){
+        return resultados;
+    }
 }
