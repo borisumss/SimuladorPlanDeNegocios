@@ -41,6 +41,10 @@ public class Anio {
         this.mesesGanancia = new HashMap<>();
     }
 
+    public void setMesesGanancia(HashMap<String, Object> mesesGanancia) {
+        this.mesesGanancia = mesesGanancia;
+    }
+
     public HashMap<String, Object> getMesesGanancia() {
         return this.mesesGanancia;
     }

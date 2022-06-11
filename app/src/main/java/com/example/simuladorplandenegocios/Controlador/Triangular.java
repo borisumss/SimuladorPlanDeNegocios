@@ -136,7 +136,9 @@ public class Triangular implements Serializable {
                                         fcAnual[contadorAnios] = flujoMensual;
                                         contadorAnios++;
                                         anio.asignarGananciaMensual(contadorMeses,flujoMensual);//REGRESION
-                                        anios.add(anio);//REGRESION
+                                        Anio anioAsignado1 = new Anio();
+                                        anioAsignado1.setMesesGanancia(anio.getMesesGanancia());
+                                        anios.add(anioAsignado1);//REGRESION
                                         anio.vaciarAnio();//REGRESION
                                         contadorMeses = 0L;
                                     }else {
@@ -154,7 +156,9 @@ public class Triangular implements Serializable {
                                         fcAnual[contadorAnios] = flujoMensual;
                                         contadorAnios++;
                                         anio.asignarGananciaMensual(contadorMeses,flujoMensual);//REGRESION
-                                        anios.add(anio);//REGRESION
+                                        Anio anioAsignado2 = new Anio();
+                                        anioAsignado2.setMesesGanancia(anio.getMesesGanancia());
+                                        anios.add(anioAsignado2);//REGRESION
                                         anio.vaciarAnio();//REGRESION
                                         contadorMeses = 0L;
                                     }else {
