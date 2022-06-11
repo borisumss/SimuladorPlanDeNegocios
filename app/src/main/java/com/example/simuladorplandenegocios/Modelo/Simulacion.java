@@ -70,7 +70,7 @@ public class Simulacion extends Fragment implements View.OnClickListener {
                     bundle.putString("NombreProyecto",String.valueOf(resultado));
                     getParentFragmentManager().setFragmentResult("nombre",bundle);
 
-                  /*  progressBar.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
                     Toast.makeText(getContext(), "Generando Resultados", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.VISIBLE);
                     Toast.makeText(getContext(), "Generando Resultados", Toast.LENGTH_LONG).show();
@@ -80,7 +80,7 @@ public class Simulacion extends Fragment implements View.OnClickListener {
                     via =(TextView) getActivity().findViewById(R.id.viabilidadInput);
                     triangular.ejecutarSimulacion(atrac,via,progressBar);
 
-                */
+
                     Bundle bundle2= new Bundle();
                     bundle2.putSerializable("Triangular",triangular);
                     getParentFragmentManager().setFragmentResult("resultados",bundle2);

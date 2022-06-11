@@ -48,7 +48,7 @@ public class Grafica extends Fragment {
     LineChart mpLineChart;
     Button mostrarGrafica;
     String nombreSimulacion;
-
+    private String nameBussines;
     private int year1;
     private int year2;
     private int year3;
@@ -74,6 +74,7 @@ public class Grafica extends Fragment {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 resultado = result.getString("NombreProyecto");
+                System.out.println(resultado);
             }
         });
     }
@@ -86,6 +87,10 @@ public class Grafica extends Fragment {
         View v= inflater.inflate(R.layout.fragment_grafica, container, false);
 
         mostrarGrafica = v.findViewById(R.id.mostrarGrafica);
+
+        EditText namePlane = (EditText) getActivity().findViewById(R.id.nombreSimuInput);
+        nameBussines = namePlane.getText().toString();
+
         mostrarGrafica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,7 +114,8 @@ public class Grafica extends Fragment {
         ArrayList<Entry> dataVals = new ArrayList<Entry>();
         //firebase
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("graficas").document(resultado);
+        System.out.println(nameBussines);
+        DocumentReference docRef = db.collection(nameBussines).document("Grafica");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -117,13 +123,13 @@ public class Grafica extends Fragment {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        year1 = document.getLong("year1").intValue();
-                        year2 = document.getLong("year2").intValue();
-                        year3 = document.getLong("year3").intValue();
-                        year4 = document.getLong("year4").intValue();
-                        year5 = document.getLong("year5").intValue();
-                        year6 = document.getLong("year6").intValue();
-                        year7 = document.getLong("year7").intValue();
+                        year1 = (int) document.getDouble("year1").doubleValue();
+                        year2 = (int) document.getDouble("year2").doubleValue();
+                        year3 = (int) document.getDouble("year3").doubleValue();
+                        year4 = (int) document.getDouble("year4").doubleValue();
+                        year5 = (int) document.getDouble("year5").doubleValue();
+                        year6 = (int) document.getDouble("year6").doubleValue();
+                        year7 = (int) document.getDouble("year7").doubleValue();
                         dataVals.add(new Entry(0,0));
                         dataVals.add(new Entry(1,year1));
                         LineDataSet lineDataSet1 = new LineDataSet(dataVals,"Año 1");
