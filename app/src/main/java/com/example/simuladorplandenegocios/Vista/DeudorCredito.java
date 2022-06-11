@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios.Controlador;
+package com.example.simuladorplandenegocios.Vista;
 
 import android.os.Bundle;
 
@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.simuladorplandenegocios.R;
-import com.google.firestore.v1.TargetOrBuilder;
 
 /**
  * A simple {@link Fragment} subclass.

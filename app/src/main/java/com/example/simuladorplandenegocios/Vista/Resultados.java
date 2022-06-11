@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios.Modelo;
+package com.example.simuladorplandenegocios.Vista;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,14 +24,8 @@ import android.widget.Toast;
 
 import com.example.simuladorplandenegocios.Controlador.Triangular;
 import com.example.simuladorplandenegocios.R;
-import com.example.simuladorplandenegocios.Vista.MainActivity;
-import com.example.simuladorplandenegocios.Vista.MenuSimulacion2;
-import com.example.simuladorplandenegocios.Vista.VistaPlanNegocioPDF;
-import com.example.simuladorplandenegocios.Vista.VistaResultadosPDF;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -52,7 +46,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios.Modelo;
+package com.example.simuladorplandenegocios.Vista;
 
 import static android.content.ContentValues.TAG;
 
@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.simuladorplandenegocios.R;
 import com.github.mikephil.charting.charts.LineChart;

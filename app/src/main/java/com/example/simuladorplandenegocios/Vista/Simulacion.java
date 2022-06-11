@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios.Modelo;
+package com.example.simuladorplandenegocios.Vista;
 
 import android.os.Bundle;
 
@@ -18,8 +18,6 @@ import android.widget.Toast;
 import com.example.simuladorplandenegocios.Controlador.Triangular;
 import com.example.simuladorplandenegocios.R;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.io.Serializable;
 
 public class Simulacion extends Fragment implements View.OnClickListener {
 
