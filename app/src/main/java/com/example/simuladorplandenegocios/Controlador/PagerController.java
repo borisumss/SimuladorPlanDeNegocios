@@ -5,6 +5,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.simuladorplandenegocios.Vista.DeudorCredito;
+import com.example.simuladorplandenegocios.Vista.GastosFijos;
+import com.example.simuladorplandenegocios.Vista.GuardarFormulario;
+import com.example.simuladorplandenegocios.Vista.Presupuesto;
+import com.example.simuladorplandenegocios.Vista.ProductoCostos;
+
 public class PagerController extends FragmentPagerAdapter{
     private int numoftabs;
 

@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios.Controlador;
+package com.example.simuladorplandenegocios.Vista;
 
 import android.os.Bundle;
 

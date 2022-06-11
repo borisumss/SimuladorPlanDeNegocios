@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios.Controlador;
+package com.example.simuladorplandenegocios.Vista;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.simuladorplandenegocios.Controlador.FirebaseFormulario;
 import com.example.simuladorplandenegocios.Modelo.AportePropio;
 import com.example.simuladorplandenegocios.Modelo.CostosProductos;
 import com.example.simuladorplandenegocios.Modelo.Credito;

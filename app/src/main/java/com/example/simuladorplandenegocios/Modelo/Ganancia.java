@@ -6,7 +6,7 @@ public class Ganancia {
     private int anio;
     private HashMap<String,Object> gananciaAnio;
 
-    public Ganancia(int anio, HashMap gananciasAnio){
+    public Ganancia(int anio, HashMap<String, Object> gananciasAnio){
         this.anio = anio;
         this.gananciaAnio = gananciasAnio;
     }

@@ -1,4 +1,4 @@
-package com.example.simuladorplandenegocios.Modelo;
+package com.example.simuladorplandenegocios.Vista;
 
 import android.os.Bundle;
 
@@ -18,8 +18,6 @@ import android.widget.Toast;
 import com.example.simuladorplandenegocios.Controlador.Triangular;
 import com.example.simuladorplandenegocios.R;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.io.Serializable;
 
 public class Simulacion extends Fragment implements View.OnClickListener {
 
@@ -69,12 +67,18 @@ public class Simulacion extends Fragment implements View.OnClickListener {
                     Bundle bundle= new Bundle();
                     bundle.putString("NombreProyecto",String.valueOf(resultado));
                     getParentFragmentManager().setFragmentResult("nombre",bundle);
+
+                    progressBar.setVisibility(View.VISIBLE);
+                    Toast.makeText(getContext(), "Generando Resultados", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.VISIBLE);
                     Toast.makeText(getContext(), "Generando Resultados", Toast.LENGTH_LONG).show();
+
                     Triangular triangular = new Triangular(resultado);
                     atrac =(TextView) getActivity().findViewById(R.id.atractivoInput);
                     via =(TextView) getActivity().findViewById(R.id.viabilidadInput);
                     triangular.ejecutarSimulacion(atrac,via,progressBar);
+
+
                     Bundle bundle2= new Bundle();
                     bundle2.putSerializable("Triangular",triangular);
                     getParentFragmentManager().setFragmentResult("resultados",bundle2);

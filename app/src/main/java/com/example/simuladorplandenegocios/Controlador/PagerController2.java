@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.simuladorplandenegocios.Modelo.Grafica;
-import com.example.simuladorplandenegocios.Modelo.Resultados;
-import com.example.simuladorplandenegocios.Modelo.Simulacion;
+import com.example.simuladorplandenegocios.Vista.Grafica;
+import com.example.simuladorplandenegocios.Vista.Resultados;
+import com.example.simuladorplandenegocios.Vista.Simulacion;
 
 public class PagerController2 extends FragmentPagerAdapter {
     int numTabs;
