@@ -20,6 +20,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -249,8 +250,10 @@ public class Triangular implements Serializable {
     public void guardarResultados(double viabilidadResultado,String atractivoFinal,ProgressBar progressBar){
         viable = viabilidadResultado;
         atract = atractivoFinal;
+        DecimalFormat dec = new DecimalFormat("#.00");
+        String viableRes = dec.format(viable);
         Map<String, Object> resultadosSimulacion = new HashMap<>();
-        resultadosSimulacion.put("Viabilidad",viabilidadResultado);
+        resultadosSimulacion.put("Viabilidad",Double.parseDouble(viableRes.replace(',','.')));
         resultadosSimulacion.put("Atractivo",atractivoFinal);
         this.db.collection(""+this.nombrePlanNegocio).document("Resultados")
                 .set(resultadosSimulacion)

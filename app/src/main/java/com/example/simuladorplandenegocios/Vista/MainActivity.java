@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                //descarga automatica
-                Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/simulador-plan-de-negocios.appspot.com/o/Proyecto%20Final%20RA%2001-2022.pdf?alt=media&token=284b0aca-c1bc-4389-b15b-22fe4e6acb14");
+                Uri uri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/simulador-plan-de-negocios.appspot.com/o/manual%2FManual%20de%20Usuario.pdf?alt=media&token=d572d42d-872d-4dbd-b9fe-c7e9921d8e04");
                 Intent i = new Intent( Intent.ACTION_VIEW, uri);
                 startActivity(i);
             }
