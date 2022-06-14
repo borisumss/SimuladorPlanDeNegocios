@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
          File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Simulacion", "Manual-de-Usuario.pdf");
                 if(!file.exists()){
                     FirebaseStorage fb = FirebaseStorage.getInstance();
-                    StorageReference ref = fb.getReference().child("Proyecto Final RA 01-2022.pdf");
+                    StorageReference ref = fb.getReference().child("manual/Manual de Usuario.pdf");
                     ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
