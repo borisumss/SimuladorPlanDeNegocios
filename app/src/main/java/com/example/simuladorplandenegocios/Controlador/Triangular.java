@@ -127,11 +127,12 @@ public class Triangular implements Serializable {
                             //CALCULO FLUJO CAJA MES
                             for(int j=1; j<=84 ;j++){
                                 if(plazoCuota > 0){
-                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito,j);
+                                    contadorMeses++;
+                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito,j,contadorMeses);
                                     plazoCuota--;
                                     saldoVariable = variables [0];
                                     flujoMensual = flujoMensual + variables [1];
-                                    contadorMeses++;
+
 
                                     if (contadorMeses == 12){
                                         fcAnual[contadorAnios] = flujoMensual;
@@ -148,10 +149,11 @@ public class Triangular implements Serializable {
 
                                 }else {
                                     cuotaVariable = 0d;
-                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito,j);
+                                    contadorMeses++;
+                                    variables = flujoCajaMes(productos,cuotaVariable,saldoVariable,costosFijos,montoSolicitadoCredito,j,contadorMeses);
                                     saldoVariable = variables [0];
                                     flujoMensual = flujoMensual + variables [1];
-                                    contadorMeses++;
+
 
                                     if (contadorMeses == 12){
                                         fcAnual[contadorAnios] = flujoMensual;
@@ -211,7 +213,7 @@ public class Triangular implements Serializable {
                             System.out.println(i);
                         }
                         //REGRESION
-                        RegresionLineal regresionLineal = new RegresionLineal(n,aniosCorridas,nombrePlanNegocio);
+                        RegresionLineal regresionLineal = new RegresionLineal(n,aniosCorridas,nombrePlanNegocio,interesCredito,montoSolicitadoCredito);
                         regresionLineal.ejecutarRegresion();
 
                         String atractivoFinal = "";
@@ -234,7 +236,10 @@ public class Triangular implements Serializable {
                         System.out.println(viabilidadResultado);
                         System.out.println(atractivoFinal);
 
-                        via.setText(""+viabilidadResultado);
+                        DecimalFormat dec = new DecimalFormat("#.00");
+                        String viabilidadMostrar = dec.format(viabilidadResultado);
+
+                        via.setText(""+Double.parseDouble(viabilidadMostrar.replace(',','.'))+" %");
                         if(viabilidadResultado<50.0){
                             via.setTextColor(Color.RED);
                         }else{
@@ -298,7 +303,7 @@ public class Triangular implements Serializable {
         return TIR;
     }
 
-    public double[] flujoCajaMes(HashMap productos,double cuotaVariable,double saldoVariable,double costosFijos,double inversionInicial,int j){
+    public double[] flujoCajaMes(HashMap productos,double cuotaVariable,double saldoVariable,double costosFijos,double inversionInicial,int j,long contadorMeses){
         double[] variables = new double[2];
         HashMap p1 = (HashMap) productos.get("Producto 1");
         HashMap p2 = (HashMap) productos.get("Producto 2");
@@ -431,7 +436,7 @@ public class Triangular implements Serializable {
         double costoProduccion = 0d;
         Random mes = new Random();
         int hayVenta = mes.nextInt(2);
-        if( hayVenta ==1){
+        if( contadorMeses == 6L || contadorMeses == 12L ){
             ingresos = totalVentas;
             costoProduccion = (double) (ingresos*(double) (1.0d-margenBrutoProduccionVentas));
         }else{
@@ -452,9 +457,6 @@ public class Triangular implements Serializable {
 
         return variables;
     }
-    /*public void prueba(double interes,long plazo,String mensual){
-        System.out.println(mensual);
-    }*/
 
     public ArrayList<String[]> getResultados(){
         return resultados;

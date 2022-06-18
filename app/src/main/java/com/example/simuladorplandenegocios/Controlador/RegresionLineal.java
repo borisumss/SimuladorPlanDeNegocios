@@ -17,13 +17,17 @@ public class RegresionLineal {
     private HashMap<String,Object> aniosCorridas;
     private String nombrePlanNegocio;
     private double[] pendientes;
+    private double interesCredito;
+    private double credito;
     //private ArrayList<> pendientes;
 
-    public RegresionLineal(long n,HashMap aniosCorridas,String nombrePlanNegocio){
+    public RegresionLineal(long n,HashMap aniosCorridas,String nombrePlanNegocio,double interesCredito,double credito){
         this.n = n;
         this.aniosCorridas = aniosCorridas;
         this.nombrePlanNegocio = nombrePlanNegocio;
         this.pendientes = new double[7];
+        this.interesCredito = interesCredito;
+        this.credito = credito;
     }
 
     public void ejecutarRegresion(){
@@ -153,6 +157,40 @@ public class RegresionLineal {
         grafica.put("year6",flujoAnual[5]);
         grafica.put("year7",flujoAnual[6]);
 
+        double VAN = this.credito;
+        for(int j=0 ;j<flujoAnual.length;j++){
+            VAN = VAN + (double) (flujoAnual[j]/Math.pow(1+this.interesCredito, j+1));
+        }
+        //double TIR = 0D;
+        //double inflacion = (double) ((0.000049d + 0.0147d + 0.0151d + 0.0271d + 0.04d)/5);
+        //double TREMA = (double) (interesCredito + inflacion + interesCredito*inflacion);
+        String recomendacion = "";
+        //String atractivo = "";
+
+        if(VAN > 0.0d){
+            //TIR = (double) estimarTIR(flujoAnual,interesCredito,this.credito);
+            /*if(TIR > TREMA){
+                recomendacion = "SU PLAN ES VIABLE PERO PODRIA INTENTAR RECORTAR GASTOS INECESARIOS";
+            }/*else{
+                recomendacion = "DEBE INTENTAR RECORTAS LOS GASTOS DE SU PLAN Y SI PUEDE VENDER SUS PRODUCTOS A UN PRECIO MEJOR";
+            }*/
+            recomendacion = "SU PLAN ES VIABLE PERO PODRIA INTENTAR RECORTAR GASTOS INECESARIOS";
+            /*if(TIR > interesCredito){
+                atractivo = "SU PLAN ES ATRACTIVO";
+            }else{
+                atractivo = "SU PLAN NO ES ATRACTIVO";
+            }*/
+
+        }else{
+            //TIR = 0f;
+            recomendacion = "DEBE INTENTAR GASTAR MENOS Y VENDER MAS PUES ESTA TENIENDO PERDIDAS";
+            //atractivo = "SU PLAN NO ES ATRACTIVO";
+        }
+
+        grafica.put("VAN",VAN);
+        //grafica.put("TIR",TIR);
+        grafica.put("Recomendacion",recomendacion);
+        //grafica.put("Atractivo",atractivo);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection(""+this.nombrePlanNegocio).document("Grafica")
                 .set(grafica)
@@ -169,6 +207,32 @@ public class RegresionLineal {
                     }
                 });
     }
+
+    /*public double estimarTIR(double fcAnual[],double interes,double creditoSolicitado){
+        double tasa1 = interes;
+        double tasa2 = 0d;
+        boolean bb = false;
+        double VAN1 = 0d;
+        double VAN2 = 0d;
+        double TIR = 0d;
+
+        while(bb!=true){
+            //VAN1 = 0D;
+            VAN1 = creditoSolicitado;
+            for(int j=0;j<fcAnual.length;j++){
+                VAN1 = VAN1 + (double) (fcAnual[j]/Math.pow(1+tasa1, j+1));
+            }
+            if(VAN1 > 0d){
+                VAN2 = VAN1;
+                tasa2 = tasa1;
+                tasa1 = tasa1 + 0.01d;
+            }else{
+                TIR = tasa2-VAN2*((tasa2-tasa1)/(VAN2-VAN1));
+                bb = true;
+            }
+        }
+        return TIR;
+    }*/
 
     public double calcularSumatoriaY(HashMap<String,Object> ganancias){
         double sumatoria = 0D;
