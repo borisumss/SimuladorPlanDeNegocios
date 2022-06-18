@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.simuladorplandenegocios.R;
 import com.github.mikephil.charting.charts.LineChart;
@@ -55,7 +56,7 @@ public class Grafica extends Fragment {
     private int year5;
     private int year6;
     private int year7;
-
+    String recomendacion;
     public Grafica() {
         // Required empty public constructor
     }
@@ -87,6 +88,8 @@ public class Grafica extends Fragment {
 
         mostrarGrafica = v.findViewById(R.id.mostrarGrafica);
 
+        TextView recomendacionResultado= v.findViewById(R.id.recomendacion);
+
         EditText namePlane = (EditText) getActivity().findViewById(R.id.nombreSimuInput);
         nameBussines = namePlane.getText().toString();
 
@@ -103,6 +106,29 @@ public class Grafica extends Fragment {
                 Año5();
                 Año6();
                 Año7();
+
+                /*FirebaseFirestore db = FirebaseFirestore.getInstance();
+                DocumentReference docRef = db.collection(nameBussines).document("Grafica");
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                                recomendacion = document.getString("Recomendacion");
+
+                            } else {
+                                Log.d(TAG, "No such document");
+                            }
+                        } else {
+                            Log.d(TAG, "get failed with ", task.getException());
+                        }
+                    }
+                });*/
+
+                recomendacionResultado.setText(recomendacion);
+
 
             }
         });
@@ -129,6 +155,8 @@ public class Grafica extends Fragment {
                         year5 = (int) document.getDouble("year5").doubleValue();
                         year6 = (int) document.getDouble("year6").doubleValue();
                         year7 = (int) document.getDouble("year7").doubleValue();
+                        recomendacion = document.getString("Recomendacion");
+
                         dataVals.add(new Entry(0,0));
                         dataVals.add(new Entry(1,year1));
                         LineDataSet lineDataSet1 = new LineDataSet(dataVals,"Año 1");
