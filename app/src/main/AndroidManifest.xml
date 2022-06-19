@@ -14,8 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimuladorPlanDeNegocios">
         <activity
-            android:name=".Vista.simulacion"
+            android:name=".Vista.VistaManual"
+            android:exported="false"
+            android:parentActivityName=".Vista.MainActivity"/>
+        <activity
+            android:name=".Vista.VistaResultadosPDF"
             android:exported="false" />
+        <activity
+            android:name=".Vista.VistaPlanNegocioPDF"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.MenuSimulacion2"
+            android:exported="false"
+            android:parentActivityName=".Vista.VistaPlanNegocioPDF" />
+        <activity
+            android:name=".Vista.MenuSimulacion"
+            android:exported="false"
+            android:parentActivityName=".Vista.MainActivity" />
         <activity
             android:name=".Vista.SplashActivity"
             android:exported="true">
@@ -25,10 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Vista.ResultadosPDF"
-            android:exported="true" />
-
         <activity
             android:name=".Vista.MainActivity"
             android:exported="true" />

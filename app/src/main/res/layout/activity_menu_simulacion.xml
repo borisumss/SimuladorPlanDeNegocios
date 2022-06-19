@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vista.MenuSimulacion"
+    android:orientation="vertical"
+    android:background="@drawable/img_9"
+    >
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#AEFFFFFF"
+        app:tabMode="scrollable"
+        app:tabGravity="fill">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/deudorCredito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_person"
+            android:text="Deudor y Credito" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/presupuesto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_presupuesto"
+            android:text="Presupuesto" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/costosProductos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_product"
+            android:text="Costos Productos" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/gastosFijos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_gastos"
+            android:text="Gastos Fijos" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/guardarFormulario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_guardar"
+            android:text="Guardar Formulario" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+</LinearLayout>
