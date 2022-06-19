@@ -46,6 +46,7 @@ public class Grafica extends Fragment {
     private String mParam2;
     private String resultado;
     LineChart mpLineChart;
+    TextView recomendacionResultado;
     Button mostrarGrafica;
     String nombreSimulacion;
     private String nameBussines;
@@ -88,7 +89,7 @@ public class Grafica extends Fragment {
 
         mostrarGrafica = v.findViewById(R.id.mostrarGrafica);
 
-        TextView recomendacionResultado= v.findViewById(R.id.recomendacion);
+        recomendacionResultado= v.findViewById(R.id.recomendacion);
 
         EditText namePlane = (EditText) getActivity().findViewById(R.id.nombreSimuInput);
         nameBussines = namePlane.getText().toString();
@@ -127,7 +128,6 @@ public class Grafica extends Fragment {
                     }
                 });*/
 
-                recomendacionResultado.setText(recomendacion);
 
 
             }
@@ -156,6 +156,7 @@ public class Grafica extends Fragment {
                         year6 = (int) document.getDouble("year6").doubleValue();
                         year7 = (int) document.getDouble("year7").doubleValue();
                         recomendacion = document.getString("Recomendacion");
+                        recomendacionResultado.setText(recomendacion);
 
                         dataVals.add(new Entry(0,0));
                         dataVals.add(new Entry(1,year1));
