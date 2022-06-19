@@ -5,7 +5,7 @@ Para instalar la aplicacion en tu movil debes tener una version igual o superior
 
 Para descargar el instalador de la aplicacion (apk) debes dar click al siguiente enlace.
 
-	https://firebasestorage.googleapis.com/v0/b/simulador-plan-de-negocios.appspot.com/o/Simulador%20Plan%20de%20Negocios.apk?alt=media&token=ba54568d-5dfc-48a3-b40b-b3ee21c58ceb
+	https://firebasestorage.googleapis.com/v0/b/simulador-plan-de-negocios.appspot.com/o/Simulador%20Plan%20de%20Negocios.apk?alt=media&token=cac81872-b0f2-411a-a714-8e8c2b6ab384
 
 Recordar que la apk solo puede instalarse en dispositivos moviles por lo que es recomendable descargar desde tu movil o sino pasarla a tu movil si no fuera asi.
 
