@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Vista.Presupuesto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="16dp">
+
+
+            <TextView
+                android:id="@+id/efectivoAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="36dp"
+                android:text="Efectivo"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/manoObraAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Mano de obra del emprendedor"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/efectivoAP" />
+
+            <TextView
+                android:id="@+id/materiaprimaAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Materia prima, insumos"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/manoObraAP" />
+
+            <TextView
+                android:id="@+id/requerimientosAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Requerimientos promocionales"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materiaprimaAP" />
+
+            <TextView
+                android:id="@+id/infraestructuraAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Infraestructura y/ terrenos y/o plantines"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/requerimientosAP" />
+
+            <TextView
+                android:id="@+id/maquinariaAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Maquinaria, equipos, vehiculos"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infraestructuraAP" />
+
+            <TextView
+                android:id="@+id/requerimientoAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Requerimientos legales"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/maquinariaAP" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:text="APORTE PROPIO"
+
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="center"
+                android:background="#358BCD"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/numEfectivoAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/efectivoAP" />
+
+            <EditText
+                android:id="@+id/numManoAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/manoObraAP" />
+
+            <EditText
+                android:id="@+id/numMateriaAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materiaprimaAP" />
+
+            <EditText
+                android:id="@+id/numReqAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requerimientosAP" />
+
+            <EditText
+                android:id="@+id/numInfraAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infraestructuraAP" />
+
+            <EditText
+                android:id="@+id/numMaquiAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/maquinariaAP" />
+
+            <EditText
+                android:id="@+id/numLegalAP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requerimientoAP" />
+
+            <!--Requerimiento-->
+
+
+            <TextView
+                android:id="@+id/totalAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.401"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/numLegalAP" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="750dp"
+                android:text="REQUERIMIENTO"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="center"
+                android:background="#358BCD"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/gastosOperativosR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="36dp"
+                android:text="Gastos operativos"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+            <TextView
+                android:id="@+id/materiaprimaR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Materia prima, insumos"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@+id/gastosOperativosR" />
+
+            <TextView
+                android:id="@+id/requerimientosR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Requerimientos promocionales"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materiaprimaR" />
+
+            <TextView
+                android:id="@+id/infraestructuraR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Infraestructura y/ terrenos y/o plantines"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requerimientosR" />
+
+            <TextView
+                android:id="@+id/maquinariaR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Maquinaria, equipos, vehiculos"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infraestructuraR" />
+
+            <TextView
+                android:id="@+id/requerimientoR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="60dp"
+                android:text="Requerimientos legales"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/maquinariaR" />
+
+            <EditText
+                android:id="@+id/gastosR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gastosOperativosR" />
+
+
+            <EditText
+                android:id="@+id/numMateriaR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materiaprimaR" />
+
+            <EditText
+                android:id="@+id/numReqR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requerimientosR" />
+
+            <EditText
+                android:id="@+id/numInfraR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infraestructuraR" />
+
+            <EditText
+                android:id="@+id/numMaquiR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/maquinariaR" />
+
+            <EditText
+                android:id="@+id/numLegalR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Bs"
+                android:inputType="numberDecimal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requerimientoR" />
+
+            <TextView
+                android:id="@+id/totalR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/numLegalR" />
+
+            <TextView
+                android:id="@+id/totalProyecto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="148dp"
+                android:textColor="#000000"
+                android:text="TOTAL PROYECTO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalR" />
+
+            <TextView
+                android:id="@+id/aportePropio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#000000"
+                android:text="APORTE PROPIO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalProyecto" />
+
+            <TextView
+                android:id="@+id/aportePropioPorc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#000000"
+                android:text="%APORTE PROPIO"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aportePropio" />
+
+            <TextView
+                android:id="@+id/condicionAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aportePropioPorc" />
+
+            <TextView
+                android:id="@+id/montoSolicitado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="32dp"
+                android:text="MONTO SOLICITADO"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/condicionAP" />
+
+            <TextView
+                android:id="@+id/montoFinanciar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#000000"
+                android:text="MONTO A FINANCIAR"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/montoSolicitado" />
+
+            <TextView
+                android:id="@+id/condicionMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/montoFinanciar"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/calcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="Ver calculo de Presupuesto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalR" />
+
+            <TextView
+                android:id="@+id/totalProyectoResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="56dp"
+                android:textColor="#3F51B5"
+                app:layout_constraintStart_toEndOf="@+id/totalProyecto"
+                app:layout_constraintTop_toBottomOf="@+id/calcular" />
+
+            <TextView
+                android:id="@+id/totalAportePropioResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#3F51B5"
+                app:layout_constraintStart_toEndOf="@+id/aportePropio"
+                app:layout_constraintTop_toBottomOf="@+id/totalProyectoResultado" />
+
+            <TextView
+                android:id="@+id/porcentajeAportePropioResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#3F51B5"
+                app:layout_constraintStart_toEndOf="@+id/aportePropioPorc"
+                app:layout_constraintTop_toBottomOf="@+id/totalAportePropioResultado" />
+
+            <TextView
+                android:id="@+id/montoSolicitadoResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:textColor="#3F51B5"
+                app:layout_constraintStart_toEndOf="@+id/montoSolicitado"
+                app:layout_constraintTop_toBottomOf="@+id/condicionAP" />
+
+            <TextView
+                android:id="@+id/montoFinanciarResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#3F51B5"
+                app:layout_constraintStart_toEndOf="@+id/montoFinanciar"
+                app:layout_constraintTop_toBottomOf="@+id/montoSolicitadoResultado" />
+
+            <TextView
+                android:id="@+id/totalAPResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-50dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintStart_toEndOf="@+id/totalAP"
+                app:layout_constraintTop_toBottomOf="@+id/numLegalAP" />
+
+            <TextView
+                android:id="@+id/totalRResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.172"
+                app:layout_constraintStart_toEndOf="@+id/totalR"
+                android:textColor="#3F51B5"
+                app:layout_constraintTop_toBottomOf="@+id/numLegalR" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</FrameLayout>
