@@ -230,15 +230,22 @@ public class Resultados extends Fragment {
             ArrayList<String[]> matriz =  tr.getResultados();
             for (int i = 0; i<10000;i++) {
                 for (int j = 0; j < matriz.get(0).length; j++) {
-                    tabla.addCell(matriz.get(i)[j]);
+                    String aux = matriz.get(i)[j];
+                    if(j==1){
+                        int punto = aux.indexOf(".");
+                        if(punto>0){
+                            if(punto+3<= aux.length()){
+                                aux = aux.substring(0,punto+3);
+                            }
+                        }
+                    }
+                    tabla.addCell(aux);
                 }
             }
             documento.add(tabla);
             //fin ingreso datos en el PDF
             documento.close();
-
-            Intent i = new Intent( getContext(), VistaResultadosPDF.class);
-            startActivity(i);
+            Toast.makeText(getContext(), "Resultados descargados exitosamente", Toast.LENGTH_SHORT).show();
 
         }catch (FileNotFoundException | DocumentException e) {
             e.printStackTrace();
